@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginRegister"></activity>
+        <activity android:name=".LoginRegister" />
+        <activity android:name=".Home_Screen"></activity>
     </application>
 
 </manifest>
