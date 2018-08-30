@@ -29,7 +29,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Search"
-        android:textAppearance="@android:style/TextAppearance.Holo.Light.Widget.Switch"
+        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
