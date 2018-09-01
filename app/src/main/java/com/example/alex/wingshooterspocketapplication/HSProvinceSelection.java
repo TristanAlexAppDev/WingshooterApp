@@ -8,7 +8,8 @@ import android.widget.Button;
 
 public class hsprovinceselection extends AppCompatActivity implements View.OnClickListener
 {
-    public int userChoice = 0;
+    public static String userChoice;
+    //public int infoNum = 0;
 
     @Override
 
@@ -60,55 +61,55 @@ public class hsprovinceselection extends AppCompatActivity implements View.OnCli
 
             case R.id.btnHSFreeState:
                 Intent i1 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 1;
+                userChoice = "Free State";
                 startActivity(i1);
                 break;
 
             case R.id.btnHSWesternCape:
                 Intent i9 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 2;
+                userChoice = "Western Cape";
                 startActivity(i9);
                 break;
 
             case R.id.btnHSEasternCape:
                 Intent i3 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 3;
+                userChoice = "Eastern Cape";
                 startActivity(i3);
                 break;
 
             case R.id.btnHSNatal:
                 Intent i4 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 4;
+                userChoice = "Kwa-Zulu Natal";
                 startActivity(i4);
                 break;
 
             case R.id.btnHSLimpopo:
                 Intent i5 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 5;
+                userChoice = "Limpopo";
                 startActivity(i5);
                 break;
 
             case R.id.btnHSNorthernCape:
                 Intent i6 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 6;
+                userChoice = "Northern Cape";
                 startActivity(i6);
                 break;
 
             case R.id.btnHSGuateng:
                 Intent i7 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 7;
+                userChoice = "Gauteng";
                 startActivity(i7);
                 break;
 
             case R.id.btnHSNWProvince:
                 Intent i8 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 8;
+                userChoice = "North West";
                 startActivity(i8);
                 break;
 
             case R.id.btnHSMpumalanga:
                 Intent i10 = new Intent(getApplicationContext(),hsprovincedates.class);
-                userChoice = 9;
+                userChoice = "Mpumalanga";
                 startActivity(i10);
                 break;
         }
