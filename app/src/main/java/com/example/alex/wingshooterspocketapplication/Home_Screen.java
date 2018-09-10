@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 
 public class Home_Screen extends AppCompatActivity implements View.OnClickListener {
 
@@ -38,8 +37,16 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.btnHuntingSeasons:
-               new  hsprovinceselection();
+               new HSProvinceSelection();
                 break;
+
+           /* case R.id.btnGamebird:
+                new*/
+
+            case R.id.btnMyHunts:
+                new StartHunt();
+                break;
+
 
         }
 
