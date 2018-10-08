@@ -21,7 +21,7 @@ public class DatabaseHandler extends SQLiteOpenHelper
 
     public DatabaseHandler(Context context,)
     {
-        super(context, name, factory, version);
+        super(context, , , );
     }
 
     @Override

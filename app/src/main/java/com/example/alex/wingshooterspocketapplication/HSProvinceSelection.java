@@ -6,10 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//<<<<<<< HEAD
 public class HSProvinceSelection extends AppCompatActivity implements View.OnClickListener
-//=======
-//>>>>>>> 2a4d1698b731c710dc5d97256b2be9b0d8cd3a47
 {
     public static String userChoice;
     //public int infoNum = 0;
@@ -52,7 +49,7 @@ public class HSProvinceSelection extends AppCompatActivity implements View.OnCli
         b10.setOnClickListener(this);
     }
 
-    @Override
+   @Override
     public void onClick(View v)
     {
         switch (v.getId())

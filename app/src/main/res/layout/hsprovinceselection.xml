@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".KSProvinceSelection">
+    tools:context=".HSProvinceSelection">
 
     <Button
         android:id="@+id/btnHSMpumalanga"
