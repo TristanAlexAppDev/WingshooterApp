@@ -11,6 +11,7 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_hunt);
+        setTitle("NEW HUNT");
 
         Button btnNHunt = findViewById(R.id.btnStart);
         btnNHunt.setOnClickListener(this);
