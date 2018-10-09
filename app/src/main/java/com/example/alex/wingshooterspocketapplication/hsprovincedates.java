@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 public class hsprovincedates extends AppCompatActivity
 {
-    public String choice = hsprovinceselection.userChoice;
+    public String choice = HSProvinceSelection.userChoice;
 
     @SuppressLint("SetTextI18n")
     @Override
