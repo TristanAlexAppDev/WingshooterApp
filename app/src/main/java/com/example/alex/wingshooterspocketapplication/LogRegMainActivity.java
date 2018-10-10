@@ -28,7 +28,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId())
         {
             case R.id.btnLog:
-                Intent i1 = new Intent(getApplicationContext(), Home_Screen.class);
+                Intent i1 = new Intent(getApplication(), Home_Screen.class);
                 startActivity(i1);
                 break;
 
