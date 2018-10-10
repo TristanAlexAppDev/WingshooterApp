@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">WingshootersPocketApplication</string>
 
-    <string-array name = "Bird_Age">
+    <string-array name="Bird_Age">
         <item>chick</item>
         <item>Jouvenile</item>
         <item>Adult</item>
     </string-array>
 
-    <string-array name = "SeenShot">
+    <string-array name="SeenShot">
         <item>Seen</item>
         <item>Shot</item>
     </string-array>
