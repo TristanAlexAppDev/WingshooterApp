@@ -41,7 +41,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.btnGamebird:
-                new gamebirdid();
+                new gamebirdidmain();
                 break;
 
             case R.id.btnMyHunts:
