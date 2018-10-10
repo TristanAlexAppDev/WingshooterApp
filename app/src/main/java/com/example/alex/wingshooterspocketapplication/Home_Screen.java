@@ -40,8 +40,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                new HSProvinceSelection();
                 break;
 
-           /* case R.id.btnGamebird:
-                new*/
+            case R.id.btnGamebird:
+                new gamebirdid();
+                break;
 
             case R.id.btnMyHunts:
                 new StartHunt();

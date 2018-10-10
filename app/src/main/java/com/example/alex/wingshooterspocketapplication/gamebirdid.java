@@ -10,6 +10,6 @@ public class gamebirdid extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.GameBirdIDMain);
+        setContentView(R.layout.gameBirdIDMain);
     }
 }
