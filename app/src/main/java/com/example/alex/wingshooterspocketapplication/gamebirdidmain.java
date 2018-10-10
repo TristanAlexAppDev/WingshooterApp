@@ -3,7 +3,7 @@ package com.example.alex.wingshooterspocketapplication;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class gamebirdid extends AppCompatActivity
+public class gamebirdidmain extends AppCompatActivity
 {
     @Override
 
