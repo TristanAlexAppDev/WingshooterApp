@@ -1,5 +1,6 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,23 +34,52 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         switch (v.getId())
         {
             case R.id.btnNewActivity:
-                new NewHunt();
+                NewHunt();
                 break;
 
             case R.id.btnHuntingSeasons:
-               new HSProvinceSelection();
+               HSProvinceSelection();
                 break;
 
             case R.id.btnGamebird:
-                new gamebirdidmain();
+                gamebirdidmain();
                 break;
 
             case R.id.btnMyHunts:
-                new StartHunt();
+                StartHunt();
                 break;
 
 
         }
 
+    }
+
+    public void NewHunt()
+    {
+        Intent intent = new Intent(this,NewHunt.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void HSProvinceSelection()
+    {
+        Intent intent = new Intent(this, HSProvinceSelection.class);
+        startActivity(intent);
+        finish();
+
+    }
+
+    public void gamebirdidmain()
+    {
+        Intent intent = new Intent(this, gamebirdidmain.class);
+        startActivity(intent);
+        finish();
+    }
+
+    public void StartHunt()
+    {
+        Intent intent = new Intent(this, StartHunt.class);
+        startActivity(intent);
+        finish();
     }
 }
