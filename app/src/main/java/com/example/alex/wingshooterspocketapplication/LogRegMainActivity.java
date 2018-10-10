@@ -1,5 +1,6 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,11 +28,13 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         switch (v.getId())
         {
             case R.id.btnLog:
-                new Home_Screen();
+                Intent i1 = new Intent(getApplicationContext(), Home_Screen.class);
+                startActivity(i1);
                 break;
 
             case R.id.btnReg:
-                new LoginRegister();
+                Intent i2 = new Intent(getApplicationContext(), LoginRegister.class);
+                startActivity(i2);
                 break;
         }
 
