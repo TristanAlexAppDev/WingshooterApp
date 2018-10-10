@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,31 +11,16 @@
         android:layout_height="27dp"
         android:layout_marginEnd="50dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="15dp"
-        android:text="Game Bird ID in the field!"
+        android:layout_marginTop="20dp"
+        android:text="Game Bird ID in the field"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edttxtbirdIDSearch"
-        android:layout_width="165dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="75dp"
-        android:layout_marginStart="75dp"
-        android:layout_marginTop="5dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Search"
-        android:textAppearance="@android:style/TextAppearance.Holo.Medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
-
     <Button
         android:id="@+id/btnGBHome"
-        android:layout_width="88dp"
+        android:layout_width="100dp"
         android:layout_height="48dp"
         android:layout_marginBottom="15dp"
         android:layout_marginEnd="100dp"
@@ -45,4 +29,108 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDucks"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Ducks"
+        app:layout_constraintBottom_toTopOf="@+id/btnQuail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
+
+    <Button
+        android:id="@+id/btnpartridge"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="25dp"
+        android:text="Partridge"
+        app:layout_constraintBottom_toTopOf="@+id/btnPigeons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
+
+    <Button
+        android:id="@+id/btnGrouse"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="25dp"
+        android:text="Grouse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnQuail"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:text="Quail"
+        app:layout_constraintBottom_toTopOf="@+id/btnGeese"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnfranc"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginStart="25dp"
+        android:text="Francolin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnsnipe"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="25dp"
+        android:text="Snipe"
+        app:layout_constraintBottom_toTopOf="@+id/btnGrouse"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnPigeons"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="25dp"
+        android:text="Pigeons"
+        app:layout_constraintBottom_toTopOf="@+id/btnTeal"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnGeese"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:text="Geese"
+        app:layout_constraintBottom_toTopOf="@+id/btnFowl"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnFowl"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginStart="25dp"
+        android:text="Guiniefowl"
+        app:layout_constraintBottom_toTopOf="@+id/btnfranc"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnTeal"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="25dp"
+        android:text="Teal"
+        app:layout_constraintBottom_toTopOf="@+id/btnsnipe"
+        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
