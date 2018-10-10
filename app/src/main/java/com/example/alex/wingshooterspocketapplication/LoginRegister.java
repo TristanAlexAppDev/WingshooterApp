@@ -25,10 +25,13 @@ public class LoginRegister extends AppCompatActivity {
     public TextView edtTxtInitials;
     public TextView edtTextIDNum;
     public TextView edtTextEmail;
-    public Button btnSubmit;
+    public TextView txtLoad;
+    public Button btnSave;
+    public Button btnLoad;
 
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,27 +44,29 @@ public class LoginRegister extends AppCompatActivity {
         edtTxtInitials = (TextView) findViewById(R.id.edtTxtInitials);
         edtTextIDNum = (TextView) findViewById(R.id.edtTextIDNum);
         edtTextEmail = (TextView) findViewById(R.id.edtTextEmail);
-        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        txtLoad = (TextView) findViewById(R.id.txtLoad);
+        btnSave = (Button) findViewById(R.id.btnSave);
+        btnLoad = (Button) findViewById(R.id.btnLoad);
 
         File dir = new File(path);
         dir.mkdirs();
     }
 
-    public void buttonSave (View view)
+    public void buttonbtnSave (View view)
 
     {
         File file = new File (path + "/savedFile.txt");
-        String [] saveDate = String.valueOf(edtTxtDate.getText()).split(System.getProperty("line.seperator"));
+        String [] saveDate = String.valueOf(edtTxtDate.getText()).split(System.getProperty("line.separator"));
         edtTxtDate.setText("");
-        String [] saveName = String.valueOf(edtTxtName.getText()).split(System.getProperty("line.seperator"));
+        String [] saveName = String.valueOf(edtTxtName.getText()).split(System.getProperty("line.separator"));
         edtTxtName.setText("");
-        String [] saveSurname = String.valueOf(edtTxtSurName.getText()).split(System.getProperty("line.seperator"));
+        String [] saveSurname = String.valueOf(edtTxtSurName.getText()).split(System.getProperty("line.separator"));
         edtTxtSurName.setText("");
-        String [] saveInitials = String.valueOf(edtTxtInitials.getText()).split(System.getProperty("line.seperator"));
+        String [] saveInitials = String.valueOf(edtTxtInitials.getText()).split(System.getProperty("line.separator"));
         edtTxtInitials.setText("");
-        String [] saveID = String.valueOf(edtTextIDNum.getText()).split(System.getProperty("line.seperator"));
+        String [] saveID = String.valueOf(edtTextIDNum.getText()).split(System.getProperty("line.separator"));
         edtTextIDNum.setText("");
-        String [] saveEmail = String.valueOf(edtTextEmail.getText()).split(System.getProperty("line.seperator"));
+        String [] saveEmail = String.valueOf(edtTextEmail.getText()).split(System.getProperty("line.separator"));
         edtTextEmail.setText("");
 
         Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
@@ -79,6 +84,15 @@ public class LoginRegister extends AppCompatActivity {
     {
         File file = new File(path + "/SavedFile.txt");
         String [] loadText = Load(file);
+
+        String finalString = "";
+
+        for (int i = 0; i < loadText.length; i++)
+        {
+            finalString += loadText[i] + System.getProperty("line.separator");
+        }
+
+        txtLoad.setText(finalString);
     }
     public static void Save(File file, String[] data)
     {

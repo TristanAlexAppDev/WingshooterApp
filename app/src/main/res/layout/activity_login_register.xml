@@ -198,17 +198,42 @@
         android:id="@+id/chkBNonDedicatedH"
         android:layout_width="177dp"
         android:layout_height="29dp"
-        android:layout_marginStart="168dp"
+        android:layout_marginStart="164dp"
         android:text="Non-Dedicated Hunter"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="359dp" />
+        tools:layout_editor_absoluteY="356dp" />
 
     <Button
-        android:id="@+id/btnSubmit"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:text="Submit"
+        android:onClick="buttonbtnSave"
+        android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="255dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btnLoad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="buttonLoad"
+        android:text="Load"
+        tools:layout_editor_absoluteX="280dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <TextView
+        android:id="@+id/txtLoad"
+        android:layout_width="269dp"
+        android:layout_height="110dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="388dp" />
+
 </android.support.constraint.ConstraintLayout>
