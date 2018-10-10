@@ -18,6 +18,15 @@
                     <category android:name="android.intent.category.LAUNCHER"/>
                 </intent-filter>
         </activity>
+        <activity android:name=".Home_Screen"/>
+        <activity android:name=".LoginRegister"/>
+        <activity android:name=".gamebirdidmain"/>
+        <activity android:name=".hsprovincedates"/>
+        <activity android:name=".HSProvinceSelection"/>
+        <activity android:name=".LogActivity"/>
+        <activity android:name=".NewHunt"/>
+        <activity android:name=".StartHunt"/>
+
 
     </application>
 
