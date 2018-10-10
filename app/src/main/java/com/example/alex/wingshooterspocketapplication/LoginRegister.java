@@ -7,14 +7,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class LoginRegister extends AppCompatActivity {
-
+    //variables for login activity
     public TextView edtTxtDate;
     public TextView edtTxtName;
     public TextView edtTxtSurName;
@@ -24,7 +28,7 @@ public class LoginRegister extends AppCompatActivity {
     public Button btnSubmit;
 
 
-public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
+    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,9 +47,10 @@ public String path = Environment.getExternalStorageDirectory().getAbsolutePath()
         dir.mkdirs();
     }
 
-    public void buttonSubmit(View view)
+    public void buttonSave (View view)
+
     {
-        File file = new File(path + "/SavedData.txt");
+        File file = new File (path + "/savedFile.txt");
         String [] saveDate = String.valueOf(edtTxtDate.getText()).split(System.getProperty("line.seperator"));
         edtTxtDate.setText("");
         String [] saveName = String.valueOf(edtTxtName.getText()).split(System.getProperty("line.seperator"));
@@ -54,12 +59,26 @@ public String path = Environment.getExternalStorageDirectory().getAbsolutePath()
         edtTxtSurName.setText("");
         String [] saveInitials = String.valueOf(edtTxtInitials.getText()).split(System.getProperty("line.seperator"));
         edtTxtInitials.setText("");
-        String [] saveID = String.valueOf(edtTxtIDNum.getText()).split(System.getProperty("line.seperator"));
-        edtTxtIDNum.setText("");
-        String [] saveEmail = String.valueOf(edtTxtEmail.getText()).split(System.getProperty("line.seperator"));
-        edtTxtEmail.setText("");
+        String [] saveID = String.valueOf(edtTextIDNum.getText()).split(System.getProperty("line.seperator"));
+        edtTextIDNum.setText("");
+        String [] saveEmail = String.valueOf(edtTextEmail.getText()).split(System.getProperty("line.seperator"));
+        edtTextEmail.setText("");
 
-        Save (file, saveDate,saveName,saveSurname,saveInitials,saveID,saveEmail);
+        Toast.makeText(getApplicationContext(), "Saved", Toast.LENGTH_LONG).show();
+
+        Save (file, saveDate);
+        Save (file, saveName);
+        Save (file, saveSurname);
+        Save (file, saveInitials);
+        Save (file, saveID);
+        Save (file, saveEmail);
+    }
+
+
+    public void buttonLoad(View view)
+    {
+        File file = new File(path + "/SavedFile.txt");
+        String [] loadText = Load(file);
     }
     public static void Save(File file, String[] data)
     {
@@ -92,5 +111,48 @@ public String path = Environment.getExternalStorageDirectory().getAbsolutePath()
             }
             catch (IOException e) {e.printStackTrace();}
         }
+    }
+    public static String[] Load(File file)
+    {
+        FileInputStream fis = null;
+        try
+        {
+            fis = new FileInputStream(file);
+        }
+        catch (FileNotFoundException e) {e.printStackTrace();}
+        InputStreamReader isr = new InputStreamReader(fis);
+        BufferedReader br = new BufferedReader(isr);
+
+        String test;
+        int anzahl=0;
+        try
+        {
+            while ((test=br.readLine()) != null)
+            {
+                anzahl++;
+            }
+        }
+        catch (IOException e) {e.printStackTrace();}
+
+        try
+        {
+            fis.getChannel().position(0);
+        }
+        catch (IOException e) {e.printStackTrace();}
+
+        String[] array = new String[anzahl];
+
+        String line;
+        int i = 0;
+        try
+        {
+            while((line=br.readLine())!=null)
+            {
+                array[i] = line;
+                i++;
+            }
+        }
+        catch (IOException e) {e.printStackTrace();}
+        return array;
     }
 }
