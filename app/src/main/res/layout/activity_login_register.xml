@@ -226,8 +226,8 @@
         android:layout_height="wrap_content"
         android:onClick="buttonLoad"
         android:text="Load"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="388dp" />
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="482dp" />
 
     <TextView
         android:id="@+id/txtLoad"
