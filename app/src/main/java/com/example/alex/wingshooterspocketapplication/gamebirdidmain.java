@@ -46,6 +46,9 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
 
         Button b10 = findViewById(R.id.btnGrouse);
         b10.setOnClickListener(this);
+
+        Button duckScreen = findViewById(R.id.btnduckscreen);
+        duckScreen.setOnClickListener(this);
     }
 
     @Override
@@ -53,9 +56,11 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
     {
         switch (v.getId())
         {
+            //-------------Code for buttons on this screen-------------------------
             case R.id.btnGBHome:
-                Intent i = new Intent(getApplicationContext(),Home_Screen.class);
+                Intent i = new Intent(this, Home_Screen.class);
                 startActivity(i);
+                finish();
                 break;
 
             case R.id.btnDucks:
@@ -98,6 +103,13 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btnGrouse:
                 setContentView(R.layout.idgrouse);
+                break;
+
+                //---------------Other buttons code-----------------
+
+            case R.id.btnduckscreen:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
                 break;
         }
     }

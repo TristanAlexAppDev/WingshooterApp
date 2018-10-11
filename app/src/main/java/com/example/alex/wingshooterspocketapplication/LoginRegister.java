@@ -34,19 +34,20 @@ public class LoginRegister extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
 
-        edtTxtDate = (TextView) findViewById(R.id.edtTxtDate);
-        edtTxtName = (TextView) findViewById(R.id.edtTxtName);
-        edtTxtSurName = (TextView) findViewById(R.id.edtTxtSurName);
-        edtTxtInitials = (TextView) findViewById(R.id.edtTxtInitials);
-        edtTextIDNum = (TextView) findViewById(R.id.edtTextIDNum);
-        edtTextEmail = (TextView) findViewById(R.id.edtTextEmail);
-        txtLoad = (TextView) findViewById(R.id.txtLoad);
-        btnSave = (Button) findViewById(R.id.btnSave);
-        btnLoad = (Button) findViewById(R.id.btnLoad);
+        edtTxtDate = findViewById(R.id.edtTxtDate);
+        edtTxtName = findViewById(R.id.edtTxtName);
+        edtTxtSurName = findViewById(R.id.edtTxtSurName);
+        edtTxtInitials = findViewById(R.id.edtTxtInitials);
+        edtTextIDNum = findViewById(R.id.edtTextIDNum);
+        edtTextEmail = findViewById(R.id.edtTextEmail);
+        txtLoad = findViewById(R.id.txtLoad);
+        btnSave = findViewById(R.id.btnSave);
+        btnLoad = findViewById(R.id.btnLoad);
 
         File dir = new File(path);
         dir.mkdirs();
