@@ -1,20 +1,18 @@
 package com.example.alex.wingshooterspocketapplication;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
-public class gamebirdidmain extends Activity implements View.OnClickListener {
+public class gamebirdidmain extends AppCompatActivity implements View.OnClickListener {
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        /*requestWindowFeature(Window.FEATURE_NO_TITLE);*/
         setContentView(R.layout.gamebirdidmain);
 
         Button b = findViewById(R.id.btnGBHome);
@@ -50,8 +48,35 @@ public class gamebirdidmain extends Activity implements View.OnClickListener {
         Button b10 = findViewById(R.id.btnGrouse);
         b10.setOnClickListener(this);
 
-        Button duckScreen = findViewById(R.id.btnReturn);
-        duckScreen.setOnClickListener(this);
+        Button btnRetDuck = findViewById(R.id.btnReturnDuck);
+        btnRetDuck.setOnClickListener(this);
+
+        Button btnRetFranc = findViewById(R.id.btnReturnFranc);
+        btnRetFranc.setOnClickListener(this);
+
+        Button btnRetGees = findViewById(R.id.btnReturnGeese);
+        btnRetGees.setOnClickListener(this);
+
+        Button btnRetGro = findViewById(R.id.btnReturnGrouse);
+        btnRetGro.setOnClickListener(this);
+
+        Button btnRetGF = findViewById(R.id.btnReturnGuine);
+        btnRetGF.setOnClickListener(this);
+
+        Button btnRetPart = findViewById(R.id.btnReturnPartridge);
+        btnRetPart.setOnClickListener(this);
+
+        Button btnRetPig = findViewById(R.id.btnReturnPigeon);
+        btnRetPig.setOnClickListener(this);
+
+        Button btnRetQua = findViewById(R.id.btnReturnQuail);
+        btnRetQua.setOnClickListener(this);
+
+        Button btnRetSnipe = findViewById(R.id.btnReturnSnipe);
+        btnRetSnipe.setOnClickListener(this);
+
+        Button btnRetTeal = findViewById(R.id.btnReturnTeal);
+        btnRetTeal.setOnClickListener(this);
     }
 
     @Override
@@ -110,7 +135,52 @@ public class gamebirdidmain extends Activity implements View.OnClickListener {
 
                 //---------------Other buttons code-----------------//
 
-            case R.id.btnReturn:
+                case R.id.btnReturnDuck:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnFranc:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnGeese:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnGrouse:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnGuine:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnPartridge:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnPigeon:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnQuail:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnSnipe:
+                setContentView(R.layout.gamebirdidmain);
+                finish();
+                break;
+
+            case R.id.btnReturnTeal:
                 setContentView(R.layout.gamebirdidmain);
                 finish();
                 break;
