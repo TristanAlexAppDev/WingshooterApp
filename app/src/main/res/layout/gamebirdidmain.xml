@@ -8,129 +8,36 @@
     <TextView
         android:id="@+id/txtBirdIDHeader"
         android:layout_width="221dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
         android:text="Game Bird ID in the field"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnGBHome"
         android:layout_width="100dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="15dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginStart="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"
         android:text="Home"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="388dp"
+        android:layout_height="448dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnDucks"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="25dp"
-        android:text="Ducks"
-        app:layout_constraintBottom_toTopOf="@+id/btnQuail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
+        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader">
 
-    <Button
-        android:id="@+id/btnpartridge"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginTop="25dp"
-        android:text="Partridge"
-        app:layout_constraintBottom_toTopOf="@+id/btnPigeons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
-    <Button
-        android:id="@+id/btnGrouse"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginEnd="25dp"
-        android:text="Grouse"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnQuail"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="25dp"
-        android:text="Quail"
-        app:layout_constraintBottom_toTopOf="@+id/btnGeese"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnfranc"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginStart="25dp"
-        android:text="Francolin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnsnipe"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="25dp"
-        android:text="Snipe"
-        app:layout_constraintBottom_toTopOf="@+id/btnGrouse"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnPigeons"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="25dp"
-        android:text="Pigeons"
-        app:layout_constraintBottom_toTopOf="@+id/btnTeal"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btnGeese"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="25dp"
-        android:text="Geese"
-        app:layout_constraintBottom_toTopOf="@+id/btnFowl"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnFowl"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="25dp"
-        android:text="Guiniefowl"
-        app:layout_constraintBottom_toTopOf="@+id/btnfranc"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnTeal"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginEnd="25dp"
-        android:text="Teal"
-        app:layout_constraintBottom_toTopOf="@+id/btnsnipe"
-        app:layout_constraintEnd_toEndOf="parent" />
 </android.support.constraint.ConstraintLayout>
