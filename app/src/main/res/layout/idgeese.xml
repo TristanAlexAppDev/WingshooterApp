@@ -8,7 +8,7 @@
     <TextView
         android:id="@+id/txtGeese"
         android:layout_width="wrap_content"
-        android:layout_height="50"
+        android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:text="GEESE"
@@ -52,7 +52,7 @@
                 android:id="@+id/imgSpurwingGoose"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/gooseSpurWinged" />
+                app:srcCompat="@drawable/goosespurwinged" />
 
             <ImageView
                 android:id="@+id/imgPygmyGoose"
