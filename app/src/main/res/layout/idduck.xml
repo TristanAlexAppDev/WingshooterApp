@@ -7,12 +7,13 @@
 
     <TextView
         android:id="@+id/txtduckscreen"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:text="Ducks"
+        android:text="DUCKS"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,43 +56,45 @@
                 android:id="@+id/imgknobbilledduck"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/knobbilledDuck" />
+                app:srcCompat="@drawable/knobbilledduck" />
 
             <ImageView
                 android:id="@+id/imgwhitebackedduck"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/WhiteBackedDuck" />
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebackedduck" />
 
             <ImageView
                 android:id="@+id/imgsashellduck"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/SouthAfricanShelduck" />
+                android:padding="1dp"
+                app:srcCompat="@drawable/southafricanshelduck" />
 
             <ImageView
                 android:id="@+id/imgredeyedpochard"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/RedeyedSouthernPochard" />
+                app:srcCompat="@drawable/redeyedsouthernpochard" />
 
             <ImageView
                 android:id="@+id/imgmaccoaduck"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/MaccoaDuck" />
+                app:srcCompat="@drawable/maccoaduck" />
 
             <ImageView
                 android:id="@+id/imgfulvousduck"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/FulvousWhistlingduck" />
+                app:srcCompat="@drawable/fulvouswhistlingduck" />
 
             <ImageView
                 android:id="@+id/imgcapeshoveler"
                 android:layout_width="match_parent"
                 android:layout_height="420dp"
-                app:srcCompat="@drawable/Capeshoveler" />
+                app:srcCompat="@drawable/capeshoveler" />
 
             <ImageView
                 android:id="@+id/imgblackduck"
@@ -99,7 +102,7 @@
                 android:layout_height="420dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/Blackduck"
+                app:srcCompat="@drawable/blackduck"
                 tools:layout_editor_absoluteY="53dp" />
         </LinearLayout>
     </ScrollView>

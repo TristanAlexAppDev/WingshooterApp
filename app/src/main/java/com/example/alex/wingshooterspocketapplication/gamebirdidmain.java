@@ -47,7 +47,7 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
         Button b10 = findViewById(R.id.btnGrouse);
         b10.setOnClickListener(this);
 
-        Button duckScreen = findViewById(R.id.btnduckscreen);
+        Button duckScreen = findViewById(R.id.btnReturn);
         duckScreen.setOnClickListener(this);
     }
 
@@ -105,9 +105,9 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
                 setContentView(R.layout.idgrouse);
                 break;
 
-                //---------------Other buttons code-----------------
+                //---------------Other buttons code-----------------//
 
-            case R.id.btnduckscreen:
+            case R.id.btnReturn:
                 setContentView(R.layout.gamebirdidmain);
                 finish();
                 break;
