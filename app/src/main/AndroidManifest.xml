@@ -12,6 +12,7 @@
         <!-- Set default activity for launch-->
         <activity
             android:name=".LogRegMainActivity"
+            android:exported="true"
             android:theme="@style/AppTheme">
                 <intent-filter>
                     <action android:name="android.intent.action.MAIN"/>
@@ -19,14 +20,29 @@
                 </intent-filter>
         </activity>
         <!-- launch activities -->
-        <activity android:name=".Home_Screen"/>
-        <activity android:name=".LoginRegister"/>
-        <activity android:name=".gamebirdidmain"/>
-        <activity android:name=".hsprovincedates"/>
-        <activity android:name=".HSProvinceSelection"/>
-        <activity android:name=".LogActivity"/>
-        <activity android:name=".NewHunt"/>
-        <activity android:name=".StartHunt"/>
+        <activity android:name=".Home_Screen"
+            android:exported="true"/>
+
+        <activity android:name=".LoginRegister"
+            android:exported="true"/>
+
+        <activity android:name=".gamebirdidmain"
+            android:exported="true"/>
+
+        <activity android:name=".hsprovincedates"
+            android:exported="true"/>
+
+        <activity android:name=".HSProvinceSelection"
+            android:exported="true"/>
+
+        <activity android:name=".LogActivity"
+            android:exported="true"/>
+
+        <activity android:name=".NewHunt"
+            android:exported="true"/>
+
+        <activity android:name=".StartHunt"
+            android:exported="true"/>
 
     </application>
 

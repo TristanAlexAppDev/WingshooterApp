@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnReturn"
+        android:id="@+id/btnreturnPart"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnReturn">
+        app:layout_constraintTop_toBottomOf="@+id/btnreturnPart">
 
         <LinearLayout
             android:layout_width="match_parent"
