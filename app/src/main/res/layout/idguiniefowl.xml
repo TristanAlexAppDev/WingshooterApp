@@ -18,7 +18,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnreturnPart"
+
+        android:id="@+id/btnReturnGuine"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -30,14 +31,15 @@
     <ScrollView
         android:layout_width="344dp"
         android:layout_height="429dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="74dp">
+        app:layout_constraintTop_toBottomOf="@+id/btnReturnGuine">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/imgCrestedGuinefowl"
