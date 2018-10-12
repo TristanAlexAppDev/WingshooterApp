@@ -28,9 +28,8 @@
         <activity
             android:name=".LoginRegister"
             android:exported="true" />
-        <activity
-            android:name=".gamebirdidmain"
-            android:exported="true" />
+
+
         <activity
             android:name=".hsprovincedates"
             android:exported="true" />

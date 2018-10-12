@@ -7,6 +7,7 @@
     tools:context=".BirdIDFV">
 
     <ViewFlipper
+        android:id="@+id/FlipBirrds"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -16,8 +17,7 @@
             android:layout_height="448dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,21 +37,24 @@
                     app:srcCompat="@drawable/notallowedtoshoot2" />
 
                 <Button
-                    android:id="@+id/btnDucks"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="findDuck"
                     android:text="Ducks" />
 
                 <Button
-                    android:id="@+id/btnQuail"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="findFranc"
                     android:text="Quail" />
 
                 <Button
-                    android:id="@+id/btnGeese"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="findGeese"
                     android:text="Geese" />
 
                 <Button
@@ -105,8 +108,7 @@
             android:layout_height="444dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtduckscreen">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -187,7 +189,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReturnFranc">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -240,7 +242,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReturnGeese"
             app:layout_constraintVertical_bias="0.0">
 
             <LinearLayout
@@ -274,8 +275,7 @@
             android:layout_height="449dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReturnGrouse">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -341,8 +341,7 @@
             android:layout_height="444dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReturnPartridge">
+            app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -441,7 +440,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtquail">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -473,7 +472,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnReturnSnipe"
             app:srcCompat="@drawable/ethiopiansnipe" />
 
         <ScrollView
@@ -510,5 +508,32 @@
             </LinearLayout>
         </ScrollView>
     </ViewFlipper>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Previous"
+        android:onClick="previousView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:onClick="nextView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GAME BIRD ID"
+        android:onClick="startView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_margin="16dp"/>
 
 </RelativeLayout>

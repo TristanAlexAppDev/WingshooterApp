@@ -71,7 +71,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     public void gamebirdidmain()
     {
-        Intent intent = new Intent(this, gamebirdidmain.class);
+        Intent intent = new Intent(this, BirdIDFV.class);
         startActivity(intent);
         finish();
     }

@@ -54,7 +54,7 @@ public class HSProvinceSelection extends AppCompatActivity implements View.OnCli
     {
         switch (v.getId())
         {
-            case R.id.btnGBHome:
+            case R.id.btnHSHome:
                 Intent i = new Intent(getApplicationContext(),Home_Screen.class);
                 startActivity(i);
                 break;
