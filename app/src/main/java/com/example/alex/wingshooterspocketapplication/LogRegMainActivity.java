@@ -13,6 +13,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
     public TextView TxtIDNUMlog;
     public TextView edttxtPassword;
+    public Button btnLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,30 +49,55 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    public void LoginCheck()
-    {
+    public void LoginCheck() {
         String userPass;
-        int userIDnum;
+        String check;
+        int userIDnum = 0;
         String dateExist = "";
 
         userPass = edttxtPassword.getText().toString();
-        userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
+        check = TxtIDNUMlog.getText().toString();
 
-        if (userPass.equals("Admin123") && userIDnum == 199)
+        if (userPass.matches("") || check.matches(""))
         {
-            Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(LogRegMainActivity.this, Home_Screen.class);
-            startActivity(intent);
-            finish();
+            Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         }
         else
-        {
-            Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(LogRegMainActivity.this, Home_Screen.class);
-            startActivity(intent);
-            finish();
+            {
+                userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
+            //backend for admin hardcoded for display purposes
+            if (userPass.equals("Admin123") && userIDnum == 199)
+            {
+                Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
+
+                new Handler().postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }, 2000);
+            }
+            else
+                {
+                Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
+                new Handler().postDelayed(new Runnable()
+                {
+                    @Override
+                    public void run()
+                    {
+                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                        startActivity(i);
+                        finish();
+                    }
+                }, 2000);
+            }
         }
     }
+
 
     public void LoginRegister()
     {
