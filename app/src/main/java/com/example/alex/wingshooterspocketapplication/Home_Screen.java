@@ -1,6 +1,10 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.app.DownloadManager;
+import android.app.VoiceInteractor;
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +35,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Button btnMyHunts = findViewById(R.id.btnMyHunts);
         btnMyHunts.setOnClickListener(this);
 
+        Button btnMag = findViewById(R.id.btnMagazine);
+        btnMag.setOnClickListener(this);
+
         txtUserLoggedIn = findViewById(R.id.txtHomeScreen);
         txtUserLoggedIn.setText("Welcome " + userName);
     }
@@ -54,6 +61,10 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
             case R.id.btnMyHunts:
                 StartHunt();
+                break;
+
+            case R.id.btnMagazine:
+                downMag();
                 break;
 
 
@@ -88,5 +99,13 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Intent intent = new Intent(this, StartHunt.class);
         startActivity(intent);
         finish();
+    }
+
+    public void downMag()
+    {
+        DownloadManager magManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
+        DownloadManager.Request magRequest = new DownloadManager.Request(Uri.parse("https://www.sajs.co.za/article/view/3565/4498"));
+        magRequest.setDescription("this is the test file needs to change");
+        long idDownload = magManager.enqueue(magRequest);
     }
 }
