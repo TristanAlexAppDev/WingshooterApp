@@ -12,15 +12,15 @@ import android.widget.TextView;
 
 import java.sql.Date;
 
-public class SendEmail extends AppCompatActivity {
-    TextView name1;
-    EditText name;
-    EditText email;
-    TextView date1;
-    EditText date;
-    TextView time1;
-    EditText time;
+public class SendEmail extends AppCompatActivity implements View.OnClickListener {
+    public static String userDOB;
+    public static String userName;
+    public static String userSurname;
+    public static String userInitials;
+    public static String userIDNum;
+    public static String userEmail;
     Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,38 +35,36 @@ public class SendEmail extends AppCompatActivity {
         TextView time1 = (TextView)findViewById(R.id.time1);
         final EditText time = (EditText)findViewById(R.id.time);
         Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {*/
+        button.setOnClickListener(new View.OnClickListener() */
+        Button button = (Button) findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+
+
             @Override
-            public void onClick(View view) {
-                String myname = name.getText().toString();
-                String myemail = email.getText().toString();
-                String mydate = date.getText().toString();
-                String mytime = time.getText().toString();
-                String emailAddressList[] = {"emailAddres"};
-                String mycontent = myname + "," + myemail + "," + mydate + ","+ mytime;
+            public void onClick(View v) {
+                String DateOfBirth = userDOB;
+                String FirstName = userName;
+                String Surname = userSurname;
+                String Initials = userInitials;
+                String IDNum = userIDNum;
+                String Email = userEmail;
+                String emailAddressList[] = {"emailAddress"};
+                String mycontent = DateOfBirth + "," + FirstName + "," + Surname + "," + Initials + "," + IDNum + "," + Email;
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
                 startActivity(Intent.createChooser(email, "Select Sender:"));
-
-
             }
         });
-
-
-
-
-
-
     }
-
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+    public void onClick(View v) {
 
+    }
 }
+
+
+
+

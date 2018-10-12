@@ -31,6 +31,22 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public Button btnLoad;
 
 
+    public String Date = SendEmail.userDOB;
+    public String Name = SendEmail.userName;
+    public String Surname= SendEmail.userSurname;
+    public String Initials= SendEmail.userInitials;
+    public String IDNum = SendEmail.userIDNum;
+    public String Email= SendEmail.userEmail;
+
+    public String UserDOB = CreateTextFile.userDOB;
+    public String UserName = CreateTextFile.userName;
+    public String UserSurname= CreateTextFile.userSurname;
+    public String UserInitials= CreateTextFile.userInitials;
+    public String UserIDNum = CreateTextFile.userIDNum;
+    public String UserEmail= CreateTextFile.userEmail;
+
+
+
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
 
@@ -50,6 +66,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         txtLoad = findViewById(R.id.txtLoad);
         btnSave = findViewById(R.id.btnSave);
         btnLoad = findViewById(R.id.btnLoad);
+
 
         Button btnCreateFile = findViewById(R.id.btnCreateFile);
         btnCreateFile.setOnClickListener(this);
@@ -181,12 +198,31 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
             case R.id.btnCreateFile:
                 CreateTxtFile();
                 break;
+
         }
     }
-    public void CreateTxtFile()
-    {
-        Intent intent = new Intent(this,CreateTextFile.class);
+    public void CreateTxtFile() {
+        Intent intent = new Intent(this, CreateTextFile.class);
         startActivity(intent);
         finish();
+
+
+        Date = edtTxtDate.getText().toString();
+        Name = edtTxtName.getText().toString();
+        Surname = edtTxtSurName.getText().toString();
+        Initials = edtTxtInitials.getText().toString();
+        IDNum = edtTextIDNum.getText().toString();
+        Email = edtTextEmail.getText().toString();
+
+        UserDOB = edtTxtDate.getText().toString();
+        UserName = edtTxtName.getText().toString();
+        UserSurname = edtTxtSurName.getText().toString();
+        UserInitials = edtTxtInitials.getText().toString();
+        UserIDNum = edtTextIDNum.getText().toString();
+        UserEmail = edtTextEmail.getText().toString();
+
+
     }
+
+
 }

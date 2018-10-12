@@ -20,6 +20,14 @@ public class CreateTextFile extends Activity {
 
     private static final String FILE_NAME = "UserInfo.txt";
 
+
+    public static String userDOB;
+    public static String userName;
+    public static String userSurname;
+    public static String userInitials;
+    public static String userIDNum;
+    public static String userEmail;
+
     EditText mEditText;
 
     @Override

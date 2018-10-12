@@ -288,7 +288,7 @@
     <Button
         android:id="@+id/btnCreateFile"
         android:layout_width="39dp"
-        android:layout_height="251dp"
+        android:layout_height="120dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
@@ -299,6 +299,14 @@
         app:layout_constraintHorizontal_bias="0.975"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.182" />
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="30dp"
+        android:layout_height="154dp"
+        android:text="Send"
+        tools:layout_editor_absoluteX="332dp"
+        tools:layout_editor_absoluteY="175dp" />
 
 </android.support.constraint.ConstraintLayout>
