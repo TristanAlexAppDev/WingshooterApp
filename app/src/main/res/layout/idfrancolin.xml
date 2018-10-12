@@ -35,7 +35,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
+        app:layout_constraintTop_toBottomOf="@+id/btnReturnFranc">
+=======
         app:layout_constraintTop_toBottomOf="@+id/btnreturnPart">
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
 
         <LinearLayout
             android:layout_width="match_parent"
