@@ -1,5 +1,6 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Intent;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class LoginRegister extends AppCompatActivity {
+public class LoginRegister extends AppCompatActivity implements View.OnClickListener {
     //variables for login activity
     public TextView edtTxtDate;
     public TextView edtTxtName;
@@ -28,6 +29,7 @@ public class LoginRegister extends AppCompatActivity {
     public TextView txtLoad;
     public Button btnSave;
     public Button btnLoad;
+
 
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
@@ -48,6 +50,9 @@ public class LoginRegister extends AppCompatActivity {
         txtLoad = findViewById(R.id.txtLoad);
         btnSave = findViewById(R.id.btnSave);
         btnLoad = findViewById(R.id.btnLoad);
+
+        Button btnCreateFile = findViewById(R.id.btnCreateFile);
+        btnCreateFile.setOnClickListener(this);
 
         File dir = new File(path);
         dir.mkdirs();
@@ -169,5 +174,19 @@ public class LoginRegister extends AppCompatActivity {
         }
         catch (IOException e) {e.printStackTrace();}
         return array;
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnCreateFile:
+                CreateTxtFile();
+                break;
+        }
+    }
+    public void CreateTxtFile()
+    {
+        Intent intent = new Intent(this,CreateTextFile.class);
+        startActivity(intent);
+        finish();
     }
 }
