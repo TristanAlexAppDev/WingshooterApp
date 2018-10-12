@@ -29,6 +29,7 @@ public class CreateTextFile extends Activity {
     public static String userEmail;
 
     EditText mEditText;
+    TextView txtView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class CreateTextFile extends Activity {
         setContentView(R.layout.activity_createtextfile);
 
         mEditText = findViewById(R.id.edit_text);
+
     }
 
     public void save(View v) {
@@ -46,7 +48,7 @@ public class CreateTextFile extends Activity {
             fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
             fos.write(text.getBytes());
 
-            mEditText.getText().clear();
+            //txtView.getText().clear();
             Toast.makeText(this, "Saved to " + getFilesDir() + "/" + FILE_NAME,
                     Toast.LENGTH_LONG).show();
         } catch (FileNotFoundException e) {
