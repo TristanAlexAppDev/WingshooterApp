@@ -36,70 +36,80 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/notallowedtoshoot2" />
 
+
                 <Button
 
+                    android:id="@+id/btnScrollDuck"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="findDuck"
                     android:text="Ducks" />
 
+
                 <Button
 
+                    android:id="@+id/btnScrollQuial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="findFranc"
                     android:text="Quail" />
 
                 <Button
 
+                    android:id="@+id/btnScrollGeese"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="findGeese"
                     android:text="Geese" />
 
                 <Button
-                    android:id="@+id/btnFowl"
+
+                    android:id="@+id/btnScrollGuinie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Guiniefowl" />
 
                 <Button
-                    android:id="@+id/btnfranc"
+
+                    android:id="@+id/btnScrollFranc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Francolin" />
 
                 <Button
-                    android:id="@+id/btnpartridge"
+
+                    android:id="@+id/btnScrollPartridge"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Partridge" />
 
                 <Button
-                    android:id="@+id/btnPigeons"
+
+                    android:id="@+id/btnScrollPigeons"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pigeons" />
 
                 <Button
-                    android:id="@+id/btnTeal"
+
+                    android:id="@+id/btnScrollTeal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Teal" />
 
                 <Button
-                    android:id="@+id/btnsnipe"
+
+                    android:id="@+id/btnScrollSnipe"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Snipe" />
 
                 <Button
-                    android:id="@+id/btnGrouse"
+
+                    android:id="@+id/btnScrollGrouse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Grouse" />
 
-            </LinearLayout>
+        </LinearLayout>
+
         </ScrollView>
 
         <ScrollView
