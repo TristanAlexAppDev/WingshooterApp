@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnReturnDuck"
+        android:id="@+id/btnreturnPart"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -27,8 +27,6 @@
         android:text="Return"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 
     <ScrollView
         android:layout_width="383dp"

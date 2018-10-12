@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnReturnGuine"
+        android:id="@+id/btnreturnPart"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"

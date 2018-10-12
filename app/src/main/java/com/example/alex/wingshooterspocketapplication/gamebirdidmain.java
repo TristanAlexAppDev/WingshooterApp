@@ -1,20 +1,32 @@
 package com.example.alex.wingshooterspocketapplication;
 
+<<<<<<< HEAD
 import android.content.Context;
+=======
+import android.app.Activity;
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+//import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+<<<<<<< HEAD
 import android.view.ViewDebug;
 import android.widget.Button;
 
 public class gamebirdidmain extends AppCompatActivity implements View.OnClickListener  {
+=======
+//import android.view.Window;
+import android.widget.Button;
+
+public class gamebirdidmain extends Activity implements View.OnClickListener
+{
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        /*requestWindowFeature(Window.FEATURE_NO_TITLE);*/
+        //requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.gamebirdidmain);
 
         Button b = findViewById(R.id.btnGBHome);
@@ -50,6 +62,7 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
         Button b10 = findViewById(R.id.btnGrouse);
         b10.setOnClickListener(this);
 
+<<<<<<< HEAD
         /*Button btnRetDuck = findViewById(R.id.btnReturnDuck);
         btnRetDuck.setOnClickListener(this);
 
@@ -79,6 +92,10 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
 
         Button btnRetTeal = findViewById(R.id.btnReturnTeal);
         btnRetTeal.setOnClickListener(this);*/
+=======
+        Button PartridgeScreen = findViewById(R.id.btnreturnPart);
+        PartridgeScreen.setOnClickListener(this);
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
     }
 
     @Override
@@ -133,6 +150,7 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
                 setContentView(R.layout.idgrouse);
                 break;
 
+<<<<<<< HEAD
                 //---------------Return button's code-----------------//
 
                 //case R.id.btnReturnDuck:
@@ -182,6 +200,11 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.btnReturnTeal:
+=======
+                //---------------Other buttons code-----------------//
+
+            case R.id.btnreturnPart:
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
                 setContentView(R.layout.gamebirdidmain);
                 finish();
                 break;*/

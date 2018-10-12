@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnReturnGeese"
+        android:id="@+id/btnreturnPart"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -34,7 +34,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/btnReturnGeese"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/btnreturnPart"
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout

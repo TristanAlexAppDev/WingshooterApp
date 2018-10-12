@@ -7,7 +7,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btnReturnSnipe"
+        android:id="@+id/btnreturnPart"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_marginEnd="15dp"
@@ -39,6 +39,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/btnReturnSnipe"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/btnreturnPart"
+>>>>>>> e67c173d027a339dc58584513b776593234ecdcb
         app:srcCompat="@drawable/ethiopiansnipe" />
 </android.support.constraint.ConstraintLayout>
