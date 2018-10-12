@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/deleteBtn"
-        android:layout_width="237dp"
-        android:layout_height="70dp"
-        android:text="Delete File"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="407dp" />
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
 
     <Button
-        android:id="@+id/updateBtn"
-        android:layout_width="237dp"
-        android:layout_height="70dp"
-        android:text="Update File"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:id="@+id/button_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="save"
+        android:onClick="save"/>
 
     <Button
-        android:id="@+id/readBtn"
-        android:layout_width="237dp"
-        android:layout_height="70dp"
-        android:text="Read File"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="267dp" />
-
-    <Button
-        android:id="@+id/createBtn"
-        android:layout_width="237dp"
-        android:layout_height="70dp"
-        android:text="Create File"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="197dp" />
-
-    <TextView
-        android:id="@+id/contentsTextView"
-        android:layout_width="332dp"
-        android:layout_height="155dp"
-        tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="16dp" />
-</android.support.constraint.ConstraintLayout>
+        android:id="@+id/button_load"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_save"
+        android:layout_below="@+id/button_save"
+        android:layout_marginTop="17dp"
+        android:text="load"
+        android:onClick="load"/>
+</RelativeLayout>

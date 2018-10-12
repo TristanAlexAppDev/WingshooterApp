@@ -46,7 +46,13 @@
         <activity
             android:name=".StartHunt"
             android:exported="true" />
+
+        <activity android:name=".CreateTextFile"
+            android:exported="true"/>
+
         <activity android:name=".BirdIDFV"></activity>
+
+
     </application>
 
 </manifest>
