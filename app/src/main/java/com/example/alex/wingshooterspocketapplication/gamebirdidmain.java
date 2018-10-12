@@ -1,12 +1,14 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewDebug;
 import android.widget.Button;
 
-public class gamebirdidmain extends AppCompatActivity implements View.OnClickListener {
+public class gamebirdidmain extends AppCompatActivity implements View.OnClickListener  {
     @Override
 
     protected void onCreate(Bundle savedInstanceState)
@@ -48,11 +50,11 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
         Button b10 = findViewById(R.id.btnGrouse);
         b10.setOnClickListener(this);
 
-        Button btnRetDuck = findViewById(R.id.btnReturnDuck);
+        /*Button btnRetDuck = findViewById(R.id.btnReturnDuck);
         btnRetDuck.setOnClickListener(this);
 
         Button btnRetFranc = findViewById(R.id.btnReturnFranc);
-        btnRetFranc.setOnClickListener(this);
+        btnRetFranc.setOnClickListener();
 
         Button btnRetGees = findViewById(R.id.btnReturnGeese);
         btnRetGees.setOnClickListener(this);
@@ -76,16 +78,15 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
         btnRetSnipe.setOnClickListener(this);
 
         Button btnRetTeal = findViewById(R.id.btnReturnTeal);
-        btnRetTeal.setOnClickListener(this);
+        btnRetTeal.setOnClickListener(this);*/
     }
 
     @Override
     public void onClick(View v)
     {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             //-------------Code for buttons on this screen-------------------------
-            case R.id.btnGBHome:
+           case R.id.btnGBHome:
                 Intent i = new Intent(this, Home_Screen.class);
                 startActivity(i);
                 finish();
@@ -93,9 +94,8 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
 
             case R.id.btnDucks:
                 setContentView(R.layout.idduck);
-                /*Intent i1 = new Intent(setContentView(););
-                startActivity(i1);*/
                 break;
+
 
             case R.id.btnQuail:
                 setContentView(R.layout.idquail);
@@ -133,13 +133,14 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
                 setContentView(R.layout.idgrouse);
                 break;
 
-                //---------------Other buttons code-----------------//
+                //---------------Return button's code-----------------//
 
-                case R.id.btnReturnDuck:
-                setContentView(R.layout.gamebirdidmain);
-                finish();
-                break;
-
+                //case R.id.btnReturnDuck:
+                //setContentView(R.layout.gamebirdidmain);
+                //finish();
+                  //  myclick();
+               // break;
+/*
             case R.id.btnReturnFranc:
                 setContentView(R.layout.gamebirdidmain);
                 finish();
@@ -183,7 +184,13 @@ public class gamebirdidmain extends AppCompatActivity implements View.OnClickLis
             case R.id.btnReturnTeal:
                 setContentView(R.layout.gamebirdidmain);
                 finish();
-                break;
+                break;*/
+
+
         }
     }
+
+
+
+
 }

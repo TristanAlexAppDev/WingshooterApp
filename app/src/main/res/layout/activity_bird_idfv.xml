@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BirdIDFV">
+
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/ScrollVIDMain"
+            android:layout_width="388dp"
+            android:layout_height="448dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtBirdIDHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgnoOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/notallowedtoshoot1" />
+
+                <ImageView
+                    android:id="@+id/imgnoTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/notallowedtoshoot2" />
+
+                <Button
+                    android:id="@+id/btnDucks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ducks" />
+
+                <Button
+                    android:id="@+id/btnQuail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Quail" />
+
+                <Button
+                    android:id="@+id/btnGeese"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Geese" />
+
+                <Button
+                    android:id="@+id/btnFowl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guiniefowl" />
+
+                <Button
+                    android:id="@+id/btnfranc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Francolin" />
+
+                <Button
+                    android:id="@+id/btnpartridge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Partridge" />
+
+                <Button
+                    android:id="@+id/btnPigeons"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pigeons" />
+
+                <Button
+                    android:id="@+id/btnTeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Teal" />
+
+                <Button
+                    android:id="@+id/btnsnipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Snipe" />
+
+                <Button
+                    android:id="@+id/btnGrouse"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Grouse" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDduck"
+            android:layout_width="383dp"
+            android:layout_height="444dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtduckscreen">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgyellowbilledduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/yellowbilledduck" />
+
+                <ImageView
+                    android:id="@+id/imgwhitewduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/whitefacedwhistlingduck" />
+
+                <ImageView
+                    android:id="@+id/imgknobbilledduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/knobbilledduck" />
+
+                <ImageView
+                    android:id="@+id/imgwhitebackedduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    android:padding="1dp"
+                    app:srcCompat="@drawable/whitebackedduck" />
+
+                <ImageView
+                    android:id="@+id/imgsashellduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    android:padding="1dp"
+                    app:srcCompat="@drawable/southafricanshelduck" />
+
+                <ImageView
+                    android:id="@+id/imgredeyedpochard"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/redeyedsouthernpochard" />
+
+                <ImageView
+                    android:id="@+id/imgmaccoaduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/maccoaduck" />
+
+                <ImageView
+                    android:id="@+id/imgfulvousduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/fulvouswhistlingduck" />
+
+                <ImageView
+                    android:id="@+id/imgcapeshoveler"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/capeshoveler" />
+
+                <ImageView
+                    android:id="@+id/imgblackduck"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/blackduck"
+                    tools:layout_editor_absoluteY="53dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDFranc"
+            android:layout_width="372dp"
+            android:layout_height="426dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReturnFranc">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCapeFrancolin"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/francolincape" />
+
+                    <ImageView
+                        android:id="@+id/imgNatalFrancolin"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/francolinnatal" />
+
+                    <ImageView
+                        android:id="@+id/imgRedBilledFrancolin"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/francolinredbilled" />
+
+                    <ImageView
+                        android:id="@+id/imgRedNeckedFrancolin"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/francolinrednecked" />
+
+                    <ImageView
+                        android:id="@+id/imgSwainsonsFrancolin"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/francolinswainsons" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDGeese"
+            android:layout_width="365dp"
+            android:layout_height="449dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReturnGeese"
+            app:layout_constraintVertical_bias="0.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgEgyptianGoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/gooseegyptian" />
+
+                <ImageView
+                    android:id="@+id/imgSpurwingGoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/goosespurwinged" />
+
+                <ImageView
+                    android:id="@+id/imgPygmyGoose"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/goosepygmy" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDGrouse"
+            android:layout_width="385dp"
+            android:layout_height="449dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReturnGrouse">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgyellowthroated"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/sandgrouseyellowthroated" />
+
+                <ImageView
+                    android:id="@+id/imgnamaqua"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/sandgrousenamaqua" />
+
+                <ImageView
+                    android:id="@+id/imgdblbanded"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/sandgrousedoublebanded" />
+
+                <ImageView
+                    android:id="@+id/imgburchall"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/sandgrouseburchells" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDGuine"
+            android:layout_width="344dp"
+            android:layout_height="429dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="74dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCrestedGuinefowl"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/guiniefowlcrested" />
+
+                <ImageView
+                    android:id="@+id/imgCrownedGuinefowl"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/guiniefowlcrowned" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDPartridge"
+            android:layout_width="386dp"
+            android:layout_height="444dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReturnPartridge">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgshellys"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgeshellys" />
+
+                <ImageView
+                    android:id="@+id/imgredwing"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgeredwing" />
+
+                <ImageView
+                    android:id="@+id/imgoriver"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgeorangeriver" />
+
+                <ImageView
+                    android:id="@+id/imggreywing"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgegreywing" />
+
+                <ImageView
+                    android:id="@+id/imgcrested"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgecrested" />
+
+                <ImageView
+                    android:id="@+id/imgcoqui"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/partridgecoqui" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDPigeons"
+            android:layout_width="344dp"
+            android:layout_height="432dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.797">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgRedEyedDove"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/pigeon_dove_redeyed" />
+
+                    <ImageView
+                        android:id="@+id/imgFeralPigeon"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/pigeonferal" />
+
+                    <ImageView
+                        android:id="@+id/imgRameronPigeon"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/pigeonrameron" />
+
+                    <ImageView
+                        android:id="@+id/imgRockPigeon"
+                        android:layout_width="match_parent"
+                        android:layout_height="420dp"
+                        app:srcCompat="@drawable/pigeonrock" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/ScrollVIDQuail"
+            android:layout_width="387dp"
+            android:layout_height="444dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtquail">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgharlequin"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/quailharlequin" />
+
+                <ImageView
+                    android:id="@+id/imgafrican"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/quailafrican" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ImageView
+            android:id="@+id/ImgVIDSnipe"
+            android:layout_width="352dp"
+            android:layout_height="421dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnReturnSnipe"
+            app:srcCompat="@drawable/ethiopiansnipe" />
+
+        <ScrollView
+            android:id="@+id/ScrollVIDTeal"
+            android:layout_width="367dp"
+            android:layout_height="438dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.592"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imgCapeTeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/tealcape" />
+
+                <ImageView
+                    android:id="@+id/imgHottentotTeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/tealhottenton" />
+
+                <ImageView
+                    android:id="@+id/imgRedBilledTeal"
+                    android:layout_width="match_parent"
+                    android:layout_height="420dp"
+                    app:srcCompat="@drawable/tealredbilled" />
+            </LinearLayout>
+        </ScrollView>
+    </ViewFlipper>
+
+</RelativeLayout>

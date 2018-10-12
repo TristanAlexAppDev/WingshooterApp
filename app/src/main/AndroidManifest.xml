@@ -9,41 +9,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!-- Set default activity for launch-->
+
+        <!-- Set default activity for launch -->
         <activity
             android:name=".LogRegMainActivity"
             android:exported="true"
             android:theme="@style/AppTheme">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN"/>
-                    <category android:name="android.intent.category.LAUNCHER"/>
-                </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!-- launch activities -->
-        <activity android:name=".Home_Screen"
-            android:exported="true"/>
-
-        <activity android:name=".LoginRegister"
-            android:exported="true"/>
-
-        <activity android:name=".gamebirdidmain"
-            android:exported="true"/>
-
-        <activity android:name=".hsprovincedates"
-            android:exported="true"/>
-
-        <activity android:name=".HSProvinceSelection"
-            android:exported="true"/>
-
-        <activity android:name=".LogActivity"
-            android:exported="true"/>
-
-        <activity android:name=".NewHunt"
-            android:exported="true"/>
-
-        <activity android:name=".StartHunt"
-            android:exported="true"/>
-
+        <activity
+            android:name=".Home_Screen"
+            android:exported="true" />
+        <activity
+            android:name=".LoginRegister"
+            android:exported="true" />
+        <activity
+            android:name=".gamebirdidmain"
+            android:exported="true" />
+        <activity
+            android:name=".hsprovincedates"
+            android:exported="true" />
+        <activity
+            android:name=".HSProvinceSelection"
+            android:exported="true" />
+        <activity
+            android:name=".LogActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NewHunt"
+            android:exported="true" />
+        <activity
+            android:name=".StartHunt"
+            android:exported="true" />
+        <activity android:name=".BirdIDFV"></activity>
     </application>
 
 </manifest>
