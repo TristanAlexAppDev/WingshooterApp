@@ -1,5 +1,6 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -50,14 +51,15 @@ public class BirdIDFV extends AppCompatActivity implements View.OnClickListener
         Button btnscrollT = findViewById(R.id.btnScrollTeal);
         btnscrollT.setOnClickListener(this);
 
-
-
+        Button btnHomemain = findViewById(R.id.btnBHome);
+        btnHomemain.setOnClickListener(this);
     }
 
-    public void previousView(View v)
+    public void Home()
     {
-        gameVF.showPrevious();
-
+        Intent intent = new Intent(this, Home_Screen.class);
+        startActivity(intent);
+        finish();
     }
 
     public void startView(View v)
@@ -70,7 +72,7 @@ public class BirdIDFV extends AppCompatActivity implements View.OnClickListener
         gameVF.showNext();
     }
 
-   public void findDuck()
+    public void findDuck()
     {
         gameVF.setDisplayedChild(1);
     }
@@ -163,6 +165,10 @@ public class BirdIDFV extends AppCompatActivity implements View.OnClickListener
 
          case R.id.btnScrollTeal:
              findTeal();
+             break;
+
+         case R.id.btnBHome:
+             Home();
              break;
      }
 
