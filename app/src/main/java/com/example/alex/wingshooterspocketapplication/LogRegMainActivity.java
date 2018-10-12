@@ -14,6 +14,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     public TextView TxtIDNUMlog;
     public TextView edttxtPassword;
     public Button btnLog;
+    public static String userName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -63,13 +64,13 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         }
         else
-            {
-                userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
+        {
+            userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
             //backend for admin hardcoded for display purposes
             if (userPass.equals("Admin123") && userIDnum == 199)
             {
                 Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
-
+                userName = "Admin";
                 new Handler().postDelayed(new Runnable()
                 {
                     @Override
@@ -82,7 +83,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                 }, 2000);
             }
             else
-                {
+            {
                 Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
                 new Handler().postDelayed(new Runnable()
                 {
