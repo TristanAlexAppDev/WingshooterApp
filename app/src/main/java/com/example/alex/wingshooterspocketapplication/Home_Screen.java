@@ -5,11 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class Home_Screen extends AppCompatActivity implements View.OnClickListener {
+public class Home_Screen extends AppCompatActivity implements View.OnClickListener
+{
+    public TextView txtUserLoggedIn;
+
+    public String userName = LogRegMainActivity.userName;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__screen);
 
@@ -25,7 +31,8 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Button btnMyHunts = findViewById(R.id.btnMyHunts);
         btnMyHunts.setOnClickListener(this);
 
-
+        txtUserLoggedIn = findViewById(R.id.txtHomeScreen);
+        txtUserLoggedIn.setText("Welcome " + userName);
     }
 
     @Override
