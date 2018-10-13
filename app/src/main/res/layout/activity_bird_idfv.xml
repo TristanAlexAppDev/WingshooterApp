@@ -19,24 +19,28 @@
             android:layout_alignStart="@+id/FlipBirrds"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_gravity="center_vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_gravity="fill_vertical">
 
                 <ImageView
                     android:id="@+id/imgnoOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/notallowedtoshoot1" />
+                    app:srcCompat="@drawable/notallowedtoshoot1"
+                    />
 
                 <ImageView
                     android:id="@+id/imgnoTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/notallowedtoshoot2" />
+                    app:srcCompat="@drawable/notallowedtoshoot2"
+                    />
 
 
                 <Button
@@ -66,7 +70,8 @@
                     android:id="@+id/btnScrollGuinie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Guiniefowl" />
+                    android:text="Guiniefowl"
+                    />
 
                 <Button
 
@@ -131,57 +136,66 @@
                     android:id="@+id/imgyellowbilledduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/yellowbilledduck" />
+                    app:srcCompat="@drawable/yellowbilledduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgwhitewduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/whitefacedwhistlingduck" />
+                    app:srcCompat="@drawable/whitefacedwhistlingduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgknobbilledduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/knobbilledduck" />
+                    app:srcCompat="@drawable/knobbilledduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgwhitebackedduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     android:padding="1dp"
-                    app:srcCompat="@drawable/whitebackedduck" />
+                    app:srcCompat="@drawable/whitebackedduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgsashellduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     android:padding="1dp"
-                    app:srcCompat="@drawable/southafricanshelduck" />
+                    app:srcCompat="@drawable/southafricanshelduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgredeyedpochard"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/redeyedsouthernpochard" />
+                    app:srcCompat="@drawable/redeyedsouthernpochard"
+                   />
 
                 <ImageView
                     android:id="@+id/imgmaccoaduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/maccoaduck" />
+                    app:srcCompat="@drawable/maccoaduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgfulvousduck"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/fulvouswhistlingduck" />
+                    app:srcCompat="@drawable/fulvouswhistlingduck"
+                    />
 
                 <ImageView
                     android:id="@+id/imgcapeshoveler"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/capeshoveler" />
+                    app:srcCompat="@drawable/capeshoveler"
+                    />
 
                 <ImageView
                     android:id="@+id/imgblackduck"
@@ -190,7 +204,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@drawable/blackduck"
-                    tools:layout_editor_absoluteY="53dp" />
+                    tools:layout_editor_absoluteY="53dp"
+                    />
             </LinearLayout>
         </ScrollView>
 
@@ -216,12 +231,14 @@
                         android:id="@+id/imgCapeFrancolin"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
+
                         app:srcCompat="@drawable/francolincape" />
 
                     <ImageView
                         android:id="@+id/imgNatalFrancolin"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
+
                         app:srcCompat="@drawable/francolinnatal" />
 
                     <ImageView
@@ -234,6 +251,7 @@
                         android:id="@+id/imgRedNeckedFrancolin"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
+
                         app:srcCompat="@drawable/francolinrednecked" />
 
                     <ImageView
@@ -241,6 +259,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
                         app:srcCompat="@drawable/francolinswainsons" />
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -264,19 +283,22 @@
                     android:id="@+id/imgEgyptianGoose"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/gooseegyptian" />
+                    app:srcCompat="@drawable/gooseegyptian"
+                    />
 
                 <ImageView
                     android:id="@+id/imgSpurwingGoose"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/goosespurwinged" />
+                    app:srcCompat="@drawable/goosespurwinged"
+                    />
 
                 <ImageView
                     android:id="@+id/imgPygmyGoose"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/goosepygmy" />
+                    app:srcCompat="@drawable/goosepygmy"
+                    />
             </LinearLayout>
         </ScrollView>
 
@@ -297,25 +319,29 @@
                     android:id="@+id/imgyellowthroated"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/sandgrouseyellowthroated" />
+                    app:srcCompat="@drawable/sandgrouseyellowthroated"
+                    android:scaleType="centerInside"/>
 
                 <ImageView
                     android:id="@+id/imgnamaqua"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/sandgrousenamaqua" />
+                    app:srcCompat="@drawable/sandgrousenamaqua"
+                    android:scaleType="centerInside"/>
 
                 <ImageView
                     android:id="@+id/imgdblbanded"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/sandgrousedoublebanded" />
+                    app:srcCompat="@drawable/sandgrousedoublebanded"
+                    android:scaleType="centerInside"/>
 
                 <ImageView
                     android:id="@+id/imgburchall"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/sandgrouseburchells" />
+                    app:srcCompat="@drawable/sandgrouseburchells"
+                    />
             </LinearLayout>
         </ScrollView>
 
@@ -336,13 +362,15 @@
                     android:id="@+id/imgCrestedGuinefowl"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/guiniefowlcrested" />
+                    app:srcCompat="@drawable/guiniefowlcrested"
+                    />
 
                 <ImageView
                     android:id="@+id/imgCrownedGuinefowl"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/guiniefowlcrowned" />
+                    app:srcCompat="@drawable/guiniefowlcrowned"
+                    />
             </LinearLayout>
         </ScrollView>
 
@@ -363,37 +391,44 @@
                     android:id="@+id/imgshellys"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgeshellys" />
+                    app:srcCompat="@drawable/partridgeshellys"
+                    android:scaleType="centerInside"/>
 
                 <ImageView
                     android:id="@+id/imgredwing"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgeredwing" />
+                    app:srcCompat="@drawable/partridgeredwing"
+                    />
 
                 <ImageView
                     android:id="@+id/imgoriver"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgeorangeriver" />
+                    app:srcCompat="@drawable/partridgeorangeriver"
+                    />
 
                 <ImageView
                     android:id="@+id/imggreywing"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgegreywing" />
+                    app:srcCompat="@drawable/partridgegreywing"
+                    />
 
                 <ImageView
                     android:id="@+id/imgcrested"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgecrested" />
+                    app:srcCompat="@drawable/partridgecrested"
+                    />
 
                 <ImageView
                     android:id="@+id/imgcoqui"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/partridgecoqui" />
+                    app:srcCompat="@drawable/partridgecoqui"
+                    />
+
             </LinearLayout>
         </ScrollView>
 
@@ -421,25 +456,30 @@
                         android:id="@+id/imgRedEyedDove"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
-                        app:srcCompat="@drawable/pigeon_dove_redeyed" />
+                        app:srcCompat="@drawable/pigeon_dove_redeyed"
+                        />
 
                     <ImageView
                         android:id="@+id/imgFeralPigeon"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
-                        app:srcCompat="@drawable/pigeonferal" />
+                        app:srcCompat="@drawable/pigeonferal"
+                        />
 
                     <ImageView
                         android:id="@+id/imgRameronPigeon"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
-                        app:srcCompat="@drawable/pigeonrameron" />
+                        app:srcCompat="@drawable/pigeonrameron"
+                        />
 
                     <ImageView
                         android:id="@+id/imgRockPigeon"
                         android:layout_width="match_parent"
                         android:layout_height="420dp"
-                        app:srcCompat="@drawable/pigeonrock" />
+                        app:srcCompat="@drawable/pigeonrock"
+                        />
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -461,13 +501,15 @@
                     android:id="@+id/imgharlequin"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/quailharlequin" />
+                    app:srcCompat="@drawable/quailharlequin"
+                    />
 
                 <ImageView
                     android:id="@+id/imgafrican"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/quailafrican" />
+                    app:srcCompat="@drawable/quailafrican"
+                    />
             </LinearLayout>
         </ScrollView>
 
@@ -482,7 +524,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ethiopiansnipe" />
+            app:srcCompat="@drawable/ethiopiansnipe"
+            />
 
         <ScrollView
             android:id="@+id/ScrollVIDTeal"
@@ -502,19 +545,22 @@
                     android:id="@+id/imgCapeTeal"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/tealcape" />
+                    app:srcCompat="@drawable/tealcape"
+                    />
 
                 <ImageView
                     android:id="@+id/imgHottentotTeal"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/tealhottenton" />
+                    app:srcCompat="@drawable/tealhottenton"
+                    />
 
                 <ImageView
                     android:id="@+id/imgRedBilledTeal"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
-                    app:srcCompat="@drawable/tealredbilled" />
+                    app:srcCompat="@drawable/tealredbilled"
+                    />
             </LinearLayout>
         </ScrollView>
     </ViewFlipper>
