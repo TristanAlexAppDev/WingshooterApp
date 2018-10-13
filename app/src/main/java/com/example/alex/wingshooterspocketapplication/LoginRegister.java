@@ -63,9 +63,26 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         edtTxtInitials = findViewById(R.id.edtTxtInitials);
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);
-        txtLoad = findViewById(R.id.txtLoad);
+
         btnSave = findViewById(R.id.btnSave);
-        btnLoad = findViewById(R.id.btnLoad);
+
+
+
+
+        Date = edtTxtDate.getText().toString();
+        Name = edtTxtName.getText().toString();
+        Surname = edtTxtSurName.getText().toString();
+        Initials = edtTxtInitials.getText().toString();
+        IDNum = edtTextIDNum.getText().toString();
+        Email = edtTextEmail.getText().toString();
+
+        UserDOB = edtTxtDate.getText().toString();
+        UserName = edtTxtName.getText().toString();
+        UserSurname = edtTxtSurName.getText().toString();
+        UserInitials = edtTxtInitials.getText().toString();
+        UserIDNum = edtTextIDNum.getText().toString();
+        UserEmail = edtTextEmail.getText().toString();
+
 
 
         Button btnCreateFile = findViewById(R.id.btnCreateFile);
@@ -207,19 +224,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         finish();
 
 
-        Date = edtTxtDate.getText().toString();
-        Name = edtTxtName.getText().toString();
-        Surname = edtTxtSurName.getText().toString();
-        Initials = edtTxtInitials.getText().toString();
-        IDNum = edtTextIDNum.getText().toString();
-        Email = edtTextEmail.getText().toString();
 
-        UserDOB = edtTxtDate.getText().toString();
-        UserName = edtTxtName.getText().toString();
-        UserSurname = edtTxtSurName.getText().toString();
-        UserInitials = edtTxtInitials.getText().toString();
-        UserIDNum = edtTextIDNum.getText().toString();
-        UserEmail = edtTextEmail.getText().toString();
 
 
     }

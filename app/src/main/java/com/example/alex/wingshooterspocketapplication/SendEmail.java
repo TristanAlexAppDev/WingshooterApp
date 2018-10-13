@@ -36,12 +36,13 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         final EditText time = (EditText)findViewById(R.id.time);
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() */
-        Button button = (Button) findViewById(R.id.button);
+        Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 String DateOfBirth = userDOB;
                 String FirstName = userName;
                 String Surname = userSurname;
