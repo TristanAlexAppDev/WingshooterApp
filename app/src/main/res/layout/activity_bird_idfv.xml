@@ -10,18 +10,18 @@
         android:id="@+id/FlipBirrds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
         android:layout_alignParentTop="true">
 
         <ScrollView
             android:id="@+id/ScrollVIDMain"
-            android:layout_width="440dp"
-            android:layout_height="518dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_alignStart="@+id/FlipBirrds"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center_vertical">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,8 +122,8 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDduck"
-            android:layout_width="383dp"
-            android:layout_height="444dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -212,8 +212,8 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDFranc"
-            android:layout_width="372dp"
-            android:layout_height="426dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -267,13 +267,12 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDGeese"
-            android:layout_width="365dp"
-            android:layout_height="449dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -305,8 +304,8 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDGrouse"
-            android:layout_width="385dp"
-            android:layout_height="449dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -321,21 +320,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     app:srcCompat="@drawable/sandgrouseyellowthroated"
-                    android:scaleType="centerInside"/>
+                    />
 
                 <ImageView
                     android:id="@+id/imgnamaqua"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     app:srcCompat="@drawable/sandgrousenamaqua"
-                    android:scaleType="centerInside"/>
+                    />
 
                 <ImageView
                     android:id="@+id/imgdblbanded"
                     android:layout_width="match_parent"
                     android:layout_height="420dp"
                     app:srcCompat="@drawable/sandgrousedoublebanded"
-                    android:scaleType="centerInside"/>
+                    />
 
                 <ImageView
                     android:id="@+id/imgburchall"
@@ -348,11 +347,11 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDGuine"
-            android:layout_width="344dp"
-            android:layout_height="429dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="74dp">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -377,8 +376,8 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDPartridge"
-            android:layout_width="386dp"
-            android:layout_height="444dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -435,13 +434,13 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDPigeons"
-            android:layout_width="344dp"
-            android:layout_height="432dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.797">
+            >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -487,8 +486,8 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDQuail"
-            android:layout_width="387dp"
-            android:layout_height="444dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -530,11 +529,10 @@
 
         <ScrollView
             android:id="@+id/ScrollVIDTeal"
-            android:layout_width="367dp"
-            android:layout_height="438dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.592"
             app:layout_constraintStart_toStartOf="parent">
 
             <LinearLayout
