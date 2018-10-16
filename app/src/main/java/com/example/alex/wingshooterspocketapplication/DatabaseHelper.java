@@ -1,6 +1,7 @@
 package com.example.alex.wingshooterspocketapplication;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -132,5 +133,50 @@ public class DatabaseHelper extends SQLiteOpenHelper
         {
             mNeedUpdate = true;
         }
+    }
+
+    public boolean checkLogin (String userPass, int userID)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String table = "userTable";
+        String[] columns = {"IDNumber","Password"};
+        String selection = "IDNumber" + "=?";
+        String[] selectionArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = "Password" + " DESC";
+        String limit = "1";
+
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+
+        if (cursor.equals(false))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+
+        /*String table = DB_NAME;
+        String[] columns = {COL2, COL2};
+        String selection = COL1 + "=?";
+        String[] selectionArgs = null;
+        String groupBy = null;
+        String having = null;
+        String orderBy = COL2 + " DESC";
+        String limit = "1";
+
+        Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);
+
+        if (cursor.equals(false))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }*/
     }
 }
