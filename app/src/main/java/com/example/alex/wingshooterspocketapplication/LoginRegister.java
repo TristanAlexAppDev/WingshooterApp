@@ -23,7 +23,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public TextView edtTxtDate;
     public TextView edtTxtName;
     public TextView edtTxtSurName;
-    public TextView edtTxtInitials;
+    public TextView edtTxtInitial;
     public TextView edtTextIDNum;
     public TextView edtTextEmail;
     public TextView txtLoad;
@@ -31,17 +31,17 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public Button btnLoad;
 
 
-    public String Date = SendEmail.userDOB;
-    public String Name = SendEmail.userName;
-    public String Surname= SendEmail.userSurname;
-    public String Initials= SendEmail.userInitials;
-    public String IDNum = SendEmail.userIDNum;
-    public String Email= SendEmail.userEmail;
+    public String Date = CreateTextFile.userDOBs;
+    public String Name =CreateTextFile.userNames;
+    public String Surname= CreateTextFile.userSurnames;
+    public String Initials= CreateTextFile.userInitials;
+    public String IDNum = CreateTextFile.userIDNums;
+    public String Email= CreateTextFile.userEmails;
 
     public String UserDOB = CreateTextFile.userDOB;
     public String UserName = CreateTextFile.userName;
     public String UserSurname= CreateTextFile.userSurname;
-    public String UserInitials= CreateTextFile.userInitials;
+    public String UserInitials= CreateTextFile.userInitial;
     public String UserIDNum = CreateTextFile.userIDNum;
     public String UserEmail= CreateTextFile.userEmail;
 
@@ -60,7 +60,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         edtTxtDate = findViewById(R.id.edtTxtDate);
         edtTxtName = findViewById(R.id.edtTxtName);
         edtTxtSurName = findViewById(R.id.edtTxtSurName);
-        edtTxtInitials = findViewById(R.id.edtTxtInitials);
+        edtTxtInitial = findViewById(R.id.edtTxtInitials);
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);
 
@@ -72,14 +72,14 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         Date = edtTxtDate.getText().toString();
         Name = edtTxtName.getText().toString();
         Surname = edtTxtSurName.getText().toString();
-        Initials = edtTxtInitials.getText().toString();
+        Initials = edtTxtInitial.getText().toString();
         IDNum = edtTextIDNum.getText().toString();
         Email = edtTextEmail.getText().toString();
 
         UserDOB = edtTxtDate.getText().toString();
         UserName = edtTxtName.getText().toString();
         UserSurname = edtTxtSurName.getText().toString();
-        UserInitials = edtTxtInitials.getText().toString();
+        UserInitials = edtTxtInitial.getText().toString();
         UserIDNum = edtTextIDNum.getText().toString();
         UserEmail = edtTextEmail.getText().toString();
 
@@ -102,8 +102,8 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         edtTxtName.setText("");
         String [] saveSurname = String.valueOf(edtTxtSurName.getText()).split(System.getProperty("line.separator"));
         edtTxtSurName.setText("");
-        String [] saveInitials = String.valueOf(edtTxtInitials.getText()).split(System.getProperty("line.separator"));
-        edtTxtInitials.setText("");
+        String [] saveInitials = String.valueOf(edtTxtInitial.getText()).split(System.getProperty("line.separator"));
+        edtTxtInitial.setText("");
         String [] saveID = String.valueOf(edtTextIDNum.getText()).split(System.getProperty("line.separator"));
         edtTextIDNum.setText("");
         String [] saveEmail = String.valueOf(edtTextEmail.getText()).split(System.getProperty("line.separator"));

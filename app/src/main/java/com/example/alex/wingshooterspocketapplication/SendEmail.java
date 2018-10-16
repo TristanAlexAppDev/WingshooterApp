@@ -68,4 +68,5 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
 
 
 
-
+//<activity android:name=".SendEmail"
+      //  android:exported="true"/>

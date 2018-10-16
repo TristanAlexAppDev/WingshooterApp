@@ -51,7 +51,8 @@
         <activity android:name=".CreateTextFile"
             android:exported="true"/>
         <activity android:name=".SendEmail"
-            android:exported="true"/>
+             android:exported="true"/>
+
 
         <activity android:name=".BirdIDFV"></activity>
 
