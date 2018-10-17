@@ -38,12 +38,12 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public String IDNum = SendEmail.userIDNums;
     public String Email= SendEmail.userEmails;
 
-    public String UserDOB = SendEmail.userDOB;
-    public String UserName = SendEmail.userName;
-    public String UserSurname= SendEmail.userSurname;
-    public String UserInitials= SendEmail.userInitial;
-    public String UserIDNum = SendEmail.userIDNum;
-    public String UserEmail= SendEmail.userEmail;
+    public String UserDOB = TextFile.userDOB;
+    public String UserName = TextFile.userName;
+    public String UserSurname= TextFile.userSurname;
+    public String UserInitials= TextFile.userInitial;
+    public String UserIDNum = TextFile.userIDNum;
+    public String UserEmail= TextFile.userEmail;
 
 
 
@@ -219,7 +219,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         }
     }
     public void SendEmail() {
-        Intent intent = new Intent(this, SendEmail.class);
+        Intent intent = new Intent(this, TextFile.class);
         startActivity(intent);
         finish();
 

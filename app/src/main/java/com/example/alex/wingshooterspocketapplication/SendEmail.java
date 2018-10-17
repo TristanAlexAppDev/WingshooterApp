@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +31,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
     Button button;
     EditText mEditText;
     TextView txtView;
+    EditText textInput;
 
     public static String userDOBs;
     public static String userNames;
@@ -39,13 +41,20 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
     public static String userEmails;
 
     private static final String FILE_NAME = "UserInfo.txt";
-
+    private TextView textView = null;
+    String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendemail);
 
+
+
+
+        //String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
+        //EditText editText = (EditText) findViewById(R.id.editText);
+       // editText.setText("User details" + "\n" + "Date of Birth - "+userDOBs+ "\n" + "First Name - " + userNames + "\n" + "Surname - " + userSurnames + "\n" + "Initials - " + userInitials + "\n" + "ID Number - " + userIDNums + "\n" + "Email - "+userEmails);
        /* TextView name1 = (TextView)findViewById(R.id.name1);
         final EditText name = (EditText)findViewById(R.id.name);
         TextView email1 = (TextView)findViewById(R.id.email1);
@@ -82,13 +91,13 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        mEditText = findViewById(R.id.edit_text);
-
-
+        textInput = findViewById(R.id.edit_text);
+        //textInput.setText(textContent);
     }
-    public void save(View v) {
-        String text = mEditText.getText().toString();
+    public void button_save(View v) {
+        String text = textInput.getText().toString();
         FileOutputStream fos = null;
+
 
         try {
             fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
@@ -112,7 +121,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    public void load(View v) {
+    public void button_load(View v) {
         FileInputStream fis = null;
 
         try {
@@ -126,7 +135,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
                 sb.append(text).append("\n");
             }
 
-            mEditText.setText(sb.toString());
+            textInput.setText(sb.toString());
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
