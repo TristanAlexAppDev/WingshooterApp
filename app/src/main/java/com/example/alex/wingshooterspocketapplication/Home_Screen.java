@@ -11,9 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class Home_Screen extends AppCompatActivity implements View.OnClickListener
 {
     public TextView txtUserLoggedIn;
+
+
 
     public String userName = LogRegMainActivity.userName;
 
@@ -72,7 +75,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    public void NewHunt()
+    public void NewHunt ()
     {
         Intent intent = new Intent(this,NewHunt.class);
         startActivity(intent);
@@ -103,9 +106,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     public void downMag()
     {
-        DownloadManager magManager = (DownloadManager) getSystemService(Context.DOWNLOAD_SERVICE);
-        DownloadManager.Request magRequest = new DownloadManager.Request(Uri.parse("https://www.sajs.co.za/article/view/3565/4498"));
-        magRequest.setDescription("this is the test file needs to change");
-        long idDownload = magManager.enqueue(magRequest);
+        
+
     }
 }
