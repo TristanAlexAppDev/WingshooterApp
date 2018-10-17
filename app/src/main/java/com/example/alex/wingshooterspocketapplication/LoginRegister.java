@@ -31,19 +31,19 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public Button btnLoad;
 
 
-    public String Date = CreateTextFile.userDOBs;
-    public String Name =CreateTextFile.userNames;
-    public String Surname= CreateTextFile.userSurnames;
-    public String Initials= CreateTextFile.userInitials;
-    public String IDNum = CreateTextFile.userIDNums;
-    public String Email= CreateTextFile.userEmails;
+    public String Date = SendEmail.userDOBs;
+    public String Name =SendEmail.userNames;
+    public String Surname= SendEmail.userSurnames;
+    public String Initials= SendEmail.userInitials;
+    public String IDNum = SendEmail.userIDNums;
+    public String Email= SendEmail.userEmails;
 
-    public String UserDOB = CreateTextFile.userDOB;
-    public String UserName = CreateTextFile.userName;
-    public String UserSurname= CreateTextFile.userSurname;
-    public String UserInitials= CreateTextFile.userInitial;
-    public String UserIDNum = CreateTextFile.userIDNum;
-    public String UserEmail= CreateTextFile.userEmail;
+    public String UserDOB = TextFile.userDOB;
+    public String UserName = TextFile.userName;
+    public String UserSurname= TextFile.userSurname;
+    public String UserInitials= TextFile.userInitial;
+    public String UserIDNum = TextFile.userIDNum;
+    public String UserEmail= TextFile.userEmail;
 
 
 
@@ -213,13 +213,13 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnCreateFile:
-                CreateTxtFile();
+                SendEmail();
                 break;
 
         }
     }
-    public void CreateTxtFile() {
-        Intent intent = new Intent(this, CreateTextFile.class);
+    public void SendEmail() {
+        Intent intent = new Intent(this, TextFile.class);
         startActivity(intent);
         finish();
 
