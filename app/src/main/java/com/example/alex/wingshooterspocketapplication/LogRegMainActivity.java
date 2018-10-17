@@ -50,11 +50,12 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
     }
 
-    public void LoginCheck() {
+    public void LoginCheck()
+    {
         String userPass;
         String check;
         int userIDnum = 0;
-        String dateExist = "";
+        boolean signedUp = false;
 
         userPass = edttxtPassword.getText().toString();
         check = TxtIDNUMlog.getText().toString();
@@ -84,17 +85,28 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             }
             else
             {
-                Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
-                new Handler().postDelayed(new Runnable()
+                DatabaseHelper login = new DatabaseHelper(this);
+                signedUp = login.checkLogin(userPass, userIDnum);
+
+                if (!signedUp)
                 {
-                    @Override
-                    public void run()
+                    Toast.makeText(getApplicationContext(), "You have not signed up yet, Please do so before using the application" +
+                            ".", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
+                    new Handler().postDelayed(new Runnable()
                     {
-                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
-                        startActivity(i);
-                        finish();
-                    }
-                }, 2000);
+                        @Override
+                        public void run()
+                        {
+                            Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    }, 2000);
+                }
             }
         }
     }
