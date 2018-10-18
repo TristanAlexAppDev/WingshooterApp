@@ -1,6 +1,8 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class LogRegMainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -61,6 +66,27 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         userPass = edttxtPassword.getText().toString();
         userIDnum = TxtIDNUMlog.getText().toString();
 
+        DatabaseHelper login = new DatabaseHelper(this);
+
+        try
+        {
+            login.createDatabase();
+        }
+        catch (IOException ioe)
+        {
+            throw new  Error("unable to create database");
+        }
+
+        try
+        {
+            login.openDatabase();
+        }
+        catch (android.database.SQLException sqle)
+        {
+            throw sqle;
+        }
+
+
         if (userPass.matches("") || userIDnum.matches(""))
         {
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
@@ -85,9 +111,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             }
             else
             {
-                DatabaseHelper login = new DatabaseHelper(this);
                 signedUp = login.checkLogin(userPass, userIDnum);
-
                 if (!signedUp)
                 {
                     Toast.makeText(getApplicationContext(), "You are not a registered user or your password or username is incorrect." +

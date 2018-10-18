@@ -108,8 +108,8 @@ public class DownloadTask
                             Environment.getExternalStorageDirectory() + "/"
                                     + "WINGPOCKAPP FILES");
                 } else
-                    /*Toast.makeText(context, "Oops!! There is no SD Card.", Toast.LENGTH_SHORT).show();*/
-                        apkStorage = new File(Environment.DIRECTORY_DOCUMENTS + "/" + "WINGPOCKAPP FILES");
+                    Toast.makeText(context, "Oops!! There is no SD Card.", Toast.LENGTH_SHORT).show();
+                        //apkStorage = new File(Environment.DIRECTORY_DOCUMENTS + "/" + "WINGPOCKAPP FILES");
 
                 //If File is not present create directory
                 if (!apkStorage.exists()) {
