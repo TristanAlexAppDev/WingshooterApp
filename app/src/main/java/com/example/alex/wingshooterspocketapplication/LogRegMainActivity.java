@@ -61,32 +61,11 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         String userPass;
         String check;
         String userIDnum;
-        boolean signedUp = false;
-        boolean finalCheck = false;
+        boolean signedUp;
+        boolean finalCheck;
 
         userPass = edttxtPassword.getText().toString();
         userIDnum = TxtIDNUMlog.getText().toString();
-
-        DatabaseHelper login = new DatabaseHelper(this);
-
-        try
-        {
-            login.createDatabase();
-        }
-        catch (IOException ioe)
-        {
-            throw new  Error("unable to create database");
-        }
-
-        try
-        {
-            login.openDatabase();
-        }
-        catch (android.database.SQLException sqle)
-        {
-            throw sqle;
-        }
-
 
         if (userPass.matches("") || userIDnum.matches(""))
         {
@@ -95,7 +74,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         else
         {
             //backend for admin hardcoded for display purposes
-            if (userPass.equals("Admin123") && userIDnum.equals("199"))
+            if (userPass.equals("Admin123") && userIDnum.equals("9704165080444"))
             {
                 Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
                 userName = "Admin";
@@ -112,7 +91,28 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             }
             else
             {
+                DatabaseHelper login = new DatabaseHelper(this);
+
+                try
+                {
+                    login.createDatabase();
+                }
+                catch (IOException ioe)
+                {
+                    throw new  Error("unable to create database");
+                }
+
+                try
+                {
+                    login.openDatabase();
+                }
+                catch (android.database.SQLException sqle)
+                {
+                    throw sqle;
+                }
+
                 signedUp = login.checkLogin(userPass, userIDnum);
+
                 if (!signedUp)
                 {
                     Toast.makeText(getApplicationContext(), "You are not a registered user or your password or username is incorrect." +
