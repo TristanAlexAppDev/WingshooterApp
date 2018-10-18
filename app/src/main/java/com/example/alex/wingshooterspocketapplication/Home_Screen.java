@@ -77,7 +77,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.btnMagazine:
-                new DownloadTask(this, URL);
+                new DownloadTask(Home_Screen.this, URL);
                 break;
 
 

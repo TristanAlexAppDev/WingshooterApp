@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -28,7 +29,8 @@ public class DownloadTask
         this.downloadUrl = downloadUrl;
 
 
-        downloadFileName = downloadUrl.substring(downloadUrl.lastIndexOf('/'), downloadUrl.length());//Create file name by picking download file name from URL
+        //downloadFileName = downloadUrl.substring(downloadUrl.lastIndexOf('/' + ".pdf"), downloadUrl.length());//Create file name by picking download file name from URL
+        downloadFileName = "WingShootersMagazine.pdf";
         Log.e(TAG, downloadFileName);
 
         //Start Downloading Task
@@ -107,6 +109,7 @@ public class DownloadTask
                     apkStorage = new File(
                             Environment.getExternalStorageDirectory() + "/"
                                     + "WINGPOCKAPP FILES");
+
                 } else
                     Toast.makeText(context, "Oops!! There is no SD Card.", Toast.LENGTH_SHORT).show();
                         //apkStorage = new File(Environment.DIRECTORY_DOCUMENTS + "/" + "WINGPOCKAPP FILES");

@@ -4,8 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.os.Build;
 
 import java.io.File;
@@ -16,18 +16,28 @@ import java.io.OutputStream;
 
 public class DatabaseHelper extends SQLiteOpenHelper
 {
+    private static String TAG = "DataBaseHelper";
     private static String DB_NAME = "SQLite Database.db";
-    private static String DB_PATH = "/data/data/com.example.alex.wingshooterspocketapplication/databases/";
+    //private static String DB_PATH = "/data/data/com.example.alex.wingshooterspocketapplication/databases/";
+    private static String DB_PATH = "";
 
     private SQLiteDatabase mDataBase;
     private final Context mContext;
-    private boolean mNeedUpdate = false;
     private String TABLE_User = "userTable";
-    private String TABLE_BIRDINFO = "BirdInfo";
-    private String TABLE_SPECIESLOG = "SpeciesLog";
 
-    public DatabaseHelper(Context context) {
-        super(context, DB_NAME, null, 2);
+    public DatabaseHelper(Context context)
+    {
+        super(context, DB_NAME, null, 1);
+
+        if (Build.VERSION.SDK_INT >= 17)
+        {
+            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+        }
+        else
+        {
+            DB_PATH = context.getApplicationInfo().dataDir + "/databases/";
+        }
+
         this.mContext = context;
     }
 
@@ -35,17 +45,21 @@ public class DatabaseHelper extends SQLiteOpenHelper
    {
        boolean dbExist = checkDatabase();
 
-       if (dbExist)
+       if (!dbExist)
        {
            //do nothing as db exists
        }
        else
        {
            this.getReadableDatabase();
+           this.close();
+
            try
            {
                copyDatabase();
-           } catch (IOException e)
+               Log.e(TAG, "createDatabase created");
+           }
+           catch (IOException mIOException)
            {
                throw new Error("Error copying database");
            }
@@ -54,7 +68,10 @@ public class DatabaseHelper extends SQLiteOpenHelper
 
     private boolean checkDatabase()
     {
-        SQLiteDatabase checkDB = null;
+        File dbFile = new File(DB_PATH + DB_NAME);
+        return dbFile.exists();
+
+        /*SQLiteDatabase checkDB = null;
 
         try
         {
@@ -71,7 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper
             checkDB.close();
         }
 
-        return checkDB != null ? true : false;
+        return checkDB != null ? true : false;*/
     }
 
    private void copyDatabase() throws IOException
@@ -94,11 +111,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
         myInput.close();
    }
 
-   public void openDatabase() throws SQLException
+   public boolean openDatabase() throws SQLException
    {
        //open the Database
        String myPath = DB_PATH + DB_NAME;
-       mDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.OPEN_READONLY);
+       mDataBase = SQLiteDatabase.openDatabase(myPath, null, SQLiteDatabase.CREATE_IF_NECESSARY);
+       return mDataBase != null;
    }
 
    @Override
