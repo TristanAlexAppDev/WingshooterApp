@@ -213,12 +213,12 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnCreateFile:
-                SendEmail();
+                MailSenderActivity();
                 break;
 
         }
     }
-    public void SendEmail() {
+    public void MailSenderActivity() {
         Intent intent = new Intent(this, TextFile.class);
         startActivity(intent);
         finish();

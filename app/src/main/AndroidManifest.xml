@@ -60,6 +60,10 @@
         <activity
             android:name=".TextFile"
             android:exported="true" />
+        <activity
+            android:name=".MailSenderActivity"
+            android:exported="true" />
+
 
 
         <activity android:name=".BirdIDFV"></activity>
