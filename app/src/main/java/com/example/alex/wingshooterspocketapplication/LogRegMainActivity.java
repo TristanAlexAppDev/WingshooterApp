@@ -1,10 +1,13 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteException;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -36,9 +39,17 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
         TxtIDNUMlog = findViewById(R.id.TxtIDNUMlog);
         edttxtPassword = findViewById(R.id.edttxtPassword);
+
+        int check = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        if (check == PackageManager.PERMISSION_GRANTED)
+        {
+            //idi nahui
+        }
+        else
+        {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1024);
+        }
     }
-
-
 
     @Override
     public void onClick(View v)
@@ -74,7 +85,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         else
         {
             //backend for admin hardcoded for display purposes
-            if (userPass.equals("Admin123") && userIDnum.equals("9704165080444"))
+            if (userPass.equals("Admin123") && userIDnum.equals("199999"))
             {
                 Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
                 userName = "Admin";
