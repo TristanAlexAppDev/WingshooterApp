@@ -25,8 +25,8 @@ import java.net.URL;
 public class Home_Screen extends AppCompatActivity implements View.OnClickListener
 {
     public TextView txtUserLoggedIn;
+    public static String otherName;
 
-    String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
 
     public String userName = LogRegMainActivity.userName;
 
@@ -50,6 +50,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
         Button btnMag = findViewById(R.id.btnMagazine);
         btnMag.setOnClickListener(this);
+
+        Button btnNoti = findViewById(R.id.btnNotification);
+        btnNoti.setOnClickListener(this);
 
         txtUserLoggedIn = findViewById(R.id.txtHomeScreen);
         txtUserLoggedIn.setText("Welcome " + userName);
@@ -77,10 +80,12 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.btnMagazine:
-                new DownloadTask(Home_Screen.this, URL);
+               downMag();
                 break;
 
-
+            case  R.id.btnNotification:
+                downNot();
+                break;
         }
 
     }
@@ -112,6 +117,21 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Intent intent = new Intent(this, StartHunt.class);
         startActivity(intent);
         finish();
+    }
+
+    public void downMag()
+    {
+        String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
+        new DownloadTask(Home_Screen.this, URL);
+        otherName = "WingShootersMagazine";
+
+    }
+
+    public void downNot()
+    {
+        String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
+        new DownloadTask(Home_Screen.this, URL);
+        otherName = "Notification";
     }
 
 

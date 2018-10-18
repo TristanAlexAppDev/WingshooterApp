@@ -22,6 +22,7 @@ public class DownloadTask
 
     private String downloadUrl = "", downloadFileName = "";
     private ProgressDialog progressDialog;
+    public String chosenName = Home_Screen.otherName;
 
     public DownloadTask(Context context, String downloadUrl) {
         this.context = context;
@@ -30,7 +31,7 @@ public class DownloadTask
 
 
         //downloadFileName = downloadUrl.substring(downloadUrl.lastIndexOf('/' + ".pdf"), downloadUrl.length());//Create file name by picking download file name from URL
-        downloadFileName = "WingShootersMagazine.pdf";
+        downloadFileName = chosenName;
         Log.e(TAG, downloadFileName);
 
         //Start Downloading Task
