@@ -38,12 +38,12 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public String IDNum = SendEmail.userIDNums;
     public String Email= SendEmail.userEmails;
 
-    public String UserDOB = TextFile.userDOB;
-    public String UserName = TextFile.userName;
-    public String UserSurname= TextFile.userSurname;
-    public String UserInitials= TextFile.userInitial;
-    public String UserIDNum = TextFile.userIDNum;
-    public String UserEmail= TextFile.userEmail;
+    public String UserDOB = MailSenderActivity.userDOB;
+    public String UserName = MailSenderActivity.userName;
+    public String UserSurname= MailSenderActivity.userSurname;
+    public String UserInitials= MailSenderActivity.userInitial;
+    public String UserIDNum = MailSenderActivity.userIDNum;
+    public String UserEmail= MailSenderActivity.userEmail;
 
 
 

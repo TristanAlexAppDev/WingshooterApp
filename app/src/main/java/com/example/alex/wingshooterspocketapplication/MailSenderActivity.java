@@ -21,6 +21,12 @@ public class MailSenderActivity extends Activity {
 
     Button send;
 
+    public static String userDOB;
+    public static String userName;
+    public static String userSurname;
+    public static String userInitial;
+    public static String userIDNum;
+    public static String userEmail;
 
 
     @Override
