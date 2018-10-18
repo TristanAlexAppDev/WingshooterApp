@@ -135,11 +135,22 @@ public class DatabaseHelper extends SQLiteOpenHelper
         }
     }
 
-    public boolean checkLogin (String userPass, int userID)
+    public boolean checkLogin (String userPass, String userID)
     {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String table = "userTable";
+        Cursor cursor = db.rawQuery("SELECT IDNumber, Password FROM userTable Where IDNumber = ? and " +
+                "Password = ?", new String[]{userID, userPass});
+
+        if (cursor.equals(false))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        /*String table = "userTable";
         String[] columns = {"IDNumber","Password"};
         String selection = "IDNumber" + "=?";
         String[] selectionArgs = null;
@@ -157,15 +168,32 @@ public class DatabaseHelper extends SQLiteOpenHelper
         else
         {
             return true;
-        }
+        }*/
+    }
 
-        /*String table = DB_NAME;
-        String[] columns = {COL2, COL2};
-        String selection = COL1 + "=?";
+    public boolean registeredUser (String userID)
+    {
+        String check = "NotJoined";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor  = db.rawQuery("SELECT IDNumber, DateJoined FROM userTable WHERE IDNumber = ? " +
+                "AND DateJoined = ?", new String[]{userID, check});
+
+        if (cursor.equals(true))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        /*String table = "userTable";
+        String[] columns = {"IDNumber", "DateJoined"};
+        String selection = "IDNumber" + "=?";
         String[] selectionArgs = null;
         String groupBy = null;
         String having = null;
-        String orderBy = COL2 + " DESC";
+        String orderBy = "IDNumber" + " DESC";
         String limit = "1";
 
         Cursor cursor = db.query(table, columns, selection, selectionArgs, groupBy, having, orderBy, limit);

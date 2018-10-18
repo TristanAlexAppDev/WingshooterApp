@@ -54,21 +54,21 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         String userPass;
         String check;
-        int userIDnum = 0;
+        String userIDnum;
         boolean signedUp = false;
+        boolean finalCheck = false;
 
         userPass = edttxtPassword.getText().toString();
-        check = TxtIDNUMlog.getText().toString();
+        userIDnum = TxtIDNUMlog.getText().toString();
 
-        if (userPass.matches("") || check.matches(""))
+        if (userPass.matches("") || userIDnum.matches(""))
         {
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         }
         else
         {
-            userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
             //backend for admin hardcoded for display purposes
-            if (userPass.equals("Admin123") && userIDnum == 199)
+            if (userPass.equals("Admin123") && userIDnum.equals("199"))
             {
                 Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
                 userName = "Admin";
@@ -90,22 +90,37 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
                 if (!signedUp)
                 {
-                    Toast.makeText(getApplicationContext(), "You have not signed up yet, Please do so before using the application" +
+                    Toast.makeText(getApplicationContext(), "You are not a registered user or your password or username is incorrect." +
                             ".", Toast.LENGTH_LONG).show();
+                    TxtIDNUMlog.setText("");
+                    edttxtPassword.setText("");
                 }
                 else
                 {
-                    Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
-                    new Handler().postDelayed(new Runnable()
+                    //check if user is registered
+
+                    finalCheck = login.registeredUser(userIDnum);
+
+                    if (!finalCheck)
                     {
-                        @Override
-                        public void run()
+                        Toast.makeText(getApplicationContext(), "User exists, but not registered. Please register before logging in.", Toast.LENGTH_LONG).show();
+                        TxtIDNUMlog.setText("");
+                        edttxtPassword.setText("");
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
+                        new Handler().postDelayed(new Runnable()
                         {
-                            Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
-                            startActivity(i);
-                            finish();
-                        }
-                    }, 2000);
+                            @Override
+                            public void run()
+                            {
+                                Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                                startActivity(i);
+                                finish();
+                            }
+                        }, 2000);
+                    }
                 }
             }
         }
