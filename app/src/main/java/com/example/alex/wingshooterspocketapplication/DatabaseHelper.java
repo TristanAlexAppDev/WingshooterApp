@@ -135,13 +135,12 @@ public class DatabaseHelper extends SQLiteOpenHelper
         }
     }
 
-    public boolean checkLogin (String userPass, int userID)
+    public boolean checkLogin (String userPass, String userID)
     {
-        String id = Integer.toString(userID);
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT IDNumber, Password FROM userTable Where IDNumber = ? and " +
-                "Password = ?", new String[]{id, userPass});
+                "Password = ?", new String[]{userID, userPass});
 
         if (cursor.equals(false))
         {
@@ -172,14 +171,13 @@ public class DatabaseHelper extends SQLiteOpenHelper
         }*/
     }
 
-    public boolean registeredUser (int userID)
+    public boolean registeredUser (String userID)
     {
-        String id = Integer.toString(userID);
         String check = "NotJoined";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor  = db.rawQuery("SELECT IDNumber, DateJoined FROM userTable WHERE IDNumber = ? " +
-                "AND DateJoined = ?", new String[]{id, check});
+                "AND DateJoined = ?", new String[]{userID, check});
 
         if (cursor.equals(true))
         {

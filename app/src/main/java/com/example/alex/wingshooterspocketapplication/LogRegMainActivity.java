@@ -54,26 +54,21 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         String userPass;
         String check;
-        String quickFix;
-        int userIDnum = 0;
+        String userIDnum;
         boolean signedUp = false;
         boolean finalCheck = false;
 
         userPass = edttxtPassword.getText().toString();
-        check = TxtIDNUMlog.getText().toString();
+        userIDnum = TxtIDNUMlog.getText().toString();
 
-        if (userPass.matches("") || check.matches(""))
+        if (userPass.matches("") || userIDnum.matches(""))
         {
             Toast.makeText(getApplicationContext(), "Please fill all fields", Toast.LENGTH_LONG).show();
         }
         else
         {
-            quickFix = TxtIDNUMlog.getText().toString();
-            userIDnum = Integer.parseInt(quickFix);
-            //userIDnum = Integer.parseInt(TxtIDNUMlog.getText().toString());
-
             //backend for admin hardcoded for display purposes
-            if (userPass.equals("Admin123") && userIDnum == 199)
+            if (userPass.equals("Admin123") && userIDnum.equals("199"))
             {
                 Toast.makeText(getApplicationContext(), "Welcome Admin", Toast.LENGTH_LONG).show();
                 userName = "Admin";
