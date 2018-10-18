@@ -2,7 +2,7 @@
     <string name="app_name">WingshootersPocketApplication</string>
     <!-- String to populate drop down for bird age-->
     <string-array name="Bird_Age">
-        <item>chick</item>
+        <item>Chick</item>
         <item>Jouvenile</item>
         <item>Adult</item>
     </string-array>

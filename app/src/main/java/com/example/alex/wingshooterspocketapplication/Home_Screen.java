@@ -4,19 +4,29 @@ import android.app.DownloadManager;
 import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+
+import android.os.Environment;
+import android.provider.DocumentsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 public class Home_Screen extends AppCompatActivity implements View.OnClickListener
 {
     public TextView txtUserLoggedIn;
 
-
+    String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
 
     public String userName = LogRegMainActivity.userName;
 
@@ -67,7 +77,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
                 break;
 
             case R.id.btnMagazine:
-                downMag();
+                new DownloadTask(this, URL);
                 break;
 
 
@@ -104,9 +114,5 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         finish();
     }
 
-    public void downMag()
-    {
-        
 
-    }
 }
