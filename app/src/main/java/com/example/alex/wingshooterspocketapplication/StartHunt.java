@@ -15,9 +15,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
         Button btnAdding = findViewById(R.id.BtnAdd);
         btnAdding.setOnClickListener(this);
-
-
-
     }
 
 

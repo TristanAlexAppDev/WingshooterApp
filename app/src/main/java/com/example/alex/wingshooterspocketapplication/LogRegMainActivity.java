@@ -15,6 +15,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -39,6 +43,8 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
         TxtIDNUMlog = findViewById(R.id.TxtIDNUMlog);
         edttxtPassword = findViewById(R.id.edttxtPassword);
+
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
         int check = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (check == PackageManager.PERMISSION_GRANTED)
@@ -106,7 +112,11 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
     private void DataLogin(String userPass, String userIDnum)
     {
-        boolean signedUp;
+        DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
+
+        Query query = fdb.child("")
+    }
+        /*boolean signedUp;
         boolean finalCheck;
 
         DatabaseHelper login = new DatabaseHelper(this);
@@ -164,8 +174,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                     }
                 }, 2000);
             }
-        }
-    }
+        }*/
 
 
     public void LoginRegister()
