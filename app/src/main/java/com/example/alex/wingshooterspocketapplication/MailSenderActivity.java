@@ -57,7 +57,7 @@ public class MailSenderActivity extends Activity {
 
                             GMailSender sender = new GMailSender(
 
-                                    "dedicatedwingshooters@gmail.com",
+                                    "wingshooterapp@gmail.com",
 
                                     "WingShooterAdmin2018");
 
@@ -67,7 +67,7 @@ public class MailSenderActivity extends Activity {
 
                             sender.sendMail("Test mail", "This mail has been sent from android app along with attachment",
 
-                                    "dedicatedwingshooters@gmail.com",
+                                    "wingshooterapp@gmail.com",
 
                                     "markvdburgh@gmail.com");
 
