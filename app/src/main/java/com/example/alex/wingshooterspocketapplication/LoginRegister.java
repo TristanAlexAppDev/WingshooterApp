@@ -225,6 +225,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         return array;
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     @Override
     public void onClick(View v)
     {
@@ -241,6 +242,8 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         finish();
 
 
+=======
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
 =======
 >>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
 
