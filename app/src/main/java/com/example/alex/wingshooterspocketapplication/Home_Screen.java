@@ -99,9 +99,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     public void HSProvinceSelection()
     {
-        Intent intent = new Intent(this, HSProvinceSelection.class);
-        startActivity(intent);
-        finish();
+
 
     }
 

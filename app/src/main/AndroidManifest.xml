@@ -37,12 +37,6 @@
 
 
         <activity
-            android:name=".hsprovincedates"
-            android:exported="true" />
-        <activity
-            android:name=".HSProvinceSelection"
-            android:exported="true" />
-        <activity
             android:name=".LogActivity"
             android:exported="true" />
         <activity
