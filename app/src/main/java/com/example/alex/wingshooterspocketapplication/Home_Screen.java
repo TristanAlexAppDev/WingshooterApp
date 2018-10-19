@@ -25,7 +25,7 @@ import java.net.URL;
 public class Home_Screen extends AppCompatActivity implements View.OnClickListener
 {
     public TextView txtUserLoggedIn;
-    public static String otherName;
+    public static int otherName;
 
 
     public String userName = LogRegMainActivity.userName;
@@ -121,7 +121,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
-        otherName = "WingShootersMagazine";
+        otherName = 1;
 
     }
 
@@ -129,7 +129,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
-        otherName = "Notification";
+        otherName = 2;
     }
 
 
