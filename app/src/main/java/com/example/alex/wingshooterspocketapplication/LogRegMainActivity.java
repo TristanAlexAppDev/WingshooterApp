@@ -15,9 +15,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -114,7 +117,33 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
-        Query query = fdb.child("")
+        Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userIDnum);
+        query.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    for (DataSnapshot user : dataSnapshot.getChildren())
+                    {
+                        DatabaseHelper users = user.getValue(DatabaseHelper.class);
+
+                        if ()
+                    }
+                }
+                else
+                {
+                    Toast.makeText(getApplicationContext(), "User not Found", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
+
+            }
+        });
     }
         /*boolean signedUp;
         boolean finalCheck;
