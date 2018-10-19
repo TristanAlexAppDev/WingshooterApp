@@ -146,8 +146,6 @@ public class DatabaseHelper extends SQLiteOpenHelper
     {
         String[] columns = {"UserID"};
 
-
-
         SQLiteDatabase db = this.getReadableDatabase();
 
         String selection = "IDNumber = ? AND Password = ?";
@@ -167,23 +165,28 @@ public class DatabaseHelper extends SQLiteOpenHelper
         cursor.close();
         db.close();
 
-        if (cursorCount > 0) {
+        if (cursorCount > 0)
+        {
             return true;
-        } else {
+        }
+        else {
             return false;
         }
     }
 
-    public boolean registeredUser (String userID) {
+    public boolean registeredUser (String userID)
+    {
         String check = "NotJoined";
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT IDNumber, DateJoined FROM userTable WHERE IDNumber = ? " +
                 "AND DateJoined = ?", new String[]{userID, check});
 
-        if (cursor.equals(true)) {
+        if (cursor.equals(true))
+        {
             return false;
-        } else {
+        }
+        else {
             return true;
         }
     }

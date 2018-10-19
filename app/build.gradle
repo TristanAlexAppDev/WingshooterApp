@@ -28,5 +28,15 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation files('libs/additionnal.jar')
     implementation files('libs/mail.jar')
+<<<<<<< HEAD
+<<<<<<< HEAD
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+=======
     implementation files('libs/android-activation-1.6.2.jar')
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
+=======
+    implementation files('libs/android-activation-1.6.2.jar')
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
 }
+
+apply plugin: 'com.google.gms.google-services'

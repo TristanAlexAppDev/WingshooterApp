@@ -224,6 +224,28 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+    @Override
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
+            case R.id.btnCreateFile:
+                MailSenderActivity();
+                break;
+        }
+    }
+    public void MailSenderActivity() {
+        Intent intent = new Intent(this, TextFile.class);
+        startActivity(intent);
+        finish();
+
+
+=======
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
+=======
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
 
 
 
