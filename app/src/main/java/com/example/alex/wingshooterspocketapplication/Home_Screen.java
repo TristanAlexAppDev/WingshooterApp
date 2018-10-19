@@ -5,6 +5,7 @@ import android.app.VoiceInteractor;
 import android.content.Context;
 import android.content.Intent;
 
+import android.net.Uri;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.support.v7.app.AppCompatActivity;
@@ -99,7 +100,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     public void HSProvinceSelection()
     {
-
+        String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
+        new DownloadTask(Home_Screen.this, URL);
+        otherName = 3;
 
     }
 
@@ -130,6 +133,8 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
         otherName = 2;
+
+
     }
 
 
