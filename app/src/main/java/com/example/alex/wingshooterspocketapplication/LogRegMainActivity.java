@@ -70,10 +70,8 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     public void LoginCheck()
     {
         String userPass;
-        String check;
         String userIDnum;
-        boolean signedUp;
-        boolean finalCheck;
+
 
         userPass = edttxtPassword.getText().toString();
         userIDnum = TxtIDNUMlog.getText().toString();
@@ -100,64 +98,71 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                     }
                 }, 2000);
             }
+            else{
+                DataLogin(userPass, userIDnum);
+            }
+        }
+    }
+
+    private void DataLogin(String userPass, String userIDnum)
+    {
+        boolean signedUp;
+        boolean finalCheck;
+
+        DatabaseHelper login = new DatabaseHelper(this);
+
+        try
+        {
+            login.createDatabase();
+        }
+        catch (IOException ioe)
+        {
+            throw new  Error("unable to create database");
+        }
+
+        try
+        {
+            login.openDatabase();
+        }
+        catch (android.database.SQLException sqle)
+        {
+            throw sqle;
+        }
+
+        signedUp = login.checkLogin(userPass, userIDnum);
+
+        if (!signedUp)
+        {
+            Toast.makeText(getApplicationContext(), "You are not a registered user or your password or username is incorrect." +
+                    ".", Toast.LENGTH_LONG).show();
+            TxtIDNUMlog.setText("");
+            edttxtPassword.setText("");
+        }
+        else
+        {
+            //check if user is registered
+
+            finalCheck = login.registeredUser(userIDnum);
+
+            if (!finalCheck)
+            {
+                Toast.makeText(getApplicationContext(), "User exists, but not registered. Please register before logging in.", Toast.LENGTH_LONG).show();
+                TxtIDNUMlog.setText("");
+                edttxtPassword.setText("");
+            }
             else
             {
-                DatabaseHelper login = new DatabaseHelper(this);
-
-                try
+                Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
+                new Handler().postDelayed(new Runnable()
                 {
-                    login.createDatabase();
-                }
-                catch (IOException ioe)
-                {
-                    throw new  Error("unable to create database");
-                }
-
-                try
-                {
-                    login.openDatabase();
-                }
-                catch (android.database.SQLException sqle)
-                {
-                    throw sqle;
-                }
-
-                signedUp = login.checkLogin(userPass, userIDnum);
-
-                if (!signedUp)
-                {
-                    Toast.makeText(getApplicationContext(), "You are not a registered user or your password or username is incorrect." +
-                            ".", Toast.LENGTH_LONG).show();
-                    TxtIDNUMlog.setText("");
-                    edttxtPassword.setText("");
-                }
-                else
-                {
-                    //check if user is registered
-
-                    finalCheck = login.registeredUser(userIDnum);
-
-                    if (!finalCheck)
+                    @Override
+                    public void run()
                     {
-                        Toast.makeText(getApplicationContext(), "User exists, but not registered. Please register before logging in.", Toast.LENGTH_LONG).show();
-                        TxtIDNUMlog.setText("");
-                        edttxtPassword.setText("");
+                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                        startActivity(i);
+                        finish();
                     }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "Welcome user", Toast.LENGTH_LONG).show();
-                        new Handler().postDelayed(new Runnable()
-                        {
-                            @Override
-                            public void run()
-                            {
-                                Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
-                                startActivity(i);
-                                finish();
-                            }
-                        }, 2000);
-                    }
-                }
+                }, 2000);
             }
         }
     }

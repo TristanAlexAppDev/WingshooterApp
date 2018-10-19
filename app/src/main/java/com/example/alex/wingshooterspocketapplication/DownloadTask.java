@@ -2,6 +2,8 @@ package com.example.alex.wingshooterspocketapplication;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
@@ -37,10 +39,15 @@ public class DownloadTask
         {
             downloadFileName = "WingShootersNotifications.pdf";
         }
-        else
+        if(chosenName == 2)
         {
             downloadFileName = "WingShootersMagazine.pdf";
         }
+        else
+        {
+            downloadFileName = "WingShootersHuntSeasons.pdf";
+        }
+
 
         Log.e(TAG, downloadFileName);
 
@@ -59,6 +66,8 @@ public class DownloadTask
             progressDialog = new ProgressDialog(context);
             progressDialog.setMessage("Downloading...");
             progressDialog.show();
+
+
         }
 
         @Override
@@ -67,7 +76,9 @@ public class DownloadTask
                 if (outputFile != null) {
                     progressDialog.dismiss();
                     Toast.makeText(context, "Downloaded Successfully", Toast.LENGTH_SHORT).show();
-                } else {
+
+                }
+                else {
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -103,7 +114,7 @@ public class DownloadTask
             try {
                 URL url = new URL(downloadUrl);//Create Download URl
                 HttpURLConnection c = (HttpURLConnection) url.openConnection();//Open Url Connection
-                c.setRequestMethod("GET");//Set Request Method to "GET" since we are grtting data
+                c.setRequestMethod("GET");//Set Request Method to "GET" since we are getting data
                 c.connect();//connect the URL Connection
 
                 //If Connection response is not OK then show Logs
@@ -124,6 +135,7 @@ public class DownloadTask
                 } else
                     Toast.makeText(context, "Oops!! There is no SD Card.", Toast.LENGTH_SHORT).show();
                         //apkStorage = new File(Environment.DIRECTORY_DOCUMENTS + "/" + "WINGPOCKAPP FILES");
+
 
                 //If File is not present create directory
                 if (!apkStorage.exists()) {
@@ -163,6 +175,10 @@ public class DownloadTask
 
             return null;
         }
+
+
     }
+
+
 }
 

@@ -50,6 +50,21 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
 
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnCreateReg:
+                MailSenderActivity();
+                break;
+
+        }
+    }
+    public void MailSenderActivity() {
+        Intent intent = new Intent(this, MailSenderActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -85,7 +100,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
 
 
 
-        Button btnCreateFile = findViewById(R.id.btnCreateFile);
+        Button btnCreateFile = findViewById(R.id.btnCreateReg);
         btnCreateFile.setOnClickListener(this);
 
         File dir = new File(path);
@@ -209,13 +224,15 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
+<<<<<<< HEAD
     @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
+    public void onClick(View v)
+    {
+        switch (v.getId())
+        {
             case R.id.btnCreateFile:
                 MailSenderActivity();
                 break;
-
         }
     }
     public void MailSenderActivity() {
@@ -224,10 +241,9 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         finish();
 
 
+=======
+>>>>>>> eee31a4839fa642c9c78d033f69aae957a8fd4d1
 
-
-
-    }
 
 
 }
