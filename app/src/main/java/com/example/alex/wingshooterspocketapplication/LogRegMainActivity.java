@@ -1,15 +1,13 @@
 package com.example.alex.wingshooterspocketapplication;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteException;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,8 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
-import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LogRegMainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -113,35 +111,30 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void DataLogin(String userPass, String userIDnum)
+    private void DataLogin(final String userPass, final String userIDnum)
     {
         DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
         Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userIDnum);
         query.addListenerForSingleValueEvent(new ValueEventListener()
         {
+            public String TAG;
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                if (dataSnapshot.exists())
+                List<String> userList = new ArrayList<String>();
+                for (DataSnapshot user : dataSnapshot.getChildren())
                 {
-                    for (DataSnapshot user : dataSnapshot.getChildren())
-                    {
-                        DatabaseHelper users = user.getValue(DatabaseHelper.class);
-
-                        if ()
-                    }
+                    userList.add(dataSnapshot.getValue(userList.class));
                 }
-                else
-                {
-                    Toast.makeText(getApplicationContext(), "User not Found", Toast.LENGTH_LONG).show();
-                }
+                Log.d(TAG, "no user found of that name " + userList.size());
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError)
             {
-
+                Log.d(TAG, "Error trying to log in for " + userIDnum + " " + databaseError);
             }
         });
     }
