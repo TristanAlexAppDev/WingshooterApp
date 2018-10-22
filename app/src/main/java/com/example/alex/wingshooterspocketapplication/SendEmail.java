@@ -72,15 +72,16 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v)
             {
-                String DateOfBirth = userDOB;
-                String FirstName = userName;
-                String Surname = userSurname;
+                String DateOfBirth = userDOBs;
+                String FirstName = userNames;
+                String Surname = userSurnames;
                 String Initials = userInitials;
-                String IDNum = userIDNum;
-                String Email = userEmail;
-                String emailAddressList[] = {"emailAddress"};
-                String mycontent = DateOfBirth + "," + FirstName + "," + Surname + "," + Initials + "," + IDNum + "," + Email;
+                String IDNum = userIDNums;
+                String Email = userEmails;
+                String emailAddressList[] = {"wingshooterapp@gmail.com"};
+                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + Initials + "\n" + IDNum + "\n" + Email;
                 Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
