@@ -54,13 +54,13 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnCreateReg:
-                MailSenderActivity();
+                SendEmail();
                 break;
 
         }
     }
-    public void MailSenderActivity() {
-        Intent intent = new Intent(this, MailSenderActivity.class);
+    public void SendEmail() {
+        Intent intent = new Intent(this, SendEmail.class);
         startActivity(intent);
         finish();
     }
@@ -220,4 +220,11 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> ec1942b0d50448ed349b238a757a579cae95198c
 }
