@@ -21,24 +21,18 @@ import java.io.InputStreamReader;
 import java.sql.Date;
 
 public class SendEmail extends AppCompatActivity implements View.OnClickListener {
-    public static String userDOB;
     public static String userName;
     public static String userSurname;
-    public static String userInitial;
     public static String userIDNum;
-    public static String userEmail;
 
     Button button;
     EditText mEditText;
     TextView txtView;
     EditText textInput;
 
-    public static String userDOBs;
     public static String userNames;
     public static String userSurnames;
-    public static String userInitials;
     public static String userIDNums;
-    public static String userEmails;
 
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
@@ -65,6 +59,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         final EditText time = (EditText)findViewById(R.id.time);
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() */
+
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 

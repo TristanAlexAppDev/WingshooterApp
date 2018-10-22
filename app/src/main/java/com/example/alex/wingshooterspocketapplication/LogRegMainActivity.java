@@ -20,9 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LogRegMainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public TextView TxtIDNUMlog;
@@ -103,7 +100,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                         startActivity(i);
                         finish();
                     }
-                }, 2000);
+                }, 1750);
             }
             else{
                 DataLogin(userPass, userIDnum);
@@ -131,26 +128,39 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
                         if (userLogin.Password.equals(userPass))
                         {
-                            userName = userLogin.Name;
-                            Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
-                            new Handler().postDelayed(new Runnable()
+                            if (userLogin.certifiedUser.equals("Yes"))
                             {
-                                @Override
-                                public void run()
+                                userName = userLogin.Name;
+                                Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
+                                new Handler().postDelayed(new Runnable()
                                 {
-                                    Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
-                                    startActivity(i);
-                                    finish();
-                                }
-                            }, 2000);
+                                    @Override
+                                    public void run()
+                                    {
+                                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                                        startActivity(i);
+                                        finish();
+                                    }
+                                }, 1750);
+                            }
+                            else
+                            {
+                                Toast.makeText(LogRegMainActivity.this, "User not registered, please register first.", Toast.LENGTH_LONG).show();
+                                TxtIDNUMlog.setText("");
+                                edttxtPassword.setText("");
+                            }
+
                         }
                         else {
-                            Toast.makeText(LogRegMainActivity.this, "Password is wrong", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LogRegMainActivity.this, "Password is incorrect", Toast.LENGTH_LONG).show();
+                            edttxtPassword.setText("");
                         }
                     }
                 }
                 else {
                     Toast.makeText(LogRegMainActivity.this, "User not found", Toast.LENGTH_LONG).show();
+                    TxtIDNUMlog.setText("");
+                    edttxtPassword.setText("");
                 }
             }
 
@@ -170,7 +180,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     }
 }
 
-//Previously tried code
+//Previously tested code that did not work with sqlite database and firebase database
 //--------------------------------------------------------------------
 
         /*DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();

@@ -72,10 +72,6 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
 
-        edtTxtDate = findViewById(R.id.edtTxtDate);
-        edtTxtName = findViewById(R.id.edtTxtName);
-        edtTxtSurName = findViewById(R.id.edtTxtSurName);
-        edtTxtInitial = findViewById(R.id.edtTxtInitials);
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);
 
