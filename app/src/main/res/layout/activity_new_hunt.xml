@@ -381,7 +381,9 @@
         app:layout_constraintHorizontal_bias="0.971"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.982"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"/>
 
     <Button
         android:id="@+id/btnStart"
@@ -396,7 +398,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.982"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"/>
 
     <Button
         android:id="@+id/btnDelete"
@@ -412,6 +416,8 @@
         app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.982" />
+        app:layout_constraintVertical_bias="0.982"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"/>
 
 </android.support.constraint.ConstraintLayout>

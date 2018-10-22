@@ -48,7 +48,9 @@
                     android:id="@+id/btnScrollDuck"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Ducks" />
+                    android:text="Ducks"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"/>
 
 
                 <Button
@@ -56,63 +58,81 @@
                     android:id="@+id/btnScrollQuial"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Quail" />
+                    android:background="@android:color/holo_blue_light"
+                    android:text="Quail"
+                    android:textColor="@android:color/white" />
 
                 <Button
 
                     android:id="@+id/btnScrollGeese"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Geese" />
+                    android:text="Geese"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollGuinie"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Guiniefowl" />
+                    android:text="Guiniefowl"
+                    android:background="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollFranc"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Francolin" />
+                    android:text="Francolin"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollPartridge"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Partridge" />
+                    android:text="Partridge"
+                    android:background="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollPigeons"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Pigeons" />
+                    android:text="Pigeons"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollTeal"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Teal" />
+                    android:text="Teal"
+                    android:background="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollSnipe"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Snipe" />
+                    android:text="Snipe"
+                    android:background="@android:color/holo_blue_dark"
+                    android:textColor="@android:color/white"/>
 
                 <Button
 
                     android:id="@+id/btnScrollGrouse"
                     android:layout_width="380dp"
                     android:layout_height="wrap_content"
-                    android:text="Grouse" />
+                    android:text="Grouse"
+                    android:background="@android:color/holo_blue_light"
+                    android:textColor="@android:color/white"/>
 
             </LinearLayout>
 
@@ -564,30 +584,48 @@
 
     <Button
         android:id="@+id/btnBHome"
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
-        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="11dp"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"
         android:text="Home" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="6dp"
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="11dp"
         android:onClick="nextView"
-        android:text="Next" />
+        android:text="Next"
+        android:background="@android:color/holo_red_dark"
+        android:textColor="@android:color/white"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_margin="16dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="11dp"
         android:onClick="startView"
-        android:text="GAME BIRD ID" />
+        android:text="GAME BIRD ID"
+        android:background="@android:color/holo_red_light"
+        android:textColor="@android:color/white"/>
 
 </RelativeLayout>
