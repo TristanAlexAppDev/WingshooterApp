@@ -114,7 +114,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
-        Query query = fdb.child("")
+        Query query = fdb.child("");
     }
         /*boolean signedUp;
         boolean finalCheck;
