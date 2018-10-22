@@ -34,9 +34,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public String Date = SendEmail.userDOBs;
     public String Name =SendEmail.userNames;
     public String Surname= SendEmail.userSurnames;
-    public String Initials= SendEmail.userInitials;
     public String IDNum = SendEmail.userIDNums;
-    public String Email= SendEmail.userEmails;
 /*
     public String UserDOB = MailSenderActivity.userDOB;
     public String UserName = MailSenderActivity.userName;
@@ -85,9 +83,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         Date = edtTxtDate.getText().toString();
         Name = edtTxtName.getText().toString();
         Surname = edtTxtSurName.getText().toString();
-        Initials = edtTxtInitial.getText().toString();
         IDNum = edtTextIDNum.getText().toString();
-        Email = edtTextEmail.getText().toString();
 
        /* UserDOB = edtTxtDate.getText().toString();
         UserName = edtTxtName.getText().toString();

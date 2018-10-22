@@ -29,28 +29,27 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
     EditText mEditText;
     TextView txtView;
     EditText textInput;
-<<<<<<< HEAD
+
     public String testString = "this is a test";
     public static String userDOBs;
-=======
 
->>>>>>> a0e8f2f6f2f33a17e9033404da6a9f7735904f24
+
+
     public static String userNames;
     public static String userSurnames;
     public static String userIDNums;
 
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
-    String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendemail);
 
-<<<<<<< HEAD
+
         getSupportActionBar().setTitle("Send Information");
-=======
+
 
 
 
@@ -68,7 +67,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() */
 
->>>>>>> a0e8f2f6f2f33a17e9033404da6a9f7735904f24
+
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -79,11 +78,9 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
                 String DateOfBirth = userDOBs;
                 String FirstName = userNames;
                 String Surname = userSurnames;
-                String Initials = userInitials;
                 String IDNum = userIDNums;
-                String Email = userEmails;
                 String emailAddressList[] = {"wingshooterapp@gmail.com"};
-                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + Initials + "\n" + IDNum + "\n" + Email +"\n" + testString;
+                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + IDNum + "\n" +testString;
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
                 email.setType("plain/text");
