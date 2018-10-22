@@ -111,54 +111,57 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void DataLogin(final String userPass, final String userIDnum)
-    {
+    private void DataLogin(final String userPass, final String userIDnum) {
         DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
         Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userIDnum);
         query.addListenerForSingleValueEvent(new ValueEventListener() {
+            public String TAG;
 
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists())
-                {
-                    for (DataSnapshot user : dataSnapshot.getChildren())
-                    {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot user : dataSnapshot.getChildren()) {
 
                         LoginInfoFirebasedb userLogin = user.getValue(LoginInfoFirebasedb.class);
 
-                        if (userLogin.Password.equals(userPass))
-                        {
+                        if (userLogin.Password.equals(userPass)) {
                             userName = userLogin.Name;
                             Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
-                            new Handler().postDelayed(new Runnable()
-                            {
+                            new Handler().postDelayed(new Runnable() {
                                 @Override
-                                public void run()
-                                {
+                                public void run() {
                                     Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
                                     startActivity(i);
                                     finish();
                                 }
                             }, 2000);
-                        }
-                        else {
+                        } else {
                             Toast.makeText(LogRegMainActivity.this, "Password is wrong", Toast.LENGTH_LONG).show();
                         }
                     }
-                }
-                else {
+                } else {
                     Toast.makeText(LogRegMainActivity.this, "User not found", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
+                Log.d(TAG, "Error trying to log in for " + userIDnum + " " + databaseError);
             }
         });
+    }
 
-        //--------------------------------------------------------------------
+    public void LoginRegister()
+    {
+        Intent intent = new Intent(this, LoginRegister.class);
+        startActivity(intent);
+        finish();
+    }
+}
+
+
+//--------------------------------------------------------------------
 
         /*DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
@@ -184,7 +187,6 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                 Log.d(TAG, "Error trying to log in for " + userIDnum + " " + databaseError);
             }
         });*/
-    }
         /*boolean signedUp;
         boolean finalCheck;
 
@@ -246,10 +248,3 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         }*/
 
 
-    public void LoginRegister()
-    {
-        Intent intent = new Intent(this, LoginRegister.class);
-        startActivity(intent);
-        finish();
-    }
-}
