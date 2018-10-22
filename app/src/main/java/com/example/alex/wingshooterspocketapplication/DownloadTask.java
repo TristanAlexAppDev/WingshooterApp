@@ -137,6 +137,8 @@ public class DownloadTask
                         //apkStorage = new File(Environment.DIRECTORY_DOCUMENTS + "/" + "WINGPOCKAPP FILES");
 
 
+
+
                 //If File is not present create directory
                 if (!apkStorage.exists()) {
                     apkStorage.mkdir();
@@ -159,6 +161,8 @@ public class DownloadTask
                 int len1 = 0;//init length
                 while ((len1 = is.read(buffer)) != -1) {
                     fos.write(buffer, 0, len1);//Write new file
+
+
                 }
 
                 //Close all connection after doing task
