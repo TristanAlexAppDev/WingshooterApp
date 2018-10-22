@@ -35,6 +35,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log_reg_main);
+        getSupportActionBar().setTitle("Welcome");
 
         Button btnLogin = findViewById(R.id.btnLog);
         btnLogin.setOnClickListener(this);

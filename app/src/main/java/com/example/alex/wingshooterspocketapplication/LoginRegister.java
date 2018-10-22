@@ -37,13 +37,14 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public String Initials= SendEmail.userInitials;
     public String IDNum = SendEmail.userIDNums;
     public String Email= SendEmail.userEmails;
-
+/*
     public String UserDOB = MailSenderActivity.userDOB;
     public String UserName = MailSenderActivity.userName;
     public String UserSurname= MailSenderActivity.userSurname;
     public String UserInitials= MailSenderActivity.userInitial;
     public String UserIDNum = MailSenderActivity.userIDNum;
     public String UserEmail= MailSenderActivity.userEmail;
+    */
 
 
 
@@ -71,6 +72,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
+        getSupportActionBar().setTitle("Sign Up");
 
         edtTxtDate = findViewById(R.id.edtTxtDate);
         edtTxtName = findViewById(R.id.edtTxtName);
@@ -91,12 +93,12 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         IDNum = edtTextIDNum.getText().toString();
         Email = edtTextEmail.getText().toString();
 
-        UserDOB = edtTxtDate.getText().toString();
+       /* UserDOB = edtTxtDate.getText().toString();
         UserName = edtTxtName.getText().toString();
         UserSurname = edtTxtSurName.getText().toString();
         UserInitials = edtTxtInitial.getText().toString();
         UserIDNum = edtTextIDNum.getText().toString();
-        UserEmail = edtTextEmail.getText().toString();
+        UserEmail = edtTextEmail.getText().toString();*/
 
 
 
@@ -106,7 +108,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         File dir = new File(path);
         dir.mkdirs();
     }
-
+/*
     public void buttonbtnSave (View view)
 
     {
@@ -224,11 +226,5 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> ec1942b0d50448ed349b238a757a579cae95198c
+*/
 }

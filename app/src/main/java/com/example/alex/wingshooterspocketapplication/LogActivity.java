@@ -12,7 +12,7 @@ public class LogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
         /* Setting up the drop down menu for the bird age*/
-        setTitle("LOG ACTIVITY");
+        getSupportActionBar().setTitle("Log your Findings");
 
         Spinner AgeSpin = (Spinner) findViewById(R.id.spnAge);
 

@@ -30,18 +30,18 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.android.support:design:27.1.1'
     implementation files('libs/additionnal.jar')
-<<<<<<< HEAD
+
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation files('libs/android-activation-1.6.2.jar')
     implementation files('libs/android-activation-1.6.2.jar')
     implementation files('libs/javax.mail-api-1.4.7.jar.zip')
     implementation files('libs/mail.jar')
-=======
+
     implementation files('libs/mail.jar')
     implementation 'com.google.firebase:firebase-core:16.0.1'
     implementation files('libs/android-activation-1.6.2.jar')
     implementation files('libs/android-activation-1.6.2.jar')
->>>>>>> ec1942b0d50448ed349b238a757a579cae95198c
+
 }
 
 apply plugin: 'com.google.gms.google-services'

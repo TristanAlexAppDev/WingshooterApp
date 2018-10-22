@@ -36,6 +36,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__screen);
+        getSupportActionBar().setTitle("The Hub");
 
         Button btnNAct = findViewById(R.id.btnNewActivity);
         btnNAct.setOnClickListener(this);
