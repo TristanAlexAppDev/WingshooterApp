@@ -131,26 +131,26 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
                         if (userLogin.Password.equals(userPass))
                         {
-                            if (userLogin.certifiedUser.isEmpty())
+                            if (userLogin.certNoYes.equals("Yes") || userLogin.certifiedUser.equals("Yes"))
+                            {
+                                idNum = userLogin.IDNumber;
+                                userName = userLogin.Name;
+                                lastName = userLogin.Surname;
+                                Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                                        startActivity(i);
+                                        finish();
+                                    }
+                                }, 1750);
+                            }
+                            else
                             {
                                 Toast.makeText(LogRegMainActivity.this, "User not registered, please register first.", Toast.LENGTH_LONG).show();
                                 TxtIDNUMlog.setText("");
                                 edttxtPassword.setText("");
-                            }
-                            else
-                            {
-                               idNum = userLogin.IDNumber;
-                               userName = userLogin.Name;
-                               lastName = userLogin.Surname;
-                               Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
-                               new Handler().postDelayed(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
-                                            startActivity(i);
-                                            finish();
-                                        }
-                                    }, 1750);
                             }
                         }
                         else
