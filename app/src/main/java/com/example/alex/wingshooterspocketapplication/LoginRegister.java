@@ -1,16 +1,21 @@
 package com.example.alex.wingshooterspocketapplication;
 
 import android.content.Intent;
-import android.os.Environment;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class LoginRegister extends AppCompatActivity implements View.OnClickListener
@@ -21,18 +26,6 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     public TextView edtTextEmail;
     public TextView edttxtPass;
     public TextView edttxtPass2;
-
-/*
-    public String UserDOB = MailSenderActivity.userDOB;
-    public String UserName = MailSenderActivity.userName;
-    public String UserSurname= MailSenderActivity.userSurname;
-    public String UserInitials= MailSenderActivity.userInitial;
-    public String UserIDNum = MailSenderActivity.userIDNum;
-    public String UserEmail= MailSenderActivity.userEmail;
-    */
-
-
-    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -65,8 +58,11 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
 
     public void InfoCheck()
     {
-        String userID = edtTextIDNum.getText().toString();
-        if (edttxtPass.equals("") || edttxtPass2.equals("") || edtTextEmail.equals("") || edtTextIDNum.equals(""))
+        String userID = "ID" + edtTextIDNum.getText().toString();
+        String pass1 = edttxtPass.getText().toString();
+        String pass2 = edttxtPass2.getText().toString();
+        String email = edtTextEmail.getText().toString();
+        if (pass1.equals("") || pass2.equals("") || userID.equals("")|| email.equals(""))
         {
             Toast.makeText(getApplicationContext(), "Some fields are missing, please try again", Toast.LENGTH_LONG).show();
             edtTextIDNum.setText("");
@@ -76,11 +72,9 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         }
         else
         {
-            if (edttxtPass.equals(edttxtPass2))
+            if (pass1.matches(pass2))
             {
-
-
-                searchData();
+                searchData(userID, pass1, email);
             }
             else
             {
@@ -89,22 +83,70 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
                 edttxtPass.setText("");
             }
         }
+    }
 
+    private void searchData(final String userID, final String pass1, final String email)
+    {
+        final DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
+        Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userID);
+        query.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            public String TAG;
 
-
-
-
-
-
-        Toast.makeText(getApplicationContext(), "Profile registered for the app, please Login.", Toast.LENGTH_LONG).show();
-        new Handler().postDelayed(new Runnable() {
             @Override
-            public void run() {
-                Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
-                startActivity(i);
-                finish();
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    for (DataSnapshot user : dataSnapshot.getChildren())
+                    {
+                        LoginInfoFirebasedb userLogin = user.getValue(LoginInfoFirebasedb.class);
+
+                        if (userLogin.Password.equals(pass1))
+                        {
+                            if (userLogin.Email.equals(email))
+                            {
+                                fdb.child("userTable").child(userID).child("certifiedUser").setValue("Yes");
+
+                                Toast.makeText(getApplicationContext(), "Profile created, please log in.", Toast.LENGTH_LONG).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
+                                        startActivity(i);
+                                        finish();
+                                    }
+                                }, 1750);
+                            }
+                            else
+                            {
+                                Toast.makeText(LoginRegister.this, "Emails do not match", Toast.LENGTH_LONG).show();
+                                edtTextEmail.setText("");
+                            }
+                        }
+                        else {
+                            Toast.makeText(LoginRegister.this, "Password does not match", Toast.LENGTH_LONG).show();
+                            edttxtPass.setText("");
+                            edttxtPass2.setText("");
+                            edtTextEmail.setText("");
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(LoginRegister.this, "ID number not found, Please contact Wingshooters", Toast.LENGTH_LONG).show();
+                    edtTextEmail.setText("");
+                    edttxtPass2.setText("");
+                    edttxtPass.setText("");
+                    edtTextIDNum.setText("");
+                }
             }
-        }, 1500);
+
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
+                Log.d(TAG, "Error trying to register profile" + databaseError);
+            }
+        });
     }
 }
 /*
