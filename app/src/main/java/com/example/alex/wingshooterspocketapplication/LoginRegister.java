@@ -224,8 +224,11 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> ec1942b0d50448ed349b238a757a579cae95198c
 }
