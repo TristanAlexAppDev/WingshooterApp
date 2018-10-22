@@ -2,17 +2,26 @@ package com.example.alex.wingshooterspocketapplication;
 
 import android.app.DownloadManager;
 import android.app.VoiceInteractor;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.DocumentsContract;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Layout;
+import android.util.AndroidException;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.github.barteksc.pdfviewer.PDFView;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,6 +36,19 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 {
     public TextView txtUserLoggedIn;
     public static int otherName;
+
+    public PDFView pdfView1;
+    public ConstraintLayout viewPdf1;
+    public ConstraintLayout butView1;
+
+    public PDFView pdfView2;
+    public ConstraintLayout viewPdf2;
+    public ConstraintLayout butView2;
+
+    public PDFView pdfView3;
+    public ConstraintLayout viewPdf3;
+    public ConstraintLayout butView3;
+
 
 
     public String userName = LogRegMainActivity.userName;
@@ -56,9 +78,36 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Button btnNoti = findViewById(R.id.btnNotification);
         btnNoti.setOnClickListener(this);
 
+
+        Button btnCPdf1 = findViewById(R.id.closePdf1);
+        btnCPdf1.setOnClickListener(this);
+
+        Button btnCPdf2 = findViewById(R.id.closePdf2);
+        btnCPdf2.setOnClickListener(this);
+
+        Button btnCPdf3 = findViewById(R.id.closePdf3);
+        btnCPdf3.setOnClickListener(this);
+
         txtUserLoggedIn = findViewById(R.id.txtHomeScreen);
         txtUserLoggedIn.setText("Welcome " + userName);
+
+        pdfView1=findViewById(R.id.pdfv1);
+        viewPdf1 = findViewById(R.id.pdView1);
+        butView1 = findViewById(R.id.conLayBtn);
+
+        pdfView2=findViewById(R.id.pdfv2);
+        viewPdf2 = findViewById(R.id.pdView2);
+        butView2= findViewById(R.id.conLayBtn);
+
+        pdfView3=findViewById(R.id.pdfv3);
+        viewPdf3 = findViewById(R.id.pdView3);
+        butView3 = findViewById(R.id.conLayBtn);
+
+
+
     }
+
+
 
     @Override
     public void onClick(View v)
@@ -88,6 +137,19 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
             case  R.id.btnNotification:
                 downNot();
                 break;
+
+            case R.id.closePdf1:
+                closepdf();
+                break;
+
+            case R.id.closePdf2:
+                closepdf();
+                break;
+
+            case R.id.closePdf3:
+                closepdf();
+                break;
+
         }
 
     }
@@ -99,13 +161,6 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         finish();
     }
 
-    public void HSProvinceSelection()
-    {
-        String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
-        new DownloadTask(Home_Screen.this, URL);
-        otherName = 3;
-
-    }
 
     public void gamebirdidmain()
     {
@@ -121,22 +176,80 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         finish();
     }
 
+    public void HSProvinceSelection()
+    {
+        File fileP = new File("/sdcard/WINGPOCKAPP FILES/WingShootersHuntSeasons.pdf");
+
+        if (fileP.exists()) {
+            Uri path3 = Uri.fromFile(fileP);
+            pdfView3.fromUri(path3).load();
+            viewPdf3.setVisibility(View.VISIBLE);
+            butView3.setVisibility(View.INVISIBLE);
+
+        }
+
+        else {
+            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
+            new DownloadTask(Home_Screen.this, URL);
+            otherName = 3;
+        }
+
+
+    }
+
     public void downMag()
     {
+        File file = new File("/sdcard/WINGPOCKAPP FILES/WingShootersMagazine.pdf");
+
+        if (file.exists()) {
+            Uri path1 = Uri.fromFile(file);
+            pdfView1.fromUri(path1).load();
+            viewPdf1.setVisibility(View.VISIBLE);
+            butView1.setVisibility(View.INVISIBLE);
+
+        }
+
+        else {
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
         otherName = 1;
+        }
 
     }
 
     public void downNot()
     {
-        String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
-        new DownloadTask(Home_Screen.this, URL);
-        otherName = 2;
+        File fileN = new File("/sdcard/WINGPOCKAPP FILES/WingShootersNotifications.pdf");
 
+        if (fileN.exists()) {
+            Uri path2 = Uri.fromFile(fileN);
+            pdfView2.fromUri(path2).load();
+            viewPdf2.setVisibility(View.VISIBLE);
+            butView2.setVisibility(View.INVISIBLE);
 
+        }
+
+        else {
+            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
+            new DownloadTask(Home_Screen.this, URL);
+            otherName = 2;
+        }
     }
+
+
+
+    public void closepdf()
+    {
+
+        Intent intent = new Intent(this,Home_Screen.class);
+        startActivity(intent);
+
+        finish();
+    }
+
+
+
+
 
 
 }
