@@ -2,6 +2,7 @@ package com.example.alex.wingshooterspocketapplication;
 
 import android.content.Intent;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,31 +11,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
-public class LoginRegister extends AppCompatActivity implements View.OnClickListener {
+
+public class LoginRegister extends AppCompatActivity implements View.OnClickListener
+{
     //variables for login activity
-    public TextView edtTxtDate;
-    public TextView edtTxtName;
-    public TextView edtTxtSurName;
-    public TextView edtTxtInitial;
+
     public TextView edtTextIDNum;
     public TextView edtTextEmail;
-    public TextView txtLoad;
-    public Button btnSave;
-    public Button btnLoad;
+    public TextView edttxtPass;
+    public TextView edttxtPass2;
 
-
-    public String Date = SendEmail.userDOBs;
-    public String Name =SendEmail.userNames;
-    public String Surname= SendEmail.userSurnames;
-    public String IDNum = SendEmail.userIDNums;
 /*
     public String UserDOB = MailSenderActivity.userDOB;
     public String UserName = MailSenderActivity.userName;
@@ -45,61 +32,81 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     */
 
 
-
-
     public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnCreateReg:
-                SendEmail();
-                break;
-
-        }
-    }
-    public void SendEmail() {
-        Intent intent = new Intent(this, SendEmail.class);
-        startActivity(intent);
-        finish();
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
-        getSupportActionBar().setTitle("Sign Up");
+        getSupportActionBar().setTitle("Register for App");
 
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);
-
-        btnSave = findViewById(R.id.btnSave);
-
-
-
-
-        Date = edtTxtDate.getText().toString();
-        Name = edtTxtName.getText().toString();
-        Surname = edtTxtSurName.getText().toString();
-        IDNum = edtTextIDNum.getText().toString();
-
-       /* UserDOB = edtTxtDate.getText().toString();
-        UserName = edtTxtName.getText().toString();
-        UserSurname = edtTxtSurName.getText().toString();
-        UserInitials = edtTxtInitial.getText().toString();
-        UserIDNum = edtTextIDNum.getText().toString();
-        UserEmail = edtTextEmail.getText().toString();*/
-
-
+        edttxtPass = findViewById(R.id.edttxtPass1);
+        edttxtPass2 = findViewById(R.id.edttxtPass2);
 
         Button btnCreateFile = findViewById(R.id.btnCreateReg);
         btnCreateFile.setOnClickListener(this);
 
-        File dir = new File(path);
-        dir.mkdirs();
+        //File dir = new File(path);
+        //dir.mkdirs();
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnCreateReg:
+                InfoCheck();
+                break;
+
+        }
+    }
+
+    public void InfoCheck()
+    {
+        String userID = edtTextIDNum.getText().toString();
+        if (edttxtPass.equals("") || edttxtPass2.equals("") || edtTextEmail.equals("") || edtTextIDNum.equals(""))
+        {
+            Toast.makeText(getApplicationContext(), "Some fields are missing, please try again", Toast.LENGTH_LONG).show();
+            edtTextIDNum.setText("");
+            edttxtPass2.setText("");
+            edttxtPass.setText("");
+            edtTextEmail.setText("");
+        }
+        else
+        {
+            if (edttxtPass.equals(edttxtPass2))
+            {
+
+
+                searchData();
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_LONG).show();
+                edttxtPass2.setText("");
+                edttxtPass.setText("");
+            }
+        }
+
+
+
+
+
+
+
+        Toast.makeText(getApplicationContext(), "Profile registered for the app, please Login.", Toast.LENGTH_LONG).show();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }, 1500);
+    }
+}
 /*
     public void buttonbtnSave (View view)
 
@@ -219,4 +226,3 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         return array;
     }
 */
-}
