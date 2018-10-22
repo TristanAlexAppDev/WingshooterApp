@@ -175,15 +175,15 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         });
     }
 
-<<<<<<< HEAD
+
         Query query = fdb.child("");
-=======
+
     public void LoginRegister()
     {
         Intent intent = new Intent(this, LoginRegister.class);
         startActivity(intent);
         finish();
->>>>>>> 704059f19c4f9598e622c87a5b8d87c3d0b4a37d
+
     }
 }
 
