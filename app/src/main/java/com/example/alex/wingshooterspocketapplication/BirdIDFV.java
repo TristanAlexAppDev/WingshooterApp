@@ -18,6 +18,7 @@ public class BirdIDFV extends AppCompatActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bird_idfv);
+        getSupportActionBar().setTitle("Types of Birds");
 
         gameVF = findViewById(R.id.FlipBirrds);
 

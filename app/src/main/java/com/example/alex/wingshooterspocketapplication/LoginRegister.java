@@ -1,112 +1,155 @@
 package com.example.alex.wingshooterspocketapplication;
 
 import android.content.Intent;
-import android.os.Environment;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-public class LoginRegister extends AppCompatActivity implements View.OnClickListener {
+
+public class LoginRegister extends AppCompatActivity implements View.OnClickListener
+{
     //variables for login activity
-    public TextView edtTxtDate;
-    public TextView edtTxtName;
-    public TextView edtTxtSurName;
-    public TextView edtTxtInitial;
+
     public TextView edtTextIDNum;
     public TextView edtTextEmail;
-    public TextView txtLoad;
-    public Button btnSave;
-    public Button btnLoad;
-
-
-    public String Date = SendEmail.userDOBs;
-    public String Name =SendEmail.userNames;
-    public String Surname= SendEmail.userSurnames;
-    public String Initials= SendEmail.userInitials;
-    public String IDNum = SendEmail.userIDNums;
-    public String Email= SendEmail.userEmails;
-
-    public String UserDOB = MailSenderActivity.userDOB;
-    public String UserName = MailSenderActivity.userName;
-    public String UserSurname= MailSenderActivity.userSurname;
-    public String UserInitials= MailSenderActivity.userInitial;
-    public String UserIDNum = MailSenderActivity.userIDNum;
-    public String UserEmail= MailSenderActivity.userEmail;
-
-
-
-
-    public String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/UserInfo";
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btnCreateReg:
-                MailSenderActivity();
-                break;
-
-        }
-    }
-    public void MailSenderActivity() {
-        Intent intent = new Intent(this, MailSenderActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
+    public TextView edttxtPass;
+    public TextView edttxtPass2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
+        getSupportActionBar().setTitle("Register for App");
 
-        edtTxtDate = findViewById(R.id.edtTxtDate);
-        edtTxtName = findViewById(R.id.edtTxtName);
-        edtTxtSurName = findViewById(R.id.edtTxtSurName);
-        edtTxtInitial = findViewById(R.id.edtTxtInitials);
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);
-
-        btnSave = findViewById(R.id.btnSave);
-
-
-
-
-        Date = edtTxtDate.getText().toString();
-        Name = edtTxtName.getText().toString();
-        Surname = edtTxtSurName.getText().toString();
-        Initials = edtTxtInitial.getText().toString();
-        IDNum = edtTextIDNum.getText().toString();
-        Email = edtTextEmail.getText().toString();
-
-        UserDOB = edtTxtDate.getText().toString();
-        UserName = edtTxtName.getText().toString();
-        UserSurname = edtTxtSurName.getText().toString();
-        UserInitials = edtTxtInitial.getText().toString();
-        UserIDNum = edtTextIDNum.getText().toString();
-        UserEmail = edtTextEmail.getText().toString();
-
-
+        edttxtPass = findViewById(R.id.edttxtPass1);
+        edttxtPass2 = findViewById(R.id.edttxtPass2);
 
         Button btnCreateFile = findViewById(R.id.btnCreateReg);
         btnCreateFile.setOnClickListener(this);
 
-        File dir = new File(path);
-        dir.mkdirs();
+        //File dir = new File(path);
+        //dir.mkdirs();
     }
 
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btnCreateReg:
+                InfoCheck();
+                break;
+
+        }
+    }
+
+    public void InfoCheck()
+    {
+        String userID = "ID" + edtTextIDNum.getText().toString();
+        String pass1 = edttxtPass.getText().toString();
+        String pass2 = edttxtPass2.getText().toString();
+        String email = edtTextEmail.getText().toString();
+        if (pass1.equals("") || pass2.equals("") || userID.equals("")|| email.equals(""))
+        {
+            Toast.makeText(getApplicationContext(), "Some fields are missing, please try again", Toast.LENGTH_LONG).show();
+            edtTextIDNum.setText("");
+            edttxtPass2.setText("");
+            edttxtPass.setText("");
+            edtTextEmail.setText("");
+        }
+        else
+        {
+            if (pass1.matches(pass2))
+            {
+                searchData(userID, pass1, email);
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Passwords do not match", Toast.LENGTH_LONG).show();
+                edttxtPass2.setText("");
+                edttxtPass.setText("");
+            }
+        }
+    }
+
+    private void searchData(final String userID, final String pass1, final String email)
+    {
+        final DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
+        Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userID);
+        query.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            public String TAG;
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    for (DataSnapshot user : dataSnapshot.getChildren())
+                    {
+                        LoginInfoFirebasedb userLogin = user.getValue(LoginInfoFirebasedb.class);
+
+                        if (userLogin.Password.equals(pass1))
+                        {
+                            if (userLogin.Email.equals(email))
+                            {
+                                fdb.child("userTable").child(userID).child("certifiedUser").setValue("Yes");
+
+                                Toast.makeText(getApplicationContext(), "Profile created, please log in.", Toast.LENGTH_LONG).show();
+                                new Handler().postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
+                                        startActivity(i);
+                                        finish();
+                                    }
+                                }, 1750);
+                            }
+                            else
+                            {
+                                Toast.makeText(LoginRegister.this, "Emails do not match", Toast.LENGTH_LONG).show();
+                                edtTextEmail.setText("");
+                            }
+                        }
+                        else {
+                            Toast.makeText(LoginRegister.this, "Password does not match", Toast.LENGTH_LONG).show();
+                            edttxtPass.setText("");
+                            edttxtPass2.setText("");
+                            edtTextEmail.setText("");
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(LoginRegister.this, "ID number not found, Please contact Wingshooters", Toast.LENGTH_LONG).show();
+                    edtTextEmail.setText("");
+                    edttxtPass2.setText("");
+                    edttxtPass.setText("");
+                    edtTextIDNum.setText("");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError)
+            {
+                Log.d(TAG, "Error trying to register profile" + databaseError);
+            }
+        });
+    }
+}
+/*
     public void buttonbtnSave (View view)
 
     {
@@ -224,4 +267,4 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
         catch (IOException e) {e.printStackTrace();}
         return array;
     }
-}
+*/

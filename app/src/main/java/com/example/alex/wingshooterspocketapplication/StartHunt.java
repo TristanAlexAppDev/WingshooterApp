@@ -12,6 +12,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_hunt);
+        getSupportActionBar().setTitle("Active Hunt");
 
         Button btnAdding = findViewById(R.id.BtnAdd);
         btnAdding.setOnClickListener(this);

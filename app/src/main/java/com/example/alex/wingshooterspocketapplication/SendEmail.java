@@ -20,34 +20,37 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Date;
 
-public class SendEmail extends AppCompatActivity implements View.OnClickListener {
-    public static String userDOB;
-    public static String userName;
-    public static String userSurname;
-    public static String userInitial;
-    public static String userIDNum;
-    public static String userEmail;
+public class SendEmail extends AppCompatActivity implements View.OnClickListener
+{
+    public static String userName = LogRegMainActivity.userName;
+    public static String userSurname = LogRegMainActivity.lastName;
+    public static String userIDNum = LogRegMainActivity.idNum;
 
     Button button;
     EditText mEditText;
     TextView txtView;
     EditText textInput;
 
+    public String testString = "this is a test";
     public static String userDOBs;
+
+
     public static String userNames;
     public static String userSurnames;
-    public static String userInitials;
     public static String userIDNums;
-    public static String userEmails;
 
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
-    String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
+
+    String textContent = userDOBs + " " + userNames + " " + userSurnames +" " + userIDNums;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendemail);
+
+        getSupportActionBar().setTitle("Send Information");
 
 
 
@@ -65,6 +68,8 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         final EditText time = (EditText)findViewById(R.id.time);
         Button button = (Button)findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() */
+
+
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -72,19 +77,20 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v)
             {
-                String DateOfBirth = userDOB;
-                String FirstName = userName;
-                String Surname = userSurname;
-                String Initials = userInitials;
-                String IDNum = userIDNum;
-                String Email = userEmail;
-                String emailAddressList[] = {"emailAddress"};
-                String mycontent = DateOfBirth + "," + FirstName + "," + Surname + "," + Initials + "," + IDNum + "," + Email;
+                String DateOfBirth = userDOBs;
+                String FirstName = userNames;
+                String Surname = userSurnames;
+                String IDNum = userIDNums;
+                String emailAddressList[] = {"wingshooterapp@gmail.com"};
+
+                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + IDNum + "\n" + testString;
+
                 Intent email = new Intent(Intent.ACTION_SEND);
+                email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
-                startActivity(Intent.createChooser(email, "Select Sender:"));
+                startActivity(Intent.createChooser(email, "Select Your Email Client:"));
             }
         });
     }
