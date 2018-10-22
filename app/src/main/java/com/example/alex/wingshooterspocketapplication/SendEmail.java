@@ -21,24 +21,23 @@ import java.io.InputStreamReader;
 import java.sql.Date;
 
 public class SendEmail extends AppCompatActivity implements View.OnClickListener {
-    public static String userDOB;
     public static String userName;
     public static String userSurname;
-    public static String userInitial;
     public static String userIDNum;
-    public static String userEmail;
 
     Button button;
     EditText mEditText;
     TextView txtView;
     EditText textInput;
+<<<<<<< HEAD
     public String testString = "this is a test";
     public static String userDOBs;
+=======
+
+>>>>>>> a0e8f2f6f2f33a17e9033404da6a9f7735904f24
     public static String userNames;
     public static String userSurnames;
-    public static String userInitials;
     public static String userIDNums;
-    public static String userEmails;
 
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
@@ -49,7 +48,27 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendemail);
 
+<<<<<<< HEAD
         getSupportActionBar().setTitle("Send Information");
+=======
+
+
+
+        //String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
+        //EditText editText = (EditText) findViewById(R.id.editText);
+       // editText.setText("User details" + "\n" + "Date of Birth - "+userDOBs+ "\n" + "First Name - " + userNames + "\n" + "Surname - " + userSurnames + "\n" + "Initials - " + userInitials + "\n" + "ID Number - " + userIDNums + "\n" + "Email - "+userEmails);
+       /* TextView name1 = (TextView)findViewById(R.id.name1);
+        final EditText name = (EditText)findViewById(R.id.name);
+        TextView email1 = (TextView)findViewById(R.id.email1);
+        final EditText email = (EditText)findViewById(R.id.email);
+        TextView date1 =(TextView)findViewById(R.id.date1);
+        final EditText date = (EditText)findViewById(R.id.date);
+        TextView time1 = (TextView)findViewById(R.id.time1);
+        final EditText time = (EditText)findViewById(R.id.time);
+        Button button = (Button)findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() */
+
+>>>>>>> a0e8f2f6f2f33a17e9033404da6a9f7735904f24
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
