@@ -116,6 +116,53 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
         DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
 
         Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userIDnum);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists())
+                {
+                    for (DataSnapshot user : dataSnapshot.getChildren())
+                    {
+
+                        LoginInfoFirebasedb userLogin = user.getValue(LoginInfoFirebasedb.class);
+
+                        if (userLogin.Password.equals(userPass))
+                        {
+                            userName = userLogin.Name;
+                            Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
+                            new Handler().postDelayed(new Runnable()
+                            {
+                                @Override
+                                public void run()
+                                {
+                                    Intent i = new Intent(LogRegMainActivity.this, Home_Screen.class);
+                                    startActivity(i);
+                                    finish();
+                                }
+                            }, 2000);
+                        }
+                        else {
+                            Toast.makeText(LogRegMainActivity.this, "Password is wrong", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                }
+                else {
+                    Toast.makeText(LogRegMainActivity.this, "User not found", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        //--------------------------------------------------------------------
+
+        /*DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
+
+        Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userIDnum);
         query.addListenerForSingleValueEvent(new ValueEventListener()
         {
             public String TAG;
@@ -123,10 +170,10 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
             {
-                List<String> userList = new ArrayList<String>();
+                List<LoginInfoFirebasedb> userList = new ArrayList<LoginInfoFirebasedb>();
                 for (DataSnapshot user : dataSnapshot.getChildren())
                 {
-                    userList.add(dataSnapshot.getValue(userList.class));
+                    userList.add(dataSnapshot.getValue(LoginInfoFirebasedb.class));
                 }
                 Log.d(TAG, "no user found of that name " + userList.size());
             }
@@ -136,7 +183,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             {
                 Log.d(TAG, "Error trying to log in for " + userIDnum + " " + databaseError);
             }
-        });
+        });*/
     }
         /*boolean signedUp;
         boolean finalCheck;
