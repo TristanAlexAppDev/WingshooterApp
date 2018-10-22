@@ -4,7 +4,7 @@ public class LoginInfoFirebasedb
 {
     public String DateJoined;
 
-    public  int DedicatedHunter;
+    public  String DedicatedHunter;
 
     public  String Email;
 
