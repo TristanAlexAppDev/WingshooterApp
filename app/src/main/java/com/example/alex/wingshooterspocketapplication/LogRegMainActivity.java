@@ -26,6 +26,8 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     public TextView edttxtPassword;
     public Button btnLog;
     public static String userName = "";
+    public static String idNum = "";
+    public static String lastName = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -131,7 +133,9 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
                         {
                             if (userLogin.certifiedUser.equals("Yes"))
                             {
+                                idNum = userLogin.IDNumber;
                                 userName = userLogin.Name;
+                                lastName = userLogin.Surname;
                                 Toast.makeText(getApplicationContext(), "Welcome " + userName, Toast.LENGTH_LONG).show();
                                 new Handler().postDelayed(new Runnable()
                                 {
