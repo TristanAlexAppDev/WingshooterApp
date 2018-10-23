@@ -165,6 +165,32 @@
     </com.github.barteksc.pdfviewer.PDFView>
 </android.support.constraint.ConstraintLayout>
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pdView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="invisible">
+
+        <Button
+            android:id="@+id/closePdf3"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+
+            android:background="@android:color/transparent"
+            android:text="X"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfv3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+        </com.github.barteksc.pdfviewer.PDFView>
+    </android.support.constraint.ConstraintLayout>
+
 
 
 </android.support.constraint.ConstraintLayout>
