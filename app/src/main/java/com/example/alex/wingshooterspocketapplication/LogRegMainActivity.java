@@ -176,7 +176,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     }
 
 
-        Query query = fdb.child("");
+
 
     public void LoginRegister()
     {

@@ -184,79 +184,12 @@
 
         <com.github.barteksc.pdfviewer.PDFView
             android:id="@+id/pdfv3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible">
+            android:layout_width="300dp"
+            android:layout_height="113dp"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="44dp"
+            tools:layout_editor_absoluteY="298dp">
 
         </com.github.barteksc.pdfviewer.PDFView>
     </android.support.constraint.ConstraintLayout>
-<<<<<<< HEAD
-
-    <Button
-        android:id="@+id/btnNewActivity"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="36dp"
-        android:text="New Activity"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHomeScreen" />
-
-    <Button
-        android:id="@+id/btnHuntingSeasons"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="92dp"
-        android:layout_marginEnd="12dp"
-        android:text="Hunting Seasons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEdtProf" />
-
-    <Button
-        android:id="@+id/btnMyHunts"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
-        android:layout_marginEnd="12dp"
-        android:text="My Hunts"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHuntingSeasons" />
-
-    <Button
-        android:id="@+id/btnGamebird"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="144dp"
-        android:text="Game Bird I.D"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnNewActivity" />
-=======
->>>>>>> db6727e9ddb5522669385800905e46db161b2a3d
-
-
-<<<<<<< HEAD
-    <Button
-        android:id="@+id/btnNotification"
-        android:layout_width="119dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="8dp"
-        android:text="Notification"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtHomeScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:text="Welcome X"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-=======
->>>>>>> db6727e9ddb5522669385800905e46db161b2a3d
-
 </android.support.constraint.ConstraintLayout>
