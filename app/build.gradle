@@ -47,7 +47,7 @@ dependencies {
     implementation files('libs/javax.mail-api-1.4.7.jar.zip')
     implementation files('libs/mail.jar')
 
-    implementation 'com.google.android.gms:play-services-analytics:15.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:16.0.4'
     implementation 'com.google.android.gms:play-services-tagmanager:16.0.4'
 
     implementation files('libs/mail.jar')
@@ -57,11 +57,12 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-database:16.0.3'
 
-    implementation "com.google.firebase:firebase-messaging:17.0.0"
-    implementation "com.google.firebase:firebase-core:16.0.0"
-    implementation "com.google.firebase:firebase-config:16.0.0"
-    implementation 'com.google.firebase:firebase-perf:16.0.0'
+    implementation "com.google.firebase:firebase-messaging:17.3.4"
+    implementation "com.google.firebase:firebase-core:16.0.4"
+    implementation "com.google.firebase:firebase-config:16.1.0"
+    implementation 'com.google.firebase:firebase-perf:16.1.2'
+
 }
 apply plugin: 'com.google.gms.google-services'
-//GoogleServicesPlugin.config.disableVersionCheck = true
+com.google.gms.googleservices.GoogleServicesPlugin.config.disableVersionCheck = true
 
