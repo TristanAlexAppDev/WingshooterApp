@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LogRegMainActivity"
-    android:background="@drawable/wallpaper1">
+    android:background="@drawable/wingshooter"
+    >
 
     <Button
         android:id="@+id/btnReg"
@@ -32,7 +33,9 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
+        android:background="@color/colorWingshooter"/>
 
     <EditText
         android:id="@+id/TxtIDNUMlog"
