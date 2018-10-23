@@ -8,7 +8,7 @@
     android:visibility="visible"
     tools:context=".Home_Screen">
 
-<<<<<<< HEAD
+
     <android.support.constraint.ConstraintLayout
         android:id="@+id/conLayBtn"
         android:layout_width="match_parent"
@@ -190,7 +190,7 @@
 
         </com.github.barteksc.pdfviewer.PDFView>
     </android.support.constraint.ConstraintLayout>
-=======
+
     <Button
         android:id="@+id/btnNewActivity"
         android:layout_width="352dp"
@@ -283,6 +283,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
->>>>>>> 704059f19c4f9598e622c87a5b8d87c3d0b4a37d
+
 
 </android.support.constraint.ConstraintLayout>
