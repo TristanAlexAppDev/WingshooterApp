@@ -31,18 +31,8 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
     TextView txtView;
     EditText textInput;
 
-    public String testString = "this is a test";
-    public static String userDOBs;
-
-
-    public static String userNames;
-    public static String userSurnames;
-    public static String userIDNums;
-
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
-
-    String textContent = userDOBs + " " + userNames + " " + userSurnames +" " + userIDNums;
 
 
     @Override
@@ -53,23 +43,6 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         getSupportActionBar().setTitle("Send Information");
 
 
-
-
-        //String textContent = userDOBs +" " + userNames + " " + userSurnames +" "+ userInitials+ " " + userIDNums + " " + userEmails;
-        //EditText editText = (EditText) findViewById(R.id.editText);
-       // editText.setText("User details" + "\n" + "Date of Birth - "+userDOBs+ "\n" + "First Name - " + userNames + "\n" + "Surname - " + userSurnames + "\n" + "Initials - " + userInitials + "\n" + "ID Number - " + userIDNums + "\n" + "Email - "+userEmails);
-       /* TextView name1 = (TextView)findViewById(R.id.name1);
-        final EditText name = (EditText)findViewById(R.id.name);
-        TextView email1 = (TextView)findViewById(R.id.email1);
-        final EditText email = (EditText)findViewById(R.id.email);
-        TextView date1 =(TextView)findViewById(R.id.date1);
-        final EditText date = (EditText)findViewById(R.id.date);
-        TextView time1 = (TextView)findViewById(R.id.time1);
-        final EditText time = (EditText)findViewById(R.id.time);
-        Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() */
-
-
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
 
@@ -77,16 +50,13 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v)
             {
-                String DateOfBirth = userDOBs;
-                String FirstName = userNames;
-                String Surname = userSurnames;
-                String IDNum = userIDNums;
+
                 String emailAddressList[] = {"wingshooterapp@gmail.com"};
 
-                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + IDNum + "\n" + testString;
+                String mycontent ="The user below has registered on the app"+ "\n" + "First name - " + "First name goes here"+ "\n" + "Surname - " + "Surname goes here" + "\n" + "ID Number - " + " ID Number goes here";
 
                 Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
+                email.putExtra(Intent.EXTRA_SUBJECT, "User App Registration");
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
