@@ -40,7 +40,7 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sendemail);
 
-        getSupportActionBar().setTitle("Send Information");
+        getSupportActionBar().setTitle("Verify");
 
 
         Button button = findViewById(R.id.button);

@@ -15,6 +15,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         getSupportActionBar().setTitle("Active Hunt");
 
         Button btnAdding = findViewById(R.id.BtnAdd);
+        Button btnSubmit = findViewById(R.id.btnSubmit);
         btnAdding.setOnClickListener(this);
     }
 
@@ -27,6 +28,9 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
             case R.id.BtnAdd:
                 NewBird();
                 break;
+            case R.id.btnSubmit:
+                EmailHuntInfo();
+                break;
         }
     }
 
@@ -34,7 +38,13 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     {
         Intent intent = new Intent(this, LogActivity.class);
         startActivity(intent);
-        finish();
 
+
+    }
+
+    public void EmailHuntInfo()
+    {
+        Intent intent = new Intent(this,EmailHuntInfo.class);
+        startActivity(intent);
     }
 }
