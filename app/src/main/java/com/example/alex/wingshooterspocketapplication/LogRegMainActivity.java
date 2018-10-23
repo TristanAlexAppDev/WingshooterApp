@@ -1,8 +1,10 @@
 package com.example.alex.wingshooterspocketapplication;
 
 import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +31,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     public static String idNum = "";
     public static String lastName = "";
 
+    @TargetApi(Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -174,9 +177,6 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
             }
         });
     }
-
-
-
 
     public void LoginRegister()
     {

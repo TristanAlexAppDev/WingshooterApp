@@ -106,7 +106,17 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
                         {
                             if (userLogin.Email.equals(email))
                             {
-                                fdb.child("userTable").child(userID).child("certifiedUser").setValue("Yes");
+                                String key = fdb.child("userTable").push().getKey();
+                                //fdb.child("userTable").child(key).child(userID).child("certifiedUser").setValue("Yes");
+
+                                try
+                                {
+                                    fdb.child("userTable").child("userTable/" + key + "/certifiedUser").setValue("Yes");
+                                }
+                                catch (Exception e)
+                                {
+                                    e.printStackTrace();
+                                }
 
                                 Toast.makeText(getApplicationContext(), "Profile created, please log in.", Toast.LENGTH_LONG).show();
                                 new Handler().postDelayed(new Runnable() {
