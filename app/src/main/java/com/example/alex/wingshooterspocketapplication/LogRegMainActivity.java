@@ -182,7 +182,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
     {
         Intent intent = new Intent(this, LoginRegister.class);
         startActivity(intent);
-        finish();
+
 
     }
 }

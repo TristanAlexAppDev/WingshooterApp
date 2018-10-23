@@ -31,18 +31,8 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
     TextView txtView;
     EditText textInput;
 
-    public String testString = "this is a test";
-    public static String userDOBs;
-
-
-    public static String userNames;
-    public static String userSurnames;
-    public static String userIDNums;
-
     private static final String FILE_NAME = "UserInfo.txt";
     private TextView textView = null;
-
-    String textContent = userDOBs + " " + userNames + " " + userSurnames +" " + userIDNums;
 
 
     @Override
@@ -77,16 +67,13 @@ public class SendEmail extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onClick(View v)
             {
-                String DateOfBirth = userDOBs;
-                String FirstName = userNames;
-                String Surname = userSurnames;
-                String IDNum = userIDNums;
+
                 String emailAddressList[] = {"wingshooterapp@gmail.com"};
 
-                String mycontent = userDOBs + "\n" + FirstName + "\n" + Surname + "\n" + IDNum + "\n" + testString;
+                String mycontent ="The user below has registered on the app"+ "\n" + "First name - " + "First name goes here"+ "\n" + "Surname - " + "Surname goes here" + "\n" + "ID Number - " + " ID Number goes here";
 
                 Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
+                email.putExtra(Intent.EXTRA_SUBJECT, "User App Registration");
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
