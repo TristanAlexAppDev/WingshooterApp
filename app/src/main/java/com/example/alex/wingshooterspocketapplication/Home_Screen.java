@@ -159,7 +159,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         Intent intent = new Intent(this,NewHunt.class);
         startActivity(intent);
-        finish();
+
     }
 
 
@@ -167,14 +167,14 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         Intent intent = new Intent(this, BirdIDFV.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void StartHunt()
     {
         Intent intent = new Intent(this, StartHunt.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void HSProvinceSelection()
