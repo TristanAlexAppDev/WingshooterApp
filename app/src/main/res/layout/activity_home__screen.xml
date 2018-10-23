@@ -6,87 +6,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:visibility="visible"
-    tools:context=".Home_Screen">
+    tools:context=".Home_Screen"
+    android:background="@drawable/bluewallpaper">
 
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/conLayBtn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="69dp"
+        tools:layout_editor_absoluteY="0dp">
 
 
         <Button
             android:id="@+id/btnEdtProf"
-            android:layout_width="90dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
+            android:layout_width="110dp"
+            android:layout_height="51dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
             android:text="Profile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/btnMagazine"
-            android:layout_width="100dp"
-            android:layout_height="50dp"
+            android:layout_width="163dp"
+            android:layout_height="64dp"
             android:layout_marginStart="100dp"
-            android:layout_marginEnd="100dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/colorPrimary"
             android:text="Magazine"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.964"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.935" />
 
         <Button
             android:id="@+id/btnNotification"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginBottom="15dp"
+            android:layout_width="163dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="36dp"
+            android:background="@color/colorPrimary"
             android:text="Notification"
+            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnMyHunts"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="15dp"
+            android:layout_width="370dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="My Hunts"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnHuntingSeasons" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.539"
+            android:background="@color/colorBlue"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/btnHuntingSeasons"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="15dp"
+            android:layout_width="370dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="68dp"
+            android:layout_marginBottom="8dp"
             android:text="Hunting Seasons"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnEdtProf" />
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.342"
+            android:background="@color/colorBlue"
+            android:textColor="@android:color/white"/>
 
         <Button
             android:id="@+id/btnGamebird"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="50dp"
+            android:layout_width="370dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Game Bird I.D"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnNewActivity" />
-
-        <Button
-            android:id="@+id/btnReport"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="15dp"
-            android:text="Report"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.731"
+            android:background="@color/colorBlue"
+            android:textColor="@android:color/white"/>
 
         <TextView
             android:id="@+id/txtHomeScreen"
@@ -94,30 +120,37 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
-            android:text="Welcome X"
+            android:text="The Hub"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-
         <Button
             android:id="@+id/btnNewActivity"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="58dp"
+            android:layout_width="370dp"
+            android:layout_height="74dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
             android:text="New Activity"
             android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtHomeScreen" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.149"
+            android:background="@color/colorBlue"
+            android:textColor="@android:color/white"/>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/pdView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/closePdf1"
@@ -134,42 +167,46 @@
             android:id="@+id/pdfv1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="visible">
+            android:visibility="gone">
 
         </com.github.barteksc.pdfviewer.PDFView>
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-    android:id="@+id/pdView2"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:visibility="invisible">
-
-    <Button
-        android:id="@+id/closePdf2"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-
-        android:background="@android:color/transparent"
-        android:text="X"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfv2"
+        android:id="@+id/pdView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="visible">
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="38dp">
 
-    </com.github.barteksc.pdfviewer.PDFView>
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/closePdf2"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+
+            android:background="@android:color/transparent"
+            android:text="X"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfv2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="25dp">
+
+        </com.github.barteksc.pdfviewer.PDFView>
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/pdView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/closePdf3"
