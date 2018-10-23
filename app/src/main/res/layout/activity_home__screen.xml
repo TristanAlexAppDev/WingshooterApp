@@ -184,13 +184,12 @@
 
         <com.github.barteksc.pdfviewer.PDFView
             android:id="@+id/pdfv3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible">
+            android:layout_width="300dp"
+            android:layout_height="113dp"
+            android:visibility="visible"
+            tools:layout_editor_absoluteX="44dp"
+            tools:layout_editor_absoluteY="298dp">
 
         </com.github.barteksc.pdfviewer.PDFView>
     </android.support.constraint.ConstraintLayout>
-
-
-
 </android.support.constraint.ConstraintLayout>
