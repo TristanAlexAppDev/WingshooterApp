@@ -17,4 +17,6 @@ public class LoginInfoFirebasedb
     public  String Surname;
 
     public String certifiedUser;
+
+    public String certNoYes;
 }

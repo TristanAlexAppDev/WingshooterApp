@@ -190,6 +190,7 @@
 
         </com.github.barteksc.pdfviewer.PDFView>
     </android.support.constraint.ConstraintLayout>
+<<<<<<< HEAD
 
     <Button
         android:id="@+id/btnNewActivity"
@@ -229,40 +230,11 @@
         android:text="Game Bird I.D"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnNewActivity" />
+=======
+>>>>>>> db6727e9ddb5522669385800905e46db161b2a3d
 
-    <Button
-        android:id="@+id/btnEdtProf"
-        android:layout_width="97dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:text="Profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnMagazine"
-        android:layout_width="352dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="80dp"
-        android:text="Magazine"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.476"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnReport"
-        android:layout_width="119dp"
-        android:layout_height="57dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="8dp"
-        android:text="Report"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
+<<<<<<< HEAD
     <Button
         android:id="@+id/btnNotification"
         android:layout_width="119dp"
@@ -284,5 +256,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+=======
+>>>>>>> db6727e9ddb5522669385800905e46db161b2a3d
 
 </android.support.constraint.ConstraintLayout>
