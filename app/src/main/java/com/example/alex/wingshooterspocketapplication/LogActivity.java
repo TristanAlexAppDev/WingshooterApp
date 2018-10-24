@@ -23,7 +23,7 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
     public RadioGroup rg;
 
     public int huntID = NewHunt.huntID;
-    public static String[] logs = new String[6];
+    //public static String[] logs = new String[10];
     public String radioSelection = "default";
     public static String NewLog;
 
@@ -134,11 +134,11 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
     {
         DatabaseHelper db = new DatabaseHelper(this);
         boolean result = db.addNewLog(huntID, birdName, ShtORSn, brdAge, numSnORSht, othrAnimORClaySht, AnimShotORClayTypeSht);
-        int count = 0;
+        //int count = 0;
 
         if (result)
         {
-            logs[count] = NewLog;
+            //logs[count] = NewLog;
             Toast.makeText(getApplicationContext(), "New entry into Log is Successful", Toast.LENGTH_LONG).show();
             new Handler().postDelayed(new Runnable() {
                 @Override

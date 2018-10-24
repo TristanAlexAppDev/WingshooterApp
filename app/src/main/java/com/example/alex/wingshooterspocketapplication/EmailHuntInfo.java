@@ -12,14 +12,12 @@ import android.widget.TextView;
 
 import java.io.File;
 
-public class EmailHuntInfo extends AppCompatActivity {
-
-
-
-
+public class EmailHuntInfo extends AppCompatActivity
+{
     public static String userName = LogRegMainActivity.userName;
     public static String userSurname = LogRegMainActivity.lastName;
     public static String userIDNum = LogRegMainActivity.idNum;
+    public static String userHuntLog = StartHunt.huntContent;
 
     Button Send;
     EditText mEditText;

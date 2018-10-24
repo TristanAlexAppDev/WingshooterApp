@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.Arrays;
 
 
@@ -15,7 +14,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     public int huntID = NewHunt.huntID;
     public String hunt = NewHunt.huntName;
     public String huntDate = NewHunt.DateofHunt;
-    public String[] log = LogActivity.logs;
+    public static String huntContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,14 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         txtHeader.setText("Activity name: " + hunt);
 
         TextView txtLog1 = findViewById(R.id.txtReport1);
-        txtLog1.setText(Arrays.toString(log));
+        if (LogActivity.NewLog.equals(""))
+        {
+            txtLog1.setText("");
+        }
+        else {
+            huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
+            txtLog1.setText(huntContent);
+        }
     }
 
 
@@ -54,7 +60,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
     public void NewHuntThing()
     {
-        DatabaseHelper db = new DatabaseHelper(this);
         Intent intent = new Intent(this, LogActivity.class);
         startActivity(intent);
     }
@@ -63,5 +68,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     {
         Intent intent = new Intent(this,EmailHuntInfo.class);
         startActivity(intent);
+        finish();
     }
 }
