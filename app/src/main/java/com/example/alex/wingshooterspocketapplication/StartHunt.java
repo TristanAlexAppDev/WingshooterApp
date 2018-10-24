@@ -32,14 +32,9 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         txtHeader.setText("Activity name: " + hunt);
 
         TextView txtLog1 = findViewById(R.id.txtReport1);
-        if (LogActivity.NewLog.equals(""))
-        {
-            txtLog1.setText("");
-        }
-        else {
-            huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
-            txtLog1.setText(huntContent);
-        }
+        huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
+        txtLog1.setText(huntContent);
+
     }
 
 
