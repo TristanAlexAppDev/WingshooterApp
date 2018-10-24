@@ -47,8 +47,8 @@ public class DatabaseHelper extends SQLiteOpenHelper
                 "\tClub\tTEXT NOT NULL,\n" +
                 "\tProvince\tTEXT NOT NULL,\n" +
                 "\tDistrict\tTEXT NOT NULL,\n" +
-                "\tAdditionalInfo\tTEXT\n" +
-                ");");
+                "\tAdditionalInfo\tTEXT,\n" +
+                "FOREIGN KEY (HuntID) REFERENCES Log (HuntID));");
 
         db.execSQL("CREATE TABLE Log (\n" +
                 "\tHuntID\tINTEGER NOT NULL,\n" +
@@ -56,8 +56,8 @@ public class DatabaseHelper extends SQLiteOpenHelper
                 "\tNumSeen\tINTEGER,\n" +
                 "\tNumShot\tINTEGER,\n" +
                 "\tOtherAnimalORclaySHOT\tTEXT,\n" +
-                "\tPRIMARY KEY(HuntID)\n" +
-                ");");
+                "\tPRIMARY KEY(HuntID),\n" +
+                "FOREIGN KEY (HuntID) REFERENCES myHunts (HuntID));");
     }
 
     @Override
@@ -66,5 +66,50 @@ public class DatabaseHelper extends SQLiteOpenHelper
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME1);
             db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME2);
             onCreate(db);
+    }
+
+    public boolean insertDataTable1(int huntID, String typeStringThing, String actName, String acttype, String huntDate, String huntLocation,
+                              String huntProvince, String huntDist, String tableType, String club)
+    {
+        boolean result;
+        int id = huntID + 1;
+        String query = "INSERT INTO myHunts(HuntID, ActivityName, ActivityType, HuntDate, Location, Club, Province, District, AdditionalInfo)" +
+                    " VALUES(" + id + "," + actName + "," + acttype + "," + huntDate + "," + huntLocation + "," + club + "," + huntProvince + "," + huntDist + "," + typeStringThing + ")";
+
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.equals(true))
+        {
+            result = true;
+            db.close();
+            cursor.close();
+        }
+        else{
+            result = false;
+            db.close();
+            cursor.close();
+        }
+
+        db.close();
+
+        return result;
+    }
+
+    public int getHuntID ()
+    {
+        int result;
+        String query = "SELECT HuntID FROM myHunts ORDER BY huntID DESC LIMIT 1";
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            result = cursor.getInt(cursor.getColumnIndex("HuntID"));
+        }
+        else
+        {
+            result = 0;
+        }
+        db.close();
+        cursor.close();
+        return result;
     }
 }

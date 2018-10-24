@@ -134,7 +134,7 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
                         if (userLogin.Password.equals(userPass))
                         {
-                            if (userLogin.certNoYes.equals("Yes") || userLogin.certifiedUser.equals("Yes"))
+                            if (userLogin.certifiedUser.equals("Yes"))
                             {
                                 idNum = userLogin.IDNumber;
                                 userName = userLogin.Name;
@@ -180,10 +180,11 @@ public class LogRegMainActivity extends AppCompatActivity implements View.OnClic
 
     public void LoginRegister()
     {
+        TxtIDNUMlog.setText("");
+        edttxtPassword.setText("");
         Intent intent = new Intent(this, LoginRegister.class);
         startActivity(intent);
         finish();
-
     }
 }
 
