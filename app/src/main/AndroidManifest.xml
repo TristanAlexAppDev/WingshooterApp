@@ -36,8 +36,6 @@
         <activity
             android:name=".LoginRegister"
             android:exported="true" />
-
-
         <activity
             android:name=".LogActivity"
             android:exported="true" />
@@ -59,7 +57,9 @@
         <activity
             android:name=".MailSenderActivity"
             android:exported="true" />
-
+        <activity
+            android:name=".EmailHuntInfo"
+            android:exported="true" />
 
 
         <activity android:name=".BirdIDFV"></activity>

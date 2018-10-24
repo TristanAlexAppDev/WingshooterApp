@@ -16,6 +16,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     public String huntDate = NewHunt.DateofHunt;
     public static String huntContent;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +31,9 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
         TextView txtHeader = findViewById(R.id.txtActivityName);
         txtHeader.setText("Activity name: " + hunt);
-
         TextView txtLog1 = findViewById(R.id.txtReport1);
         huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
         txtLog1.setText(huntContent);
-
     }
 
 
