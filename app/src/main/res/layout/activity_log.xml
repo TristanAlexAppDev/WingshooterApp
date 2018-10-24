@@ -18,7 +18,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/btnSave"
+        android:id="@+id/btnNewLog"
         android:layout_width="210dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
@@ -78,16 +78,20 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.131" />
+        app:layout_constraintVertical_bias="0.131"
+        android:entries="@array/Bird_Age"
+        android:prompt="@string/Bird_Age_Prompt"/>
 
     <Spinner
         android:id="@+id/spnSorS"
         android:layout_width="190dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:entries="@array/SeenShot"
+        android:prompt="@string/Seen_Or_Shot_Prompt"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,29 +120,30 @@
         android:id="@+id/pTxtNumSeenorShot"
         android:layout_width="165dp"
         android:layout_height="46dp"
-        android:layout_marginTop="17dp"
         android:layout_marginEnd="31dp"
+        android:layout_marginTop="17dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spnAge" />
 
     <RadioGroup
+        android:id="@+id/rdbGroup"
         android:layout_width="match_parent"
-        android:layout_height="86dp"
 
+        android:layout_height="86dp"
         android:layout_marginBottom="184dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewLog"
         app:layout_constraintStart_toStartOf="parent">
 
         <RadioButton
             android:id="@+id/rdbOtherAnimal"
             android:layout_width="149dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:text="Other Animal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,14 +160,14 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edttxtOptionalInfo"
         android:layout_width="0dp"
         android:layout_height="149dp"
         android:layout_marginBottom="9dp"
         android:ems="10"
-        android:hint="Animal Shot / Type of Clays Shot"
+        android:hint="Animal Shot / Type of Clays Shot with number shot"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintBottom_toTopOf="@+id/btnNewLog"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

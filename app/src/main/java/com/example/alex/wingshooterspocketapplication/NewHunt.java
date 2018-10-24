@@ -25,6 +25,9 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
     public Spinner spnProvince;
 
     public String typeStringThing;
+    public static String huntName;
+    public static String DateofHunt;
+    public static int huntID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +90,8 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             String farmName = txtFarmname.getText().toString();
             String farmOwner = txtFarmowner.getText().toString();
             String farmCell = txtCellNum.getText().toString();
+            huntName = actName;
+            DateofHunt = huntDate;
 
             if (farmName.equals(""))
             {
@@ -101,14 +106,23 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
                 farmCell = "000-000-0000";
             }
 
+            actName = actName.replaceAll("\\s+","");
+            acttype = acttype.replaceAll("\\s+","");
+            huntDate = huntDate.replaceAll("\\s+","");
+            huntLocation = huntLocation.replaceAll("\\s+","");
+            huntProvince = huntProvince.replaceAll("\\s+","");
+            huntDist = huntDist.replaceAll("\\s+","");
+            club = club.replaceAll("\\s+","");
+
             String optionalInfo = farmName + "-" + farmOwner + "-" + farmCell;
             typeStringThing = "newhunt";
 
             DatabaseHelper dbHelp = new DatabaseHelper(this);
 
-            int huntID = dbHelp.getHuntID();
+            boolean complete = dbHelp.insertDataTable1(typeStringThing, actName, acttype,
+                    huntDate, huntLocation, huntProvince, huntDist, optionalInfo, club);
 
-            boolean complete = dbHelp.insertDataTable1(huntID, typeStringThing, actName, acttype, huntDate, huntLocation, huntProvince, huntDist, optionalInfo, club);
+            huntID = dbHelp.getHuntID(huntDate);
 
             if (complete)
             {

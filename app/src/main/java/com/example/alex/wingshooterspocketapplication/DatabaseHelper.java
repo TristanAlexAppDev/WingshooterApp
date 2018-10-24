@@ -51,12 +51,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
                 "FOREIGN KEY (HuntID) REFERENCES Log (HuntID));");
 
         db.execSQL("CREATE TABLE Log (\n" +
+                "\tLogID\tINTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,\n" +
                 "\tHuntID\tINTEGER NOT NULL,\n" +
-                "\tBirdName\tTEXT,\n" +
-                "\tNumSeen\tINTEGER,\n" +
-                "\tNumShot\tINTEGER,\n" +
-                "\tOtherAnimalORclaySHOT\tTEXT,\n" +
-                "\tPRIMARY KEY(HuntID),\n" +
+                "\tBirdName\tTEXT NOT NULL,\n" +
+                "\tSeenORShot\tTEXT NOT NULL,\n" +
+                "\tBirdAge\tTEXT NOT NULL,\n" +
+                "\tNumSeenORShot\tTEXT NOT NULL,\n" +
+                "\tOtherAnimalShotORClayShoot\tTEXT,\n" +
+                "\tAnimalShotNameORTypeClaysShot\tTEXT,\n" +
                 "FOREIGN KEY (HuntID) REFERENCES myHunts (HuntID));");
     }
 
@@ -68,36 +70,27 @@ public class DatabaseHelper extends SQLiteOpenHelper
             onCreate(db);
     }
 
-    public boolean insertDataTable1(int huntID, String typeStringThing, String actName, String acttype, String huntDate, String huntLocation,
+    public boolean insertDataTable1(String typeStringThing, String actName, String acttype, String huntDate, String huntLocation,
                               String huntProvince, String huntDist, String tableType, String club)
     {
-        boolean result;
-        int id = huntID + 1;
-        String query = "INSERT INTO myHunts(HuntID, ActivityName, ActivityType, HuntDate, Location, Club, Province, District, AdditionalInfo)" +
-                    " VALUES(" + id + "," + actName + "," + acttype + "," + huntDate + "," + huntLocation + "," + club + "," + huntProvince + "," + huntDist + "," + typeStringThing + ")";
-
-        Cursor cursor = db.rawQuery(query, null);
-        if (cursor.equals(true))
+        try
         {
-            result = true;
-            db.close();
-            cursor.close();
+            String query = "INSERT INTO myHunts(ActivityName, ActivityType, HuntDate, Location, Club, Province, District, AdditionalInfo)" +
+                    " VALUES('" + actName + "','" + acttype + "','" + huntDate + "','" + huntLocation + "','" + club + "','" + huntProvince
+                    + "','" + huntDist + "','" + typeStringThing + "')";
+            db.execSQL(query);
+            return true;
         }
-        else{
-            result = false;
-            db.close();
-            cursor.close();
+        catch (Exception e)
+        {
+            return false;
         }
-
-        db.close();
-
-        return result;
     }
 
-    public int getHuntID ()
+    public int getHuntID(String huntDate)
     {
         int result;
-        String query = "SELECT HuntID FROM myHunts ORDER BY huntID DESC LIMIT 1";
+        String query = "SELECT HuntID FROM myHunts WHERE HuntDate ='" + huntDate + "'";
         Cursor cursor = db.rawQuery(query, null);
 
         if(cursor.moveToFirst())
@@ -108,8 +101,23 @@ public class DatabaseHelper extends SQLiteOpenHelper
         {
             result = 0;
         }
-        db.close();
         cursor.close();
         return result;
+    }
+
+    public boolean addNewLog(int huntID, String birdName, String shtORSn, String brdAge, String numSnORSht, String othrAnimORClaySht, String animShotORClayTypeSht)
+    {
+        try
+        {
+            String query = "INSERT INTO Log(HuntID, BirdName, SeenORShot, BirdAge, NumSeenORShot, OtherAnimalShotORClayShoot, AnimalShotNameORTypeClaysShot)" +
+                    " VALUES('" + huntID + "', '" + birdName + "', '" + shtORSn + "', '" + brdAge + "', '" + numSnORSht + "', " +
+                    "'" + othrAnimORClaySht + "', '" + animShotORClayTypeSht + "')";
+            db.execSQL(query);
+            return true;
+        }
+        catch (Exception e)
+        {
+            return false;
+        }
     }
 }
