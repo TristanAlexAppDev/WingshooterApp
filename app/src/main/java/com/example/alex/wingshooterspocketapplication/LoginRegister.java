@@ -35,7 +35,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
-        getSupportActionBar().setTitle("Register for App");
+        getSupportActionBar().setTitle("Register your Info");
 
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);

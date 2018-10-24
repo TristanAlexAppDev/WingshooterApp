@@ -19,18 +19,6 @@
 
 
         <Button
-            android:id="@+id/btnEdtProf"
-            android:layout_width="110dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="12dp"
-            android:text="Profile"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/colorPrimary"
-            android:textColor="@android:color/white"/>
-
-        <Button
             android:id="@+id/btnMagazine"
             android:layout_width="163dp"
             android:layout_height="64dp"
@@ -140,7 +128,7 @@
         android:id="@+id/pdView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="invisible">
 
         <Button
             android:id="@+id/closePdf1"

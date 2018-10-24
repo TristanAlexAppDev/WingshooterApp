@@ -59,7 +59,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home__screen);
-        getSupportActionBar().setTitle("The Hub");
+        getSupportActionBar().setTitle("Home");
 
         Button btnNAct = findViewById(R.id.btnNewActivity);
         btnNAct.setOnClickListener(this);
@@ -159,7 +159,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         Intent intent = new Intent(this,NewHunt.class);
         startActivity(intent);
-        finish();
+
     }
 
 
@@ -167,14 +167,14 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     {
         Intent intent = new Intent(this, BirdIDFV.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void StartHunt()
     {
         Intent intent = new Intent(this, StartHunt.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void HSProvinceSelection()
@@ -213,7 +213,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         else {
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
-        otherName = 1;
+        otherName = 2;
         }
 
     }
@@ -231,9 +231,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         }
 
         else {
-            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
+            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
             new DownloadTask(Home_Screen.this, URL);
-            otherName = 2;
+            otherName = 1;
         }
     }
 

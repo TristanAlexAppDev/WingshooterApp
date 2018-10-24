@@ -43,7 +43,7 @@ public class DownloadTask
         {
             downloadFileName = "WingShootersMagazine.pdf";
         }
-        else
+        if(chosenName == 3)
         {
             downloadFileName = "WingShootersHuntSeasons.pdf";
         }

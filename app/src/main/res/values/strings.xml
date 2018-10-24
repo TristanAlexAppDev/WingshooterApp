@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">WingshootersPocketApplication</string>
+    <string name="app_name">WINGSHOOTERS POCKET APP</string>
+    <string name="app_logo">WSPA</string>
     <string name="province_prompt">Choose a province</string>
     <!-- String to populate drop down for bird age-->
     <string-array name="Bird_Age">
