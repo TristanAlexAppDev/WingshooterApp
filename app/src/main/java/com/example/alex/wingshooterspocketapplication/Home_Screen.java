@@ -213,7 +213,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         else {
         String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/WINGS-MAG-No4-2017.pdf?cdp=a";
         new DownloadTask(Home_Screen.this, URL);
-        otherName = 1;
+        otherName = 2;
         }
 
     }
@@ -231,9 +231,9 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         }
 
         else {
-            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/HUNTING-SEASONS-2018-May.pdf?cdp=a";
+            String URL = "http://www.wingshooters.org.za/.cm4all/iproc.php/SAWingshooters-2018-ShootCalendar-Fin.pdf?cdp=a";
             new DownloadTask(Home_Screen.this, URL);
-            otherName = 2;
+            otherName = 1;
         }
     }
 

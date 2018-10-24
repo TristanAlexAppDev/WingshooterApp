@@ -12,7 +12,7 @@
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
+        android:label="@string/app_logo"
         android:icon="@mipmap/ic_winglogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
