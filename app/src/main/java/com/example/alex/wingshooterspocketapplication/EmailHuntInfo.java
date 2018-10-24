@@ -44,25 +44,24 @@ public class EmailHuntInfo extends AppCompatActivity
             public void onClick(View v)
             {
 
-                String emailAddressList[] = {"wingshooterapp@gmail.com"};
+                String emailAddressList[] = {"wingshootersapp@gmail.com"};
 
                 String mycontent ="The Following user has made the following report:"+ "\n"
-                        + "First name - " + "First name goes here"+ "\n"
-                        + "Surname - " + "Surname goes here" + "\n"
-                        + "ID Number - " + " ID Number goes here"+
-                        "\n"+"\n"
-                        +"Reports go here";
+                        + "First name - " + userName+ "\n"
+                        + "Surname - " + userSurname + "\n"
+                        + "ID Number - " + userIDNum+
+                        "\n"+"\n"+ userHuntLog;
 
-                String HuntingInfo="HuntingInfo.txt";
-                File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),HuntingInfo);
-                Uri path = Uri.fromFile(filelocation);
+               // String HuntingInfo="HuntingInfo.txt";
+                //File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),HuntingInfo);
+               // Uri path = Uri.fromFile(filelocation);
 
                 Intent email = new Intent(Intent.ACTION_SEND);
                 email.putExtra(Intent.EXTRA_SUBJECT, "Hunting Information");
                 email.setType("plain/text");
                 email.putExtra(Intent.EXTRA_EMAIL, emailAddressList);
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
-                email.putExtra(Intent.EXTRA_STREAM,path);
+               // email.putExtra(Intent.EXTRA_STREAM,path);
                 startActivity(Intent.createChooser(email, "Select Your Email Client:"));
             }
         });
