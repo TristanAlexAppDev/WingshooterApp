@@ -54,11 +54,20 @@ public class EmailHuntInfo extends AppCompatActivity
 
                 String emailAddressList[] = {"wingshootersapp@gmail.com"};
 
-                String mycontent ="The Following user has made the following report:"+ "\n"
+                String mycontent ="The Following user has made the following report:"+ "\n" +"\n"
                         + "First name - " + userName+ "\n"
                         + "Surname - " + userSurname + "\n"
                         + "ID Number - " + userIDNum+
-                        "\n"+"\n"+ userHuntLog;
+                        "\n"+"\n"
+                        + "Date - " + huntDate + "\n"
+                        + "Activity Name - " + ActivityName + "\n"
+                        + "Activity type - " + activityType + "\n"
+                        + "Location - " + Location + "\n"
+                        + "Club Name - " + clubName + "\n"
+                        + "Province - " + province + "\n"
+                        + "District - " + District + "\n"
+                        + "Other Info - " + OtherInfo + "\n"
+                        + "LOGS - " + userHuntLog;
 
                // String HuntingInfo="HuntingInfo.txt";
                 //File filelocation = new File(Environment.getExternalStorageDirectory().getAbsolutePath(),HuntingInfo);
