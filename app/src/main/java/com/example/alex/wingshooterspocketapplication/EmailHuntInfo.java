@@ -18,6 +18,14 @@ public class EmailHuntInfo extends AppCompatActivity
     public static String userSurname = LogRegMainActivity.lastName;
     public static String userIDNum = LogRegMainActivity.idNum;
     public static String userHuntLog = StartHunt.huntContent;
+    public String huntDate = NewHunt.DateofHunt;
+    public String ActivityName = NewHunt.huntName;
+    public String activityType = NewHunt.activityType;
+    public String Location = NewHunt.actLocation;
+    public String clubName = NewHunt.actClub;
+    public String province = NewHunt.actProvince;
+    public String District = NewHunt.actDistrict;
+    public String OtherInfo = NewHunt.optionalInfo;
 
     Button Send;
     EditText mEditText;

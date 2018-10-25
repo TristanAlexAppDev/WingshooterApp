@@ -61,14 +61,14 @@ public class DatabaseHelper extends SQLiteOpenHelper
             onCreate(db);
     }
 
-    public boolean insertDataTable1(String typeStringThing, String actName, String acttype, String huntDate, String huntLocation,
-                              String huntProvince, String huntDist, String tableType, String club)
+    public boolean insertDataTable1(String actName, String acttype, String huntDate, String huntLocation,
+                              String huntProvince, String huntDist, String club, String optionalInfo)
     {
         try
         {
             String query = "INSERT INTO myHunts(ActivityName, ActivityType, HuntDate, Location, Club, Province, District, AdditionalInfo)" +
                     " VALUES('" + actName + "','" + acttype + "','" + huntDate + "','" + huntLocation + "','" + club + "','" + huntProvince
-                    + "','" + huntDist + "','" + typeStringThing + "')";
+                    + "','" + huntDist + "','" + optionalInfo + "')";
             db.execSQL(query);
             return true;
         }

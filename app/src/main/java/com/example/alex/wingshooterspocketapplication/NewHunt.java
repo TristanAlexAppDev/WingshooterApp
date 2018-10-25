@@ -24,10 +24,16 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
     public TextView txtCellNum;
     public Spinner spnProvince;
 
-    public String typeStringThing;
     public static String huntName;
     public static String DateofHunt;
     public static int huntID;
+    public static String optionalInfo;
+    public static String activityType;
+    public static String actLocation;
+    public static String actClub;
+    public static String actProvince;
+    public static String actDistrict;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,6 +98,12 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             String farmCell = txtCellNum.getText().toString();
             huntName = actName;
             DateofHunt = huntDate;
+            activityType = acttype;
+            actLocation = huntLocation;
+            actClub = club;
+            actProvince = huntProvince;
+            actDistrict = huntDist;
+
 
             if (farmName.equals(""))
             {
@@ -99,11 +111,11 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             }
             if (farmOwner.equals(""))
             {
-                farmOwner = "OwnerNotKnow";
+                farmOwner = "OwnerNotKnown";
             }
             if (farmCell.equals(""))
             {
-                farmCell = "000-000-0000";
+                farmCell = "Unknown";
             }
 
             actName = actName.replaceAll("\\s+","");
@@ -114,12 +126,11 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             huntDist = huntDist.replaceAll("\\s+","");
             club = club.replaceAll("\\s+","");
 
-            String optionalInfo = farmName + "-" + farmOwner + "-" + farmCell;
-            typeStringThing = "newhunt";
+            optionalInfo = farmName + "-" + farmOwner + "-" + farmCell;
 
             DatabaseHelper dbHelp = new DatabaseHelper(this);
 
-            boolean complete = dbHelp.insertDataTable1(typeStringThing, actName, acttype,
+            boolean complete = dbHelp.insertDataTable1(actName, acttype,
                     huntDate, huntLocation, huntProvince, huntDist, optionalInfo, club);
 
             huntID = dbHelp.getHuntID(huntDate);
