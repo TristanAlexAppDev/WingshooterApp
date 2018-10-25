@@ -182,20 +182,35 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             }
             else {
                 Toast.makeText(getApplicationContext(), "There was a problem starting hunt, please try again.", Toast.LENGTH_LONG).show();
-                clearFields();
             }
         }
     }
 
     private void clearFields()
     {
-        txtActName.setText("");
-        txtActivityType.setText("");
-        txthuntDate.setText("");
-        txtLocation.setText("");
-        txtDistrict.setText("");
-        txtFarmname.setText("");
-        txtFarmowner.setText("");
-        txtCellNum.setText("");
+        if (txtActName.getText() == "") {
+            txtActName.setText("");
+        }
+        if (txtActivityType.getText() == "") {
+            txtActivityType.setText("");
+        }
+        if (txthuntDate.getText() == "") {
+            txthuntDate.setText("");
+        }
+        if (txtLocation.getText() == "") {
+            txtLocation.setText("");
+        }
+        if (txtDistrict.getText() == "") {
+            txtDistrict.setText("");
+        }
+        if (txtFarmname.getText() == "") {
+            txtFarmname.setText("");
+        }
+        if (txtFarmowner.getText() == "") {
+            txtFarmowner.setText("");
+        }
+        if (txtCellNum.getText() == "") {
+            txtCellNum.setText("");
+        }
     }
 }
