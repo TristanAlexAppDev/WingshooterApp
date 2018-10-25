@@ -89,6 +89,15 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
         Button btnCPdf3 = findViewById(R.id.closePdf3);
         btnCPdf3.setOnClickListener(this);
 
+        Button btnDmag = findViewById(R.id.btnDMag1);
+        btnDmag.setOnClickListener(this);
+
+        Button btnDnot = findViewById(R.id.btnDNot);
+        btnDnot.setOnClickListener(this);
+
+        Button btnDSeas = findViewById(R.id.btnDHS);
+        btnDSeas.setOnClickListener(this);
+
         txtUserLoggedIn = findViewById(R.id.txtHomeScreen);
         txtUserLoggedIn.setText("Welcome " + userName);
 
@@ -149,6 +158,18 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
             case R.id.closePdf3:
                 closepdf();
+                break;
+
+            case R.id.btnDMag1:
+                dltPdfM();
+                break;
+
+            case R.id.btnDNot:
+                dltPdfN();
+                break;
+
+            case R.id.btnDHS:
+                dltPdfHS();
                 break;
 
         }
@@ -242,10 +263,44 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
     public void closepdf()
     {
 
+
         Intent intent = new Intent(this,Home_Screen.class);
         startActivity(intent);
 
         finish();
+    }
+
+    public void dltPdfM()
+    {
+        Intent intent = new Intent(this,Home_Screen.class);
+        startActivity(intent);
+        File file = new File("/sdcard/WINGPOCKAPP FILES/WingShootersMagazine.pdf");
+        file.delete();
+        finish();
+
+
+    }
+
+    public void dltPdfN()
+    {
+        Intent intent = new Intent(this,Home_Screen.class);
+        startActivity(intent);
+        File fileN = new File("/sdcard/WINGPOCKAPP FILES/WingShootersNotifications.pdf");
+        fileN.delete();
+        finish();
+
+
+    }
+
+    public void dltPdfHS()
+    {
+        Intent intent = new Intent(this,Home_Screen.class);
+        startActivity(intent);
+        File fileP = new File("/sdcard/WINGPOCKAPP FILES/WingShootersHuntSeasons.pdf");
+        fileP.delete();
+        finish();
+
+
     }
 
 
