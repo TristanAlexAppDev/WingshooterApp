@@ -188,28 +188,29 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
 
     private void clearFields()
     {
-        if (txtActName.getText() == "") {
+        if (!txtActName.equals(""))
+        {
             txtActName.setText("");
         }
-        if (txtActivityType.getText() == "") {
+        if (!txtActivityType.equals("")) {
             txtActivityType.setText("");
         }
-        if (txthuntDate.getText() == "") {
+        if (!txthuntDate.equals("")) {
             txthuntDate.setText("");
         }
-        if (txtLocation.getText() == "") {
+        if (!txtLocation.equals("")) {
             txtLocation.setText("");
         }
-        if (txtDistrict.getText() == "") {
+        if (!txtDistrict.equals("")) {
             txtDistrict.setText("");
         }
-        if (txtFarmname.getText() == "") {
+        if (!txtFarmname.equals("")) {
             txtFarmname.setText("");
         }
-        if (txtFarmowner.getText() == "") {
+        if (!txtFarmowner.equals("")) {
             txtFarmowner.setText("");
         }
-        if (txtCellNum.getText() == "") {
+        if (!txtCellNum.equals("")) {
             txtCellNum.setText("");
         }
     }
