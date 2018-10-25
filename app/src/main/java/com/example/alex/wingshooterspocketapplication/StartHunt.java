@@ -15,7 +15,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     public String hunt = NewHunt.huntName;
     public String huntDate = NewHunt.DateofHunt;
     public static String huntContent = "";
-    public static String LogsForEmail = "";
     public static String email;
 
 
@@ -43,7 +42,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         else {
             huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
             txtLog1.setText(huntContent);
-            LogsForEmail = txtLog1.getText().toString().trim();
         }
     }
 
@@ -71,9 +69,10 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
     public void EmailHuntInfo()
     {
-        email = LogsForEmail;
+        TextView txtView = findViewById(R.id.txtReport1);
+        email = txtView.getText().toString().trim();
         Intent intent = new Intent(this,EmailHuntInfo.class);
         startActivity(intent);
-        finish();
+        //finish();
     }
 }
