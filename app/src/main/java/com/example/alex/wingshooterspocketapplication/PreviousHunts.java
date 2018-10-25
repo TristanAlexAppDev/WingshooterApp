@@ -2,12 +2,14 @@ package com.example.alex.wingshooterspocketapplication;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -66,6 +68,24 @@ public class PreviousHunts extends AppCompatActivity implements View.OnClickList
             }
         },Year, Month, Day);
         datePickerDialog.show();
+
+        DatabaseHelper dbHelp = new DatabaseHelper(this);
+        int huntID = dbHelp.getHuntIDforPastHunts(strDate);
+
+        if (huntID == 0)
+        {
+            Toast.makeText(getApplicationContext(), "No Hunts on that day.", Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            LastPart(huntID);
+        }
+    }
+
+    private void LastPart(int huntID)
+    {
+        DatabaseHelper dbHelp = new DatabaseHelper(this);
+        //Cursor cursor = dbHelp.getPastHuntLogs(huntID);
     }
 
     private void goHome()

@@ -172,7 +172,7 @@ public class Home_Screen extends AppCompatActivity implements View.OnClickListen
 
     public void StartHunt()
     {
-        Intent intent = new Intent(this, StartHunt.class);
+        Intent intent = new Intent(this, PreviousHunts.class);
         startActivity(intent);
 
     }

@@ -111,4 +111,28 @@ public class DatabaseHelper extends SQLiteOpenHelper
             return false;
         }
     }
+
+    public int getHuntIDforPastHunts(String strDate)
+    {
+        int result;
+        String query = "SELECT HuntID FROM myHunts WHERE HuntDate ='" + strDate + "'";
+        Cursor cursor = db.rawQuery(query, null);
+
+        if(cursor.moveToFirst())
+        {
+            result = cursor.getInt(cursor.getColumnIndex("HuntID"));
+        }
+        else
+        {
+            result = 0;
+        }
+        cursor.close();
+        return result;
+    }
+
+    /*public Cursor getPastHuntLogs(int huntID)
+    {
+        Cursor cursor = "";
+        return cursor;
+    }*/
 }

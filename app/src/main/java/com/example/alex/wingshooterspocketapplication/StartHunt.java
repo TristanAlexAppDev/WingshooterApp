@@ -14,7 +14,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     public int huntID = NewHunt.huntID;
     public String hunt = NewHunt.huntName;
     public String huntDate = NewHunt.DateofHunt;
-    public static String huntContent;
+    public static String huntContent = "";
 
 
     @Override
@@ -33,11 +33,9 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         TextView txtLog1 = findViewById(R.id.txtReport1);
         if (LogActivity.NewLog == null)
         {
-            txtLog1.setText("");
-            huntContent = "";
+            txtLog1.setText(huntContent);
         }
-        else
-        {
+        else {
             huntContent = huntContent + "/NEXT_LOG/" + LogActivity.NewLog;
             txtLog1.setText(huntContent);
         }
