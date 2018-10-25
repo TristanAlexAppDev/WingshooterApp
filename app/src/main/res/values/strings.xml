@@ -16,7 +16,7 @@
         <item>Shot</item>
     </string-array>
     <!-- String to populate drop down for province selection-->
-    <string-array name = "provinceSelect">
+    <string-array name="provinceSelect">
         <item>Gauteng</item>
         <item>North West Province</item>
         <item>Western Cape</item>
@@ -27,4 +27,5 @@
         <item>Free State</item>
         <item>Mpumalanga</item>
     </string-array>
+    <string name="title_activity_previous_hunts">PreviousHunts</string>
 </resources>
