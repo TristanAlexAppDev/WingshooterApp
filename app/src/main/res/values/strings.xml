@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">WINGSHOOTERS POCKET APP</string>
     <string name="app_logo">WSPA</string>
-    <string name="province_prompt">Choose a province</string>
+    <string name="province_prompt">Select a province</string>
+    <string name="Bird_Age_Prompt">What was the birds Age?</string>
+    <string name="Seen_Or_Shot_Prompt">Was Bird seen or shot?</string>
     <!-- String to populate drop down for bird age-->
     <string-array name="Bird_Age">
         <item>Chick</item>
@@ -13,7 +15,8 @@
         <item>Seen</item>
         <item>Shot</item>
     </string-array>
-    <string-array name = "provinceSelect">
+    <!-- String to populate drop down for province selection-->
+    <string-array name="provinceSelect">
         <item>Gauteng</item>
         <item>North West Province</item>
         <item>Western Cape</item>
@@ -24,4 +27,5 @@
         <item>Free State</item>
         <item>Mpumalanga</item>
     </string-array>
+    <string name="title_activity_previous_hunts">PreviousHunts</string>
 </resources>

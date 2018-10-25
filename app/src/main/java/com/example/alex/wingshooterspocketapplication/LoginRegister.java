@@ -1,7 +1,9 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginRegister extends AppCompatActivity implements View.OnClickListener
 {
+    private String TAG;
     //variables for login activity
 
     public TextView edtTextIDNum;
@@ -106,27 +109,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
                         {
                             if (userLogin.Email.equals(email))
                             {
-                                String key = fdb.child("userTable").push().getKey();
-                                //fdb.child("userTable").child(key).child(userID).child("certifiedUser").setValue("Yes");
-
-                                try
-                                {
-                                    fdb.child("userTable").child("userTable/" + key + "/certifiedUser").setValue("Yes");
-                                }
-                                catch (Exception e)
-                                {
-                                    e.printStackTrace();
-                                }
-
-                                Toast.makeText(getApplicationContext(), "Profile created, please log in.", Toast.LENGTH_LONG).show();
-                                new Handler().postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
-                                        startActivity(i);
-                                        finish();
-                                    }
-                                }, 1750);
+                                finallyDone(userID);
                             }
                             else
                             {
@@ -155,6 +138,48 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
             public void onCancelled(DatabaseError databaseError)
             {
                 Log.d(TAG, "Error trying to register profile" + databaseError);
+            }
+        });
+    }
+
+    private void finallyDone(final String userID)
+    {
+        final DatabaseReference fdb = FirebaseDatabase.getInstance().getReference();
+        Query query = fdb.child("userTable").orderByChild("IDNumber").equalTo(userID);
+        query.addListenerForSingleValueEvent(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot)
+            {
+                for (DataSnapshot childsnapshot : dataSnapshot.getChildren())
+                {
+                    String key = childsnapshot.getKey();
+
+                    try
+                    {
+                        fdb.child("userTable").child(key).child("certifiedUser").setValue("Yes");
+                    }
+                    catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    }
+
+                    Toast.makeText(getApplicationContext(), "Profile created, please login now.", Toast.LENGTH_LONG).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(LoginRegister.this, LogRegMainActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    }, 1750);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError)
+            {
+                Log.d(userID, "Unable to check database for " + databaseError);
             }
         });
     }

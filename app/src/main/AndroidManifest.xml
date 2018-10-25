@@ -2,21 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.alex.wingshooterspocketapplication">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"></uses-permission>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>>
-
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    >
     <application
         android:allowBackup="true"
-        android:label="@string/app_logo"
         android:icon="@mipmap/ic_winglogo"
+        android:label="@string/app_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
 
         <!-- Set default activity for launch -->
         <activity
@@ -36,8 +34,6 @@
         <activity
             android:name=".LoginRegister"
             android:exported="true" />
-
-
         <activity
             android:name=".LogActivity"
             android:exported="true" />
@@ -47,24 +43,23 @@
         <activity
             android:name=".StartHunt"
             android:exported="true" />
-
-        <activity android:name=".CreateTextFile"
-            android:exported="true"/>
-
-        <activity android:name=".SendEmail"
-             android:exported="true"/>
+        <activity
+            android:name=".CreateTextFile"
+            android:exported="true" />
+        <activity
+            android:name=".SendEmail"
+            android:exported="true" />
         <activity
             android:name=".TextFile"
             android:exported="true" />
         <activity
             android:name=".MailSenderActivity"
             android:exported="true" />
-
-
-
-        <activity android:name=".BirdIDFV"></activity>
-
-
+        <activity
+            android:name=".EmailHuntInfo"
+            android:exported="true" />
+        <activity android:name=".BirdIDFV" />
+        <activity android:name=".PreviousHunts"></activity>
     </application>
 
 </manifest>
