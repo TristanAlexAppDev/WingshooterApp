@@ -15,7 +15,8 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
     public String hunt = NewHunt.huntName;
     public String huntDate = NewHunt.DateofHunt;
     public static String huntContent = "";
-
+    public static String LogsForEmail = "";
+    TextView txtLog1 = findViewById(R.id.txtReport1);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
         TextView txtHeader = findViewById(R.id.txtActivityName);
         txtHeader.setText("Activity name: " + hunt);
-        TextView txtLog1 = findViewById(R.id.txtReport1);
         if (LogActivity.NewLog == null)
         {
             txtLog1.setText(huntContent);
@@ -65,6 +65,7 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
 
     public void EmailHuntInfo()
     {
+        LogsForEmail = txtLog1.getText().toString();
         Intent intent = new Intent(this,EmailHuntInfo.class);
         startActivity(intent);
         finish();

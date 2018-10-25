@@ -17,7 +17,7 @@ public class EmailHuntInfo extends AppCompatActivity
     public static String userName = LogRegMainActivity.userName;
     public static String userSurname = LogRegMainActivity.lastName;
     public static String userIDNum = LogRegMainActivity.idNum;
-    public static String userHuntLog = StartHunt.huntContent;
+    public static String userHuntLog = StartHunt.LogsForEmail;
     public String huntDate = NewHunt.DateofHunt;
     public String ActivityName = NewHunt.huntName;
     public String activityType = NewHunt.activityType;
