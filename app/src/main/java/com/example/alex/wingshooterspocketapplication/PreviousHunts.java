@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ public class PreviousHunts extends AppCompatActivity implements View.OnClickList
 {
     public TextView txtDate;
     public String strDate = "";
+    public ListView lstView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +34,7 @@ public class PreviousHunts extends AppCompatActivity implements View.OnClickList
         btnHome.setOnClickListener(this);
 
         txtDate = findViewById(R.id.txtDateThing);
+        lstView = findViewById(R.id.lstView);
     }
 
     @Override
@@ -84,8 +88,16 @@ public class PreviousHunts extends AppCompatActivity implements View.OnClickList
 
     private void LastPart(int huntID)
     {
-        DatabaseHelper dbHelp = new DatabaseHelper(this);
+        //DatabaseHelper dbHelp = new DatabaseHelper(this);
         //Cursor cursor = dbHelp.getPastHuntLogs(huntID);
+
+        /*SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
+                R.layout.activity_previous_hunts,
+                cursor,
+                new String[]{"BirdName", "SeenORShot", "BirdAge", "NumSeenORShot", "OtherAnimalShotORClayShoot", "AnimalShotNameORTypeClaysShot"},
+                new int[]{1, 2, 3, 4, 5, 6});*/
+
+        //lstView.setAdapter(adapter);
     }
 
     private void goHome()

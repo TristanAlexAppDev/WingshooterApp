@@ -130,9 +130,11 @@ public class DatabaseHelper extends SQLiteOpenHelper
         return result;
     }
 
-    /*public Cursor getPastHuntLogs(int huntID)
+    public Cursor getPastHuntLogs(int huntID)
     {
-        Cursor cursor = "";
+        String query = "SELECT BirdName, SeenORShot, BirdAge, NumSeenORShot, OtherAnimalShotORClayShoot, " +
+                "AnimalShotNameORTypeClaysShot FROM Log WHERE HuntID = " + "'huntID'";
+        Cursor cursor = db.rawQuery(query, null);
         return cursor;
-    }*/
+    }
 }
