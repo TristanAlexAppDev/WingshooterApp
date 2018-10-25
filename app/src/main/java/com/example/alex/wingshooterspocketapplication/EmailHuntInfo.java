@@ -39,7 +39,7 @@ public class EmailHuntInfo extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sendemail);
+        setContentView(R.layout.activity_emailhuntinfo);
 
         getSupportActionBar().setTitle("Verify");
 
