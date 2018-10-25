@@ -1,14 +1,19 @@
 package com.example.alex.wingshooterspocketapplication;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
 
 public class NewHunt extends AppCompatActivity implements View.OnClickListener
 {
@@ -23,6 +28,7 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
     public TextView txtFarmowner;
     public TextView txtCellNum;
     public Spinner spnProvince;
+    public TextView txtDateShower;
 
     public static String huntName;
     public static String DateofHunt;
@@ -47,15 +53,19 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
         Button btnDelete = findViewById(R.id.btnDelete);
         btnDelete.setOnClickListener(this);
 
+        Button btnDatePick = findViewById(R.id.btnDatePicker);
+        btnDatePick.setOnClickListener(this);
+
         txtActName = findViewById(R.id.txtActivityName);
         txtActivityType = findViewById(R.id.txtActivity);
-        txthuntDate = findViewById(R.id.datebox);
+        //txthuntDate = findViewById(R.id.datebox);
         txtLocation = findViewById(R.id.txtLocation);
         txtDistrict = findViewById(R.id.txtDistrict);
         txtFarmname = findViewById(R.id.txtFarmName);
         txtFarmowner = findViewById(R.id.txtFarmOwner);
         txtCellNum = findViewById(R.id.txtCellNumber);
         txtClub = findViewById(R.id.txtClub);
+        txtDateShower = findViewById(R.id.txtDateShower);
 
         spnProvince = findViewById(R.id.spnProvinceSelec);
     }
@@ -72,20 +82,44 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             case R.id.btnDelete:
                 clearFields();
                 break;
+            case R.id.btnDatePicker:
+                DatePick();
+                break;
         }
+    }
+
+    private void DatePick()
+    {
+        final Calendar c = Calendar.getInstance();
+        final int Year = c.get(Calendar.YEAR);
+        final int Month = c.get(Calendar.MONTH);
+        final int Day = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener()
+        {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth)
+            {
+                String day = String.valueOf(dayOfMonth);
+                String Smonth = String.valueOf(month + 1);
+                String sYear = String.valueOf(year);
+
+                txtDateShower.setText(day + "/" + Smonth + "/" + sYear);
+            }
+            },Year, Month, Day);
+        datePickerDialog.show();
     }
 
     public void StartHunt()
     {
         String actName = txtActName.getText().toString();
         String acttype = txtActivityType.getText().toString();
-        String huntDate = txthuntDate.getText().toString();
         String huntLocation = txtLocation.getText().toString();
         String huntProvince = spnProvince.getSelectedItem().toString();
         String huntDist = txtDistrict.getText().toString();
         String club = txtClub.getText().toString();
 
-        if (actName.equals("") || acttype.equals("") || huntDate.equals("") || huntLocation.equals("") ||
+        if (actName.equals("") || acttype.equals("") || huntLocation.equals("") ||
                 huntProvince.equals("") || huntDist.equals("") || club.equals(""))
         {
             Toast.makeText(getApplicationContext(), "Not all fields filled out, please fill all fields", Toast.LENGTH_LONG).show();
@@ -96,8 +130,8 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             String farmName = txtFarmname.getText().toString();
             String farmOwner = txtFarmowner.getText().toString();
             String farmCell = txtCellNum.getText().toString();
+            DateofHunt = txtDateShower.getText().toString();
             huntName = actName;
-            DateofHunt = huntDate;
             activityType = acttype;
             actLocation = huntLocation;
             actClub = club;
@@ -120,7 +154,6 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
 
             actName = actName.replaceAll("\\s+","");
             acttype = acttype.replaceAll("\\s+","");
-            huntDate = huntDate.replaceAll("\\s+","");
             huntLocation = huntLocation.replaceAll("\\s+","");
             huntProvince = huntProvince.replaceAll("\\s+","");
             huntDist = huntDist.replaceAll("\\s+","");
@@ -131,9 +164,9 @@ public class NewHunt extends AppCompatActivity implements View.OnClickListener
             DatabaseHelper dbHelp = new DatabaseHelper(this);
 
             boolean complete = dbHelp.insertDataTable1(actName, acttype,
-                    huntDate, huntLocation, huntProvince, huntDist, optionalInfo, club);
+                    DateofHunt, huntLocation, huntProvince, huntDist, club, optionalInfo);
 
-            huntID = dbHelp.getHuntID(huntDate);
+            huntID = dbHelp.getHuntID(DateofHunt);
 
             if (complete)
             {

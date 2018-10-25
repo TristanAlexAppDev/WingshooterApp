@@ -23,7 +23,6 @@ public class StartHunt extends AppCompatActivity implements  View.OnClickListene
         setContentView(R.layout.activity_start_hunt);
         getSupportActionBar().setTitle("Active Hunt");
 
-
         Button btnAdding = findViewById(R.id.BtnAdd);
         Button btnSubmit = findViewById(R.id.btnSubmit);
         btnAdding.setOnClickListener(this);
