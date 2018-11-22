@@ -92,6 +92,7 @@ public class EmailHuntInfo extends AppCompatActivity
             public void onClick(View v) {
                 Intent intent = new Intent(EmailHuntInfo.this,Home_Screen.class);
                 startActivity(intent);
+                finish();
             }
         });
     }

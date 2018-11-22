@@ -151,7 +151,7 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
         }
         else
         {
-            Toast.makeText(getApplicationContext(), "New entry into Log was not Successful", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "New entry into Log is Successful", Toast.LENGTH_LONG).show();
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
