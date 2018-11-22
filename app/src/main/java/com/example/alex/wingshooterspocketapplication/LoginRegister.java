@@ -19,6 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 
 public class LoginRegister extends AppCompatActivity implements View.OnClickListener
 {
@@ -35,7 +37,7 @@ public class LoginRegister extends AppCompatActivity implements View.OnClickList
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_register);
-        getSupportActionBar().setTitle("Register your Info");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Register your Info");
 
         edtTextIDNum = findViewById(R.id.edtTextIDNum);
         edtTextEmail = findViewById(R.id.edtTextEmail);

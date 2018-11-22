@@ -1,0 +1,4 @@
+_id,IDNumber,Name,Surname,Email,Password,DedicatedHunter,DateJoined
+1,9706145024082,Mark,van der Burgh,mkvdburgh@gmail.com,mark2018,0,NotJoined
+2,9704165080084,Alexander,McMichael,alexMc2018@yahoo.com,alexMc123,1,08/10/2018
+3,9512125207089,Tristan,Fraser,tjafraser@mweb.co.za,Tristan#roks,1,08/10/2018
