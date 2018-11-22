@@ -26,6 +26,7 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
     //public static String[] logs = new String[10];
     public String radioSelection = "default";
     public static String NewLog;
+    public String space = "\n";
 
     //must have values
     String birdName;
@@ -110,20 +111,20 @@ public class LogActivity extends AppCompatActivity implements View.OnClickListen
             if (othrAnimORClaySht.equals(""))
             {
                 othrAnimORClaySht = "noDataGiven";
-                NewLog = birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht;
+                NewLog = space + birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + space;
             }
             else
             {
-                NewLog = birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + " " + othrAnimORClaySht + " " + AnimShotORClayTypeSht;
+                NewLog = space + birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + " " + othrAnimORClaySht + " " + AnimShotORClayTypeSht + space;
             }
             if (AnimShotORClayTypeSht.equals(""))
             {
                 AnimShotORClayTypeSht = "noDataGiven";
-                NewLog = birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht;
+                NewLog = space + birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + space;
             }
             else
             {
-                NewLog = birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + " " + othrAnimORClaySht + " " + AnimShotORClayTypeSht;
+                NewLog = space + birdName + " " + ShtORSn + " " + brdAge + " " + numSnORSht + " " + othrAnimORClaySht + " " + AnimShotORClayTypeSht + space;
             }
             LogFinalTask();
         }

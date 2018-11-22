@@ -66,7 +66,7 @@ public class EmailHuntInfo extends AppCompatActivity
                         + "Club Name - " + clubName + "\n"
                         + "Province - " + province + "\n"
                         + "District - " + District + "\n"
-                        + "Other Info - " + OtherInfo + "\n"
+                        + "Other Info - " + OtherInfo + "\n" + "\n"
                         + "LOGS - " + userHuntLog;
 
                // String HuntingInfo="HuntingInfo.txt";
@@ -80,6 +80,18 @@ public class EmailHuntInfo extends AppCompatActivity
                 email.putExtra(Intent.EXTRA_TEXT, mycontent);
                // email.putExtra(Intent.EXTRA_STREAM,path);
                 startActivity(Intent.createChooser(email, "Select Your Email Client:"));
+
+
+
+            }
+        });
+
+        Button btnH = findViewById(R.id.btnHomeSE);
+        btnH.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(EmailHuntInfo.this,Home_Screen.class);
+                startActivity(intent);
             }
         });
     }

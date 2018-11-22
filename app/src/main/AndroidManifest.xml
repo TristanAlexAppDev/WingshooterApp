@@ -44,18 +44,6 @@
             android:name=".StartHunt"
             android:exported="true" />
         <activity
-            android:name=".CreateTextFile"
-            android:exported="true" />
-        <activity
-            android:name=".SendEmail"
-            android:exported="true" />
-        <activity
-            android:name=".TextFile"
-            android:exported="true" />
-        <activity
-            android:name=".MailSenderActivity"
-            android:exported="true" />
-        <activity
             android:name=".EmailHuntInfo"
             android:exported="true" />
         <activity android:name=".BirdIDFV" />
